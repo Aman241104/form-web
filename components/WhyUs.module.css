@@ -1,0 +1,112 @@
+.section {
+  padding: 160px 0;
+  background-color: var(--bg-deep);
+  border-top: 1px solid var(--glass-border);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50/50 split */
+  gap: 100px;
+  align-items: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+}
+
+.highlight {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.pointItem {
+  transition: all 0.3s ease;
+}
+
+.pointContent {
+  display: flex;
+  gap: 32px;
+  padding: 32px 0;
+}
+
+.pointNum {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  opacity: 0.4;
+  margin-top: 5px;
+}
+
+.pointText {
+  flex: 1;
+}
+
+.pointTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.pointDesc {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--glass-border);
+}
+
+.pointItem:hover .pointTitle {
+  color: var(--accent-red);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+}

@@ -1,0 +1,110 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import styles from './Security.module.css';
+
+const securityFeatures = [
+  {
+    label: 'NETWORK',
+    title: 'End-to-End Encryption',
+    desc: 'Restricted VPN tunnels with mandatory Multi-Factor Authentication (MFA) on every touchpoint.',
+    detail: '256-bit AES'
+  },
+  {
+    label: 'PHYSICAL',
+    title: 'Biometric Controls',
+    desc: 'Zero-tolerance clean-desk policy within a biometric-only facility monitored 24/7.',
+    detail: 'CCTV & BIOMETRIC'
+  },
+  {
+    label: 'STANDARDS',
+    title: 'Institutional Compliance',
+    desc: 'Operating under ISO 27001 framework with CISM-certified leadership overseeing all protocols.',
+    detail: 'ISO & CISM'
+  }
+];
+
+export default function Security() {
+  const sectionRef = useRef<section>(null);
+  const gridRef = useRef<divElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      // Header Animation
+      gsap.from('.headerReveal', {
+        opacity: 0,
+        y: 30,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%'
+        }
+      });
+
+      // Cards Border Draw & Content Stagger
+      const cards = gridRef.current?.children;
+      if (cards) {
+        gsap.from(cards, {
+          opacity: 0,
+          scale: 0.95,
+          stagger: 0.15,
+          duration: 1,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: 'top 75%'
+          }
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section id="security" ref={sectionRef} className={styles.section}>
+      <div className={styles.container}>
+        <div className={`headerReveal ${styles.header}`}>
+          <span className={styles.label}>Ironclad Compliance</span>
+          <h2 className={styles.title}>
+            Data residency and<br />
+            multi-layer protection<span className={styles.red}>.</span>
+          </h2>
+        </div>
+
+        <div ref={gridRef} className={styles.grid}>
+          {securityFeatures.map((feature, index) => (
+            <div key={index} className={styles.card}>
+              <div className={styles.scanLine}></div>
+              <div className={styles.cardHeader}>
+                <span className={styles.featureLabel}>{feature.label}</span>
+                <span className={styles.featureDetail}>{feature.detail}</span>
+              </div>
+              <div className={styles.cardContent}>
+                <h4 className={styles.featureTitle}>{feature.title}</h4>
+                <p className={styles.featureDesc}>{feature.desc}</p>
+              </div>
+              <div className={styles.cardFooter}>
+                <div className={styles.statusDot}></div>
+                <span className={styles.statusText}>Active Protocol</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.trustBar}>
+          <div className={styles.badge}>SOC2 COMPLIANT</div>
+          <div className={styles.divider}></div>
+          <div className={styles.badge}>GDPR READY</div>
+          <div className={styles.divider}></div>
+          <div className={styles.badge}>ISO 27001</div>
+        </div>
+      </div>
+    </section>
+  );
+}

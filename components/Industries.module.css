@@ -1,0 +1,138 @@
+.section {
+  padding: 160px 0;
+  background-color: var(--bg-deep);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--glass-border);
+}
+
+.backgroundText {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 25vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 1);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  margin-bottom: 100px;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-secondary);
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.red {
+  color: var(--accent-red);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  position: relative;
+  cursor: pointer;
+}
+
+.itemContent {
+  display: flex;
+  align-items: center;
+  padding: 48px 0;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.itemNum {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  opacity: 0.4;
+  width: 80px;
+}
+
+.itemName {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--glass-border);
+}
+
+.glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-red);
+  transition: width 0.4s ease;
+}
+
+/* Hover States */
+.listItem:hover .itemContent {
+  transform: translateX(15px);
+}
+
+.listItem:hover .itemName {
+  color: #ffffff;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.listItem:hover .glow {
+  width: 100%;
+}
+
+.listItem:hover .itemNum {
+  opacity: 0.8;
+  color: var(--accent-red);
+}
+
+@media (max-width: 768px) {
+  .itemContent {
+    padding: 32px 0;
+  }
+  .itemNum {
+    width: 60px;
+  }
+  .itemName {
+    font-size: 1.5rem;
+  }
+}

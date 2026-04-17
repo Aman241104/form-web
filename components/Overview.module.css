@@ -1,0 +1,88 @@
+.section {
+  padding: 160px 0;
+  background-color: var(--bg-deep);
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* 60/40 ratio */
+  gap: 100px;
+  align-items: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 30px;
+  text-transform: none; /* Keeping case natural as per design */
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  color: #9ca3af; /* Refined gray as requested */
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 48px; /* High-end vertical spacing */
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #9ca3af;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+  
+  .left {
+    max-width: 100%;
+  }
+}

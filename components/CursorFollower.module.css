@@ -1,0 +1,25 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent-crimson);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out;
+}
+
+@media (max-width: 1024px) {
+  .cursor {
+    display: none;
+  }
+}
+
+/* Ensure interactive elements don't have default cursors if we want full custom feel */
+/* * {
+  cursor: none !important;
+} */

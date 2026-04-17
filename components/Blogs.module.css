@@ -1,0 +1,164 @@
+.section {
+  padding: 160px 0;
+  background-color: var(--bg-deep);
+  border-top: 1px solid var(--glass-border);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 100px;
+}
+
+.left {
+  position: sticky;
+  top: 160px;
+  height: fit-content;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.dot {
+  color: var(--accent-red);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.blogItem {
+  position: relative;
+  cursor: pointer;
+}
+
+.itemContent {
+  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-red);
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.postTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 80%;
+}
+
+.imagePreview {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(20px);
+  width: 120px;
+  height: 80px;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  border: 1px solid var(--glass-border);
+}
+
+.imagePreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--glass-border);
+}
+
+/* Hover States */
+.blogItem:hover .postTitle {
+  transform: translateX(10px);
+  color: #ffffff;
+}
+
+.blogItem:hover .imagePreview {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.viewAll {
+  margin-top: 60px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: gap 0.3s ease;
+}
+
+.viewAll:hover {
+  gap: 25px;
+  color: var(--accent-red);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .left {
+    position: relative;
+    top: 0;
+  }
+  .imagePreview {
+    display: none;
+  }
+  .postTitle {
+    max-width: 100%;
+  }
+}
