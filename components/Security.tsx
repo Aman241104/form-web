@@ -28,39 +28,33 @@ const securityFeatures = [
 
 export default function Security() {
   const sectionRef = useRef<section>(null);
-  const gridRef = useRef<divElement>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       // Header Animation
-      gsap.from('.headerReveal', {
+      gsap.from('.securityHeaderReveal', {
         opacity: 0,
         y: 30,
         duration: 1.2,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%'
+          start: 'top 90%'
         }
       });
 
       // Cards Border Draw & Content Stagger
-      const cards = gridRef.current?.children;
-      if (cards) {
-        gsap.from(cards, {
-          opacity: 0,
-          scale: 0.95,
-          stagger: 0.15,
-          duration: 1,
-          ease: 'power4.out',
-          scrollTrigger: {
-            trigger: gridRef.current,
-            start: 'top 75%'
-          }
-        });
-      }
+      gsap.from('.securityCardReveal', {
+        opacity: 0,
+        scale: 0.95,
+        stagger: 0.15,
+        duration: 1,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 90%'
+        }
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -69,7 +63,7 @@ export default function Security() {
   return (
     <section id="security" ref={sectionRef} className={styles.section}>
       <div className={styles.container}>
-        <div className={`headerReveal ${styles.header}`}>
+        <div className={`securityHeaderReveal ${styles.header}`}>
           <span className={styles.label}>Ironclad Compliance</span>
           <h2 className={styles.title}>
             Data residency and<br />
@@ -77,9 +71,9 @@ export default function Security() {
           </h2>
         </div>
 
-        <div ref={gridRef} className={styles.grid}>
+        <div className={styles.grid}>
           {securityFeatures.map((feature, index) => (
-            <div key={index} className={styles.card}>
+            <div key={index} className={`securityCardReveal ${styles.card}`}>
               <div className={styles.scanLine}></div>
               <div className={styles.cardHeader}>
                 <span className={styles.featureLabel}>{feature.label}</span>

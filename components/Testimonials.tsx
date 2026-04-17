@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Testimonials.module.css';
 
 const testimonials = [
@@ -28,25 +29,33 @@ const testimonials = [
 export default function Testimonials() {
   const [active, setActive] = useState(0);
   const quoteRef = useRef<divElement>(null);
-  const bgTextRef = useRef<divElement>(null);
+  const sectionRef = useRef<section>(null);
 
   useEffect(() => {
-    // Initial entrance
-    gsap.from('.testimonialReveal', {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      stagger: 0.2,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '#testimonials',
-        start: 'top 80%'
-      }
-    });
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      // Initial entrance
+      gsap.from('.testimonialReveal', {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 90%'
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   useEffect(() => {
     // Transition animation when active index changes
+    if (!quoteRef.current) return;
+    
     const tl = gsap.timeline();
     tl.to(quoteRef.current, {
       opacity: 0,
@@ -63,8 +72,8 @@ export default function Testimonials() {
   }, [active]);
 
   return (
-    <section id="testimonials" className={styles.section}>
-      <div ref={bgTextRef} className={styles.bgText}>TRUST</div>
+    <section id="testimonials" ref={sectionRef} className={styles.section}>
+      <div className={styles.bgText}>TRUST</div>
       
       <div className={styles.container}>
         <div className={`testimonialReveal ${styles.header}`}>

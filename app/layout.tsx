@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CursorFollower from '@/components/CursorFollower';
 import Preloader from '@/components/Preloader';
+import GSAPInitializer from '@/components/GSAPInitializer';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
+        <GSAPInitializer />
         <Preloader />
         <CursorFollower />
         <Header />

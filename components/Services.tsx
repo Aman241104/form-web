@@ -30,8 +30,6 @@ export default function Services() {
   const sectionRef = useRef<section>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       // Header Animation
       gsap.from('.headerReveal', {
@@ -41,7 +39,8 @@ export default function Services() {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
+          start: 'top 90%',
+          toggleActions: 'play none none none'
         }
       });
 
@@ -54,7 +53,8 @@ export default function Services() {
         ease: 'power4.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 75%',
+          start: 'top 90%',
+          toggleActions: 'play none none none'
         }
       });
     }, sectionRef);

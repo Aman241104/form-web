@@ -28,39 +28,35 @@ const posts = [
 
 export default function Blogs() {
   const sectionRef = useRef<section>(null);
-  const listRef = useRef<divElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
       // Header Animation
-      gsap.from('.headerReveal', {
+      gsap.from('.blogHeaderReveal', {
         opacity: 0,
         x: -50,
         duration: 1.2,
         ease: 'power4.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%'
+          start: 'top 90%'
         }
       });
 
-      // List Items Animation
-      const items = listRef.current?.children;
-      if (items) {
-        gsap.from(items, {
-          opacity: 0,
-          y: 40,
-          stagger: 0.15,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: listRef.current,
-            start: 'top 75%'
-          }
-        });
-      }
+      // List Items Animation using class selector
+      gsap.from('.blogItemReveal', {
+        opacity: 0,
+        y: 40,
+        stagger: 0.15,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 90%'
+        }
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -71,7 +67,7 @@ export default function Blogs() {
       <div className={styles.container}>
         <div className={styles.grid}>
           {/* Left: Branding & Header */}
-          <div className={`headerReveal ${styles.left}`}>
+          <div className={`blogHeaderReveal ${styles.left}`}>
             <span className={styles.label}>Intelligence</span>
             <h2 className={styles.title}>
               Thought leadership<br />
@@ -81,9 +77,9 @@ export default function Blogs() {
           </div>
 
           {/* Right: Interactive List */}
-          <div ref={listRef} className={styles.right}>
+          <div className={styles.right}>
             {posts.map((post, index) => (
-              <div key={index} className={styles.blogItem}>
+              <div key={index} className={`blogItemReveal ${styles.blogItem}`}>
                 <div className={styles.itemContent}>
                   <div className={styles.meta}>
                     <span className={styles.category}>{post.category}</span>

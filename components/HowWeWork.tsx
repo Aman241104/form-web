@@ -32,8 +32,6 @@ export default function HowWeWork() {
   const sectionRef = useRef<section>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       // Header Reveal
       gsap.from('.headerReveal', {
@@ -43,11 +41,11 @@ export default function HowWeWork() {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%'
+          start: 'top 90%'
         }
       });
 
-      // Steps Stagger Reveal (Left -> Right) using class selector
+      // Steps Stagger Reveal (Left -> Right)
       gsap.from('.stepReveal', {
         opacity: 0,
         y: 30,
@@ -56,7 +54,7 @@ export default function HowWeWork() {
         ease: 'power4.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 75%'
+          start: 'top 90%'
         }
       });
     }, sectionRef);

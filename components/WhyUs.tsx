@@ -38,7 +38,7 @@ export default function WhyUs() {
         ease: 'power4.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 75%',
+          start: 'top 90%',
         }
       });
 
@@ -51,7 +51,7 @@ export default function WhyUs() {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
+          start: 'top 90%',
         }
       });
     }, sectionRef);

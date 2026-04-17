@@ -34,17 +34,15 @@ export default function FAQ() {
   const titleRef = useRef<h1>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       // Split Title Animation (Character-by-character reveal)
       if (titleRef.current) {
         const text = titleRef.current.innerText;
         titleRef.current.innerHTML = text.split('').map(char => 
-          `<span class="char" style="display:inline-block">${char === ' ' ? '&nbsp;' : char}</span>`
+          `<span class="faqChar" style="display:inline-block">${char === ' ' ? '&nbsp;' : char}</span>`
         ).join('');
 
-        gsap.from('.char', {
+        gsap.from('.faqChar', {
           opacity: 0,
           y: 20,
           rotateX: -90,
@@ -53,13 +51,13 @@ export default function FAQ() {
           ease: 'power4.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 70%'
+            start: 'top 90%'
           }
         });
       }
 
       // Items stagger entrance
-      gsap.from('.faqItem', {
+      gsap.from('.faqItemReveal', {
         opacity: 0,
         x: 30,
         stagger: 0.1,
@@ -67,7 +65,7 @@ export default function FAQ() {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 60%'
+          start: 'top 90%'
         }
       });
     }, sectionRef);
@@ -104,7 +102,7 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className={`faqItem ${styles.item} ${active === index ? styles.active : ''}`}
+                className={`faqItemReveal ${styles.item} ${active === index ? styles.active : ''}`}
                 onClick={() => setActive(active === index ? null : index)}
               >
                 <div className={styles.itemHeader}>

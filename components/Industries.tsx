@@ -28,7 +28,7 @@ export default function Industries() {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
+          start: 'top 90%',
         }
       });
 
@@ -41,7 +41,7 @@ export default function Industries() {
         ease: 'power4.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 75%',
+          start: 'top 90%',
         }
       });
 
