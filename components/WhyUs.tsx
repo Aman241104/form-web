@@ -24,7 +24,7 @@ const points = [
 ];
 
 export default function WhyUs() {
-  const sectionRef = useRef<section>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

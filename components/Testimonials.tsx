@@ -28,8 +28,8 @@ const testimonials = [
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
-  const quoteRef = useRef<divElement>(null);
-  const sectionRef = useRef<section>(null);
+  const quoteRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

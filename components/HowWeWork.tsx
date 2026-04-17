@@ -29,7 +29,7 @@ const steps = [
 ];
 
 export default function HowWeWork() {
-  const sectionRef = useRef<section>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

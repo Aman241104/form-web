@@ -27,7 +27,7 @@ const projects = [
 ];
 
 export default function Projects() {
-  const sectionRef = useRef<section>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

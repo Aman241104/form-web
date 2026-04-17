@@ -6,8 +6,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Preloader.module.css';
 
 export default function Preloader() {
-  const loaderRef = useRef<divElement>(null);
-  const logoRef = useRef<divElement>(null);
+  const loaderRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {

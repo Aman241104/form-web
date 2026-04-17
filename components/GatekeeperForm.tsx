@@ -20,9 +20,9 @@ export default function GatekeeperForm() {
     email: ''
   });
 
-  const questionRef = useRef<divElement>(null);
-  const optionsRef = useRef<divElement>(null);
-  const sectionRef = useRef<section>(null);
+  const questionRef = useRef<HTMLDivElement>(null);
+  const optionsRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const transitionStep = (nextStep: number) => {
     const tl = gsap.timeline();

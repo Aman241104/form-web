@@ -27,7 +27,7 @@ const securityFeatures = [
 ];
 
 export default function Security() {
-  const sectionRef = useRef<section>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

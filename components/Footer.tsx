@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Footer.module.css';
 
 export default function Footer() {
-  const footerRef = useRef<footerElement>(null);
+  const footerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

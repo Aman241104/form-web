@@ -14,7 +14,7 @@ const industries = [
 ];
 
 export default function Industries() {
-  const sectionRef = useRef<section>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

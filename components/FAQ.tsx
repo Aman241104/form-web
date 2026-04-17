@@ -30,15 +30,15 @@ const faqs = [
 
 export default function FAQ() {
   const [active, setActive] = useState<number | null>(null);
-  const sectionRef = useRef<section>(null);
-  const titleRef = useRef<h1>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Split Title Animation (Character-by-character reveal)
       if (titleRef.current) {
         const text = titleRef.current.innerText;
-        titleRef.current.innerHTML = text.split('').map(char => 
+        titleRef.current.innerHTML = text.split('').map((char: string) => 
           `<span class="faqChar" style="display:inline-block">${char === ' ' ? '&nbsp;' : char}</span>`
         ).join('');
 

@@ -27,7 +27,7 @@ const services = [
 ];
 
 export default function Services() {
-  const sectionRef = useRef<section>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

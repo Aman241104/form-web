@@ -5,11 +5,11 @@ import gsap from 'gsap';
 import styles from './Hero.module.css';
 
 export default function Hero() {
-  const heroRef = useRef<section>(null);
-  const titleRef = useRef<divElement>(null);
-  const subtextRef = useRef<pElement>(null);
-  const ctaRef = useRef<divElement>(null);
-  const dotRef = useRef<divElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const subtextRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
