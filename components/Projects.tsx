@@ -11,19 +11,19 @@ const projects = [
     category: 'Tax & Compliance',
     title: 'Fortune 500 Tax Scale',
     result: '30% Margin Increase',
-    image: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80'
   },
   {
     category: 'Strategic Finance',
     title: 'Fintech vCFO Advisory',
     result: 'Zero Audit Deficiencies',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80'
   },
   {
     category: 'Audit Support',
     title: 'Real Estate Fund Audit',
     result: '100% Backlog Cleared',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1551288049-bbbda5366991?auto=format&fit=crop&w=1000&q=80'
   }
 ];
 
@@ -32,29 +32,35 @@ export default function Projects() {
 
   useGSAP(() => {
       // Header Animation
-      gsap.from('.headerReveal', {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
+      gsap.fromTo('.headerReveal', 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          }
         }
-      });
+      );
 
       // Cards Stagger Reveal using class-based selector
-      gsap.from('.projectCard', {
-        opacity: 0,
-        y: 60,
-        stagger: 0.15,
-        duration: 1.2,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
+      gsap.fromTo('.projectCard', 
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.15,
+          duration: 1.2,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          }
         }
-      });
+      );
     }, { scope: sectionRef });
 
   return (

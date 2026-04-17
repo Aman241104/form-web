@@ -19,29 +19,35 @@ export default function Industries() {
 
   useGSAP(() => {
       // Header Animation
-      gsap.from('.industryHeader', {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
+      gsap.fromTo('.industryHeader', 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          }
         }
-      });
+      );
 
       // Staggered list items reveal using class selector
-      gsap.from('.industryItemReveal', {
-        opacity: 0,
-        y: 40,
-        stagger: 0.1,
-        duration: 1,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
+      gsap.fromTo('.industryItemReveal', 
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          duration: 1,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          }
         }
-      });
+      );
 
       // Background text parallax
       gsap.fromTo('.industryBgText', 

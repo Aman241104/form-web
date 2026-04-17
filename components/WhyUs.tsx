@@ -29,29 +29,35 @@ export default function WhyUs() {
 
   useGSAP(() => {
       // Left side: fade + slide from left
-      gsap.from('.whyUsLeft', {
-        opacity: 0,
-        x: -50,
-        duration: 1.2,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
+      gsap.fromTo('.whyUsLeft', 
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          }
         }
-      });
+      );
 
       // Right side: stagger reveal using class selector
-      gsap.from('.whyUsPoint', {
-        opacity: 0,
-        y: 30,
-        stagger: 0.2,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
+      gsap.fromTo('.whyUsPoint', 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.2,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          }
         }
-      });
+      );
     }, { scope: sectionRef });
 
   return (

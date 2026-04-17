@@ -12,17 +12,20 @@ export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-      gsap.from('.footerColumn', {
-        opacity: 0,
-        y: 40,
-        stagger: 0.1,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: 'top 90%'
+      gsap.fromTo('.footerColumn', 
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: 'top 90%'
+          }
         }
-      });
+      );
     }, { scope: footerRef });
 
   return (

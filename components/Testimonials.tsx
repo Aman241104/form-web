@@ -33,18 +33,20 @@ export default function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-      // Initial entrance
-      gsap.from('.testimonialReveal', {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%'
+      gsap.fromTo('.testimonialReveal', 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%'
+          }
         }
-      });
+      );
     }, { scope: sectionRef });
 
   useEffect(() => {

@@ -32,29 +32,35 @@ export default function Security() {
 
   useGSAP(() => {
       // Header Animation
-      gsap.from('.securityHeaderReveal', {
-        opacity: 0,
-        y: 30,
-        duration: 1.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%'
+      gsap.fromTo('.securityHeaderReveal', 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%'
+          }
         }
-      });
+      );
 
       // Cards Border Draw & Content Stagger
-      gsap.from('.securityCardReveal', {
-        opacity: 0,
-        scale: 0.95,
-        stagger: 0.15,
-        duration: 1,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%'
+      gsap.fromTo('.securityCardReveal', 
+        { opacity: 0, scale: 0.95 },
+        {
+          opacity: 1,
+          scale: 1,
+          stagger: 0.15,
+          duration: 1,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%'
+          }
         }
-      });
+      );
     }, { scope: sectionRef });
 
   return (

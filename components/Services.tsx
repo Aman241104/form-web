@@ -34,31 +34,37 @@ export default function Services() {
 
   useGSAP(() => {
       // Header Animation
-      gsap.from('.headerReveal', {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
-          toggleActions: 'play none none none'
+      gsap.fromTo('.headerReveal', 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+            toggleActions: 'play none none none'
+          }
         }
-      });
+      );
 
       // Cards Stagger Reveal using class selectors within context
-      gsap.from('.serviceCard', {
-        opacity: 0,
-        y: 40,
-        stagger: 0.15,
-        duration: 1,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
-          toggleActions: 'play none none none'
+      gsap.fromTo('.serviceCard', 
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.15,
+          duration: 1,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+            toggleActions: 'play none none none'
+          }
         }
-      });
+      );
     }, { scope: sectionRef });
 
   return (

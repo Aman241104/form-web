@@ -42,32 +42,38 @@ export default function FAQ() {
           `<span class="faqChar" style="display:inline-block">${char === ' ' ? '&nbsp;' : char}</span>`
         ).join('');
 
-        gsap.from('.faqChar', {
-          opacity: 0,
-          y: 20,
-          rotateX: -90,
-          stagger: 0.02,
-          duration: 0.8,
-          ease: 'power4.out',
+        gsap.fromTo('.faqChar', 
+          { opacity: 0, y: 20, rotateX: -90 },
+          {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            stagger: 0.02,
+            duration: 0.8,
+            ease: 'power4.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 90%'
+            }
+          }
+        );
+      }
+
+      // Items stagger entrance
+      gsap.fromTo('.faqItemReveal', 
+        { opacity: 0, x: 30 },
+        {
+          opacity: 1,
+          x: 0,
+          stagger: 0.1,
+          duration: 1,
+          ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 90%'
           }
-        });
-      }
-
-      // Items stagger entrance
-      gsap.from('.faqItemReveal', {
-        opacity: 0,
-        x: 30,
-        stagger: 0.1,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%'
         }
-      });
+      );
     }, { scope: sectionRef });
 
   return (

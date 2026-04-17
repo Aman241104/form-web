@@ -11,19 +11,19 @@ const posts = [
     title: 'The 2026 CPA Talent Crisis',
     date: 'APR 15, 2026',
     category: 'INDUSTRY',
-    image: 'https://images.unsplash.com/photo-1454165833767-027ffea9e77b?q=80&w=800&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'Navigating Cross-Border Tax',
     date: 'MAR 28, 2026',
     category: 'TECHNICAL',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'
   },
   {
     title: 'AI in Fractional CFO Services',
     date: 'MAR 12, 2026',
     category: 'TECHNOLOGY',
-    image: 'https://images.unsplash.com/photo-1551288049-bbbda5366991?q=80&w=800&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1664575198308-3959901b0b5c?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
@@ -32,29 +32,35 @@ export default function Blogs() {
 
   useGSAP(() => {
       // Header Animation
-      gsap.from('.blogHeaderReveal', {
-        opacity: 0,
-        x: -50,
-        duration: 1.2,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%'
+      gsap.fromTo('.blogHeaderReveal', 
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%'
+          }
         }
-      });
+      );
 
       // List Items Animation using class selector
-      gsap.from('.blogItemReveal', {
-        opacity: 0,
-        y: 40,
-        stagger: 0.15,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%'
+      gsap.fromTo('.blogItemReveal', 
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.15,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%'
+          }
         }
-      });
+      );
     }, { scope: sectionRef });
 
   return (

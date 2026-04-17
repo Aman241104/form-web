@@ -11,29 +11,35 @@ export default function Overview() {
 
   useGSAP(() => {
       // Left Content Animation
-      gsap.from('.overviewContent', {
-        opacity: 0,
-        x: -50,
-        duration: 1.2,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
+      gsap.fromTo('.overviewContent', 
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          }
         }
-      });
+      );
 
       // Stats Stagger Animation
-      gsap.from('.statItemReveal', {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%',
+      gsap.fromTo('.statItemReveal', 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%',
+          }
         }
-      });
+      );
 
       // Count-up Animation for Numbers
       const numbers = gsap.utils.toArray('.statNum');

@@ -34,29 +34,35 @@ export default function HowWeWork() {
 
   useGSAP(() => {
       // Header Reveal
-      gsap.from('.headerReveal', {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%'
+      gsap.fromTo('.headerReveal', 
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%'
+          }
         }
-      });
+      );
 
       // Steps Stagger Reveal (Left -> Right)
-      gsap.from('.stepReveal', {
-        opacity: 0,
-        y: 30,
-        stagger: 0.15,
-        duration: 1.2,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 90%'
+      gsap.fromTo('.stepReveal', 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.15,
+          duration: 1.2,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 90%'
+          }
         }
-      });
+      );
     }, { scope: sectionRef });
 
   return (
