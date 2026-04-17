@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import styles from './Preloader.module.css';
 
 export default function Preloader() {
@@ -10,13 +11,11 @@ export default function Preloader() {
   const logoRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
+  useGSAP(() => {
     const tl = gsap.timeline({
       onComplete: () => {
         setIsLoaded(true);
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = '';
         // Final refresh to ensure all triggers are correct after site is "visible"
         setTimeout(() => {
           ScrollTrigger.refresh();

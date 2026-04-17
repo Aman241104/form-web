@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './WhyUs.module.css';
 
@@ -26,10 +27,7 @@ const points = [
 export default function WhyUs() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       // Left side: fade + slide from left
       gsap.from('.whyUsLeft', {
         opacity: 0,
@@ -54,10 +52,7 @@ export default function WhyUs() {
           start: 'top 90%',
         }
       });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: sectionRef });
 
   return (
     <section id="why-us" ref={sectionRef} className={styles.section}>

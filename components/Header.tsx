@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import styles from './Header.module.css';
+import { getWhatsAppLink } from './StickyWhatsApp';
 
 export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
@@ -49,7 +50,12 @@ export default function Header() {
         </nav>
 
         <div className={styles.ctaGroup}>
-          <a href="#contact" onClick={(e) => scrollToSection(e, '#contact')} className={styles.cta}>
+          <a 
+            href={getWhatsAppLink("Hello Caramel Advisors, I'd like to book a consultation.")} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.cta}
+          >
             Consultation
           </a>
         </div>

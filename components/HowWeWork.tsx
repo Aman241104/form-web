@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './HowWeWork.module.css';
 
@@ -31,8 +32,7 @@ const steps = [
 export default function HowWeWork() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       // Header Reveal
       gsap.from('.headerReveal', {
         opacity: 0,
@@ -57,10 +57,7 @@ export default function HowWeWork() {
           start: 'top 90%'
         }
       });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: sectionRef });
 
   return (
     <section id="how-it-works" ref={sectionRef} className={styles.section}>

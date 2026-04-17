@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Testimonials.module.css';
 
@@ -31,10 +32,7 @@ export default function Testimonials() {
   const quoteRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       // Initial entrance
       gsap.from('.testimonialReveal', {
         opacity: 0,
@@ -47,10 +45,7 @@ export default function Testimonials() {
           start: 'top 90%'
         }
       });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: sectionRef });
 
   useEffect(() => {
     // Transition animation when active index changes

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Industries.module.css';
 
@@ -16,10 +17,7 @@ const industries = [
 export default function Industries() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       // Header Animation
       gsap.from('.industryHeader', {
         opacity: 0,
@@ -59,10 +57,7 @@ export default function Industries() {
           }
         }
       );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: sectionRef });
 
   return (
     <section id="industries" ref={sectionRef} className={styles.section}>

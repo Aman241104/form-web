@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Blogs.module.css';
 
@@ -29,10 +30,7 @@ const posts = [
 export default function Blogs() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       // Header Animation
       gsap.from('.blogHeaderReveal', {
         opacity: 0,
@@ -57,10 +55,7 @@ export default function Blogs() {
           start: 'top 90%'
         }
       });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: sectionRef });
 
   return (
     <section id="blogs" ref={sectionRef} className={styles.section}>

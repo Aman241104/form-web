@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './FAQ.module.css';
 
@@ -33,8 +34,7 @@ export default function FAQ() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       // Split Title Animation (Character-by-character reveal)
       if (titleRef.current) {
         const text = titleRef.current.innerText;
@@ -68,10 +68,7 @@ export default function FAQ() {
           start: 'top 90%'
         }
       });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: sectionRef });
 
   return (
     <section id="faq" ref={sectionRef} className={styles.section}>

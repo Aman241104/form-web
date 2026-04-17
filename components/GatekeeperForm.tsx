@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import styles from './GatekeeperForm.module.css';
+import { getWhatsAppLink } from './StickyWhatsApp';
 
 type FormData = {
   persona: string;
@@ -48,6 +49,16 @@ export default function GatekeeperForm() {
     transitionStep(next);
   };
 
+  const handleSubmit = () => {
+    const message = `Hello Caramel Advisors, I've completed the intake brief:
+- Persona: ${data.persona}
+- Bottleneck: ${data.bottleneck}
+- Firm Size: ${data.size}
+- Email: ${data.email}`;
+    
+    window.open(getWhatsAppLink(message), '_blank');
+  };
+
   return (
     <section id="contact" ref={sectionRef} className={styles.section}>
       <div className={styles.background}>
@@ -76,15 +87,18 @@ export default function GatekeeperForm() {
           <div ref={optionsRef} className={styles.right}>
             {step === 1 && (
               <div className={styles.options}>
-                <button onClick={() => handleSelection('persona', 'CPA Firm', 2)} className={styles.option}>
+                <button onClick={() => handleSelection('persona', 'US CPA Firm', 2)} className={styles.option}>
                   <span className={styles.optionTitle}>US CPA Firm</span>
                   <span className={styles.optionDesc}>Specialized in 1040, 1120, and 1065 scale.</span>
                 </button>
-                <button onClick={() => handleSelection('persona', 'Business', 2)} className={styles.option}>
+                <button onClick={() => handleSelection('persona', 'Private Business', 2)} className={styles.option}>
                   <span className={styles.optionTitle}>Private Business</span>
                   <span className={styles.optionDesc}>Mid-market entities requiring CFO advisory.</span>
                 </button>
-                <button onClick={() => setStep(1)} className={styles.secondaryBtn}>
+                <button 
+                  onClick={() => window.open(getWhatsAppLink("Hello, I am looking for career opportunities at Caramel Advisors."), '_blank')} 
+                  className={styles.secondaryBtn}
+                >
                   I AM LOOKING FOR A CAREER →
                 </button>
               </div>
@@ -92,15 +106,15 @@ export default function GatekeeperForm() {
 
             {step === 2 && (
               <div className={styles.options}>
-                <button onClick={() => handleSelection('bottleneck', 'Tax', 3)} className={styles.option}>
+                <button onClick={() => handleSelection('bottleneck', 'Tax Overload', 3)} className={styles.option}>
                   <span className={styles.optionTitle}>Tax Overload</span>
                   <span className={styles.optionDesc}>High-volume compliance during peak seasons.</span>
                 </button>
-                <button onClick={() => handleSelection('bottleneck', 'Audit', 3)} className={styles.option}>
+                <button onClick={() => handleSelection('bottleneck', 'Audit Support', 3)} className={styles.option}>
                   <span className={styles.optionTitle}>Audit Support</span>
                   <span className={styles.optionDesc}>Substantive testing & workpaper prep.</span>
                 </button>
-                <button onClick={() => handleSelection('bottleneck', 'CAS', 3)} className={styles.option}>
+                <button onClick={() => handleSelection('bottleneck', 'Accounting/CAS', 3)} className={styles.option}>
                   <span className={styles.optionTitle}>Accounting/CAS</span>
                   <span className={styles.optionDesc}>Monthly close & ledger management.</span>
                 </button>
@@ -109,10 +123,10 @@ export default function GatekeeperForm() {
 
             {step === 3 && (
               <div className={styles.options}>
-                <button onClick={() => handleSelection('size', '< $1M', 4)} className={styles.option}>
+                <button onClick={() => handleSelection('size', 'Under $1M', 4)} className={styles.option}>
                   <span className={styles.optionTitle}>Under $1M</span>
                 </button>
-                <button onClick={() => handleSelection('size', '$1M - $5M', 4)} className={styles.option}>
+                <button onClick={() => handleSelection('size', '$1M — $5M', 4)} className={styles.option}>
                   <span className={styles.optionTitle}>$1M — $5M</span>
                 </button>
                 <button onClick={() => handleSelection('size', '$5M+', 4)} className={styles.option}>
@@ -131,8 +145,8 @@ export default function GatekeeperForm() {
                     value={data.email}
                     onChange={(e) => setData({...data, email: e.target.value})}
                   />
-                  <button className={styles.submitBtn}>
-                    FINISH & ROUTE
+                  <button onClick={handleSubmit} className={styles.submitBtn}>
+                    CONNECT ON WHATSAPP
                   </button>
                 </div>
                 <button onClick={() => setStep(1)} className={styles.backBtn}>START OVER</button>

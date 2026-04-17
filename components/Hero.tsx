@@ -2,7 +2,9 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import styles from './Hero.module.css';
+import { getWhatsAppLink } from './StickyWhatsApp';
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -11,7 +13,7 @@ export default function Hero() {
   const ctaRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
     // Stagger reveal for headline lines
@@ -46,7 +48,7 @@ export default function Hero() {
       ease: 'sine.inOut'
     });
 
-  }, []);
+  }, { scope: heroRef });
 
   return (
     <section id="hero" ref={heroRef} className={styles.hero}>
@@ -69,7 +71,12 @@ export default function Hero() {
         </p>
 
         <div ref={ctaRef} className={styles.ctaWrapper}>
-          <a href="#contact" className={styles.primaryBtn}>
+          <a 
+            href={getWhatsAppLink("Hello, I am interested in a capacity audit for my firm.")} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.primaryBtn}
+          >
             Book Consultation
           </a>
         </div>

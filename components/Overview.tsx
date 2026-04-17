@@ -2,16 +2,14 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Overview.module.css';
 
 export default function Overview() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       // Left Content Animation
       gsap.from('.overviewContent', {
         opacity: 0,
@@ -59,10 +57,7 @@ export default function Overview() {
           }
         );
       });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: sectionRef });
 
   return (
     <section id="overview" ref={sectionRef} className={styles.section}>

@@ -2,8 +2,11 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Services.module.css';
+
+import { getWhatsAppLink } from './StickyWhatsApp';
 
 const services = [
   {
@@ -29,8 +32,7 @@ const services = [
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       // Header Animation
       gsap.from('.headerReveal', {
         opacity: 0,
@@ -57,10 +59,7 @@ export default function Services() {
           toggleActions: 'play none none none'
         }
       });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: sectionRef });
 
   return (
     <section id="services" ref={sectionRef} className={styles.section}>
@@ -80,7 +79,12 @@ export default function Services() {
               <h3 className={styles.serviceTitle}>{services[0].title}</h3>
               <p className={styles.serviceDesc}>{services[0].desc}</p>
             </div>
-            <a href="#contact" className={styles.link}>
+            <a 
+              href={getWhatsAppLink(`Hello Caramel Advisors, I'm interested in learning more about your ${services[0].title} services.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.link}
+            >
               Explore Service <span className={styles.arrow}>→</span>
             </a>
           </div>
@@ -94,7 +98,12 @@ export default function Services() {
                   <h3 className={styles.serviceTitle}>{service.title}</h3>
                   <p className={styles.serviceDesc}>{service.desc}</p>
                 </div>
-                <a href="#contact" className={styles.link}>
+                <a 
+                  href={getWhatsAppLink(`Hello Caramel Advisors, I'm interested in learning more about your ${service.title} services.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
                   Explore Service <span className={styles.arrow}>→</span>
                 </a>
               </div>

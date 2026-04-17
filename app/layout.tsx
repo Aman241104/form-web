@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import CursorFollower from '@/components/CursorFollower';
 import Preloader from '@/components/Preloader';
 import GSAPInitializer from '@/components/GSAPInitializer';
+import StickyWhatsApp from '@/components/StickyWhatsApp';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
@@ -28,6 +29,7 @@ export default function RootLayout({
         <CursorFollower />
         <Header />
         {children}
+        <StickyWhatsApp />
         <Footer />
       </body>
     </html>

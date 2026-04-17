@@ -3,16 +3,15 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { getWhatsAppLink } from './StickyWhatsApp';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       gsap.from('.footerColumn', {
         opacity: 0,
         y: 40,
@@ -24,10 +23,7 @@ export default function Footer() {
           start: 'top 90%'
         }
       });
-    }, footerRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: footerRef });
 
   return (
     <footer ref={footerRef} className={styles.footer}>
@@ -63,7 +59,7 @@ export default function Footer() {
               <Link href="#overview" className={styles.link}>Our Story</Link>
               <Link href="#security" className={styles.link}>Security</Link>
               <Link href="#industries" className={styles.link}>Industries</Link>
-              <Link href="#contact" className={styles.link}>Contact</Link>
+              <a href={getWhatsAppLink("Hello Caramel Advisors, I'd like to get in touch.")} target="_blank" rel="noopener noreferrer" className={styles.link}>Contact</a>
             </nav>
           </div>
 

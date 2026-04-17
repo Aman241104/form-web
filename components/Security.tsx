@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Security.module.css';
 
@@ -29,8 +30,7 @@ const securityFeatures = [
 export default function Security() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
+  useGSAP(() => {
       // Header Animation
       gsap.from('.securityHeaderReveal', {
         opacity: 0,
@@ -55,10 +55,7 @@ export default function Security() {
           start: 'top 90%'
         }
       });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+    }, { scope: sectionRef });
 
   return (
     <section id="security" ref={sectionRef} className={styles.section}>
