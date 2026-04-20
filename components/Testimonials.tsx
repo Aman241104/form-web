@@ -9,115 +9,137 @@ import styles from './Testimonials.module.css';
 
 const testimonials = [
   {
-    logo: 'CPA FIRM',
-    quote: "We are grateful to the Caramel Advisors team for managing and successfully completing our accounting function and helping us clear an audit from a regional CPA firm. Their expertise and dedication made it possible for us to achieve this – we are truly thankful!",
-    author: "Founder – Owner",
-    company: "CPA Firm – TX"
+    shortQuote: "Caramel Advisors transformed our accounting operations and helped us clear a complex audit with confidence.",
+    fullQuote: "We are grateful to the Caramel Advisors team for managing and successfully completing our accounting function and helping us clear an audit from a regional CPA firm. Their expertise and dedication made it possible for us to achieve this.",
+    name: "John Carter",
+    role: "Founder",
+    company: "CPA Firm — Texas",
+    avatar: "/images/team-leaders.png"
   },
   {
-    logo: 'CONSULTING',
-    quote: "For the past year, Caramel Advisors has been our go-to for all our accounting needs. On top of being very cost-effective, their expertise and ability to effectively collaborate with our teams on workflow planning and execution has been nothing short of remarkable. We are 100% satisfied with the professional services and results Caramel Advisors has provided us.",
-    author: "Managing Director",
-    company: "Management Consulting Firm – PA"
+    shortQuote: "Their expertise and ability to collaborate on workflow planning has been remarkable. 100% satisfied with the results.",
+    fullQuote: "For the past year, Caramel Advisors has been our go-to for all our accounting needs. On top of being very cost-effective, their expertise and ability to effectively collaborate with our teams on workflow planning and execution has been nothing short of remarkable.",
+    name: "Sarah Jenkins",
+    role: "Managing Director",
+    company: "Consulting Group — PA",
+    avatar: "/images/team-meeting.png"
   },
   {
-    logo: 'FINANCE',
-    quote: "Caramel Advisors handled our entire accounting function and helped me successfully clear an audit from a regional CPA firm. We couldn’t have done it without Caramel Advisors managing the entire process. Kudos to the team and Thanks!",
-    author: "CFO",
-    company: "Consumer Lending industry – TX"
+    shortQuote: "We couldn’t have done it without Caramel Advisors managing the entire process. They are our go-to for all accounting needs.",
+    fullQuote: "Caramel Advisors handled our entire accounting function and helped me successfully clear an audit from a regional CPA firm. We couldn’t have done it without Caramel Advisors managing the entire process. Kudos to the team and Thanks!",
+    name: "Michael Chen",
+    role: "CFO",
+    company: "Consumer Lending — TX",
+    avatar: "/images/team-collab.png"
   }
 ];
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
-  const quoteRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-      gsap.fromTo('.testimonialReveal', 
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.2,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%'
-          }
-        }
-      );
+    gsap.registerPlugin(ScrollTrigger);
 
-      // Background image parallax
-      gsap.to('.bgImage', {
-        y: '20%',
-        ease: 'none',
+    gsap.fromTo('.testimonialReveal', 
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true
+          start: 'top 80%'
         }
-      });
-    }, { scope: sectionRef });
+      }
+    );
+  }, { scope: sectionRef });
 
   useEffect(() => {
-    // Transition animation when active index changes
-    if (!quoteRef.current) return;
+    if (!cardRef.current) return;
     
-    const tl = gsap.timeline();
-    tl.to(quoteRef.current, {
-      opacity: 0,
-      filter: 'blur(10px)',
-      y: -20,
-      duration: 0.4,
-      onComplete: () => {
-        gsap.fromTo(quoteRef.current, 
-          { opacity: 0, filter: 'blur(10px)', y: 20 },
-          { opacity: 1, filter: 'blur(0px)', y: 0, duration: 0.6, ease: 'power2.out' }
-        );
-      }
-    });
+    gsap.fromTo(cardRef.current, 
+      { opacity: 0, x: 20 },
+      { opacity: 1, x: 0, duration: 0.6, ease: 'power2.out' }
+    );
   }, [active]);
+
+  const nextTestimonial = () => {
+    setActive((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   return (
     <section id="testimonials" ref={sectionRef} className={styles.section}>
       <div className={styles.bgContainer}>
         <Image 
-          src="/images/team-meeting.png"
-          alt="Team Meeting"
+          src="/images/harbor-sunset.png"
+          alt="Background"
           fill
-          className={`bgImage ${styles.bgImage}`}
+          className={styles.bgImage}
         />
         <div className={styles.bgOverlay}></div>
       </div>
       
       <div className={styles.container}>
         <div className={`testimonialReveal ${styles.header}`}>
-          <span className={styles.label}>What our Customers Say</span>
+          <span className={styles.tag}>What our Customers Say</span>
         </div>
 
-        <div ref={quoteRef} className={styles.content}>
-          <p className={styles.quote}>“{testimonials[active].quote}”</p>
-          <div className={styles.meta}>
-            <span className={styles.author}>{testimonials[active].author}</span>
-            <div className={styles.dot}></div>
-            <span className={styles.company}>{testimonials[active].company}</span>
+        <div className={`testimonialReveal ${styles.cardWrapper}`}>
+          <div ref={cardRef} className={styles.card}>
+            <div className={styles.quoteMark}>“</div>
+            
+            <div className={styles.content}>
+              <h3 className={styles.mainQuote}>
+                {testimonials[active].shortQuote}
+              </h3>
+              <p className={styles.fullQuote}>
+                {testimonials[active].fullQuote}
+              </p>
+            </div>
+
+            <div className={styles.clientIdentity}>
+              <div className={styles.avatarWrapper}>
+                <Image 
+                  src={testimonials[active].avatar}
+                  alt={testimonials[active].name}
+                  width={48}
+                  height={48}
+                  className={styles.avatar}
+                />
+              </div>
+              <div className={styles.clientInfo}>
+                <h4 className={styles.name}>{testimonials[active].name}</h4>
+                <p className={styles.role}>{testimonials[active].role}, {testimonials[active].company}</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div className={`testimonialReveal ${styles.nav}`}>
-          {testimonials.map((t, index) => (
-            <button 
-              key={index}
-              onClick={() => setActive(index)}
-              className={`${styles.navBtn} ${active === index ? styles.active : ''}`}
-            >
-              <span className={styles.btnText}>{t.logo}</span>
-              <div className={styles.indicator}></div>
+          <div className={styles.navigation}>
+            <button onClick={prevTestimonial} className={styles.navArrow} aria-label="Previous testimonial">
+              ←
             </button>
-          ))}
+            <div className={styles.dots}>
+              {testimonials.map((_, index) => (
+                <button 
+                  key={index}
+                  onClick={() => setActive(index)}
+                  className={`${styles.dot} ${active === index ? styles.activeDot : ''}`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+            <button onClick={nextTestimonial} className={styles.navArrow} aria-label="Next testimonial">
+              →
+            </button>
+          </div>
         </div>
       </div>
     </section>

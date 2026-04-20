@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -11,98 +11,73 @@ const points = [
   {
     num: '01',
     title: 'U.S. Accountability',
-    desc: 'As a U.S. Entity offering domestic contracts and invoicing, we provide the legal security you expect.'
+    desc: 'Domestic contracts and invoicing providing the legal security you expect from a U.S. entity.'
   },
   {
     num: '02',
     title: 'Expert Delivery',
-    desc: 'Backed by a Chartered Accountant-led delivery team in India for high-precision accounting.'
+    desc: 'Chartered Accountant-led delivery team in India ensuring high-precision accounting and tax work.'
   },
   {
     num: '03',
     title: 'Scalable & Secure',
-    desc: 'Delivering secure, scalable, and predictable support with deep expertise across leading tools.'
+    desc: 'Safe, predictable support with deep expertise across all leading cloud accounting platforms.'
   },
   {
     num: '04',
-    title: 'Proven Experience',
-    desc: 'With 15+ years of experience and 100+ professionals helping firms scale with confidence.'
+    title: 'Proven Track Record',
+    desc: '15+ years of partner experience and 100+ professionals helping firms scale with confidence.'
   }
 ];
 
 export default function WhyUs() {
   const sectionRef = useRef<HTMLElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-      // Left side: fade + slide from left
-      gsap.fromTo('.whyUsLeft', 
-        { opacity: 0, x: -50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          ease: 'power4.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%',
-          }
-        }
-      );
+    gsap.registerPlugin(ScrollTrigger);
 
-      // Right side: stagger reveal using class selector
-      gsap.fromTo('.whyUsPoint', 
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.2,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%',
-          }
-        }
-      );
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+      }
+    });
 
-      // Image reveal
-      gsap.fromTo(imageRef.current,
-        { opacity: 0, scale: 1.1 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1.5,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%'
-          }
-        }
-      );
-    }, { scope: sectionRef });
+    // Left side animations
+    tl.fromTo('.reveal-left', 
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.2 }
+    );
+
+    // Right list animations
+    tl.fromTo('.reveal-point',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.12 },
+      '-=0.6'
+    );
+  }, { scope: sectionRef });
 
   return (
     <section id="why-us" ref={sectionRef} className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.grid}>
+        <div className={styles.layoutGrid}>
           {/* Left Column */}
-          <div className={`whyUsLeft ${styles.left}`}>
-            <span className={styles.label}>Why Choose Us</span>
-            <h2 className={styles.title}>
-              Caramel <br />
-              <span className={styles.highlight}>Advisors?</span>
+          <div className={styles.leftColumn}>
+            <span className={`${styles.tag} reveal-left`}>WHY CHOOSE US</span>
+            <h2 className={`${styles.title} reveal-left`}>
+              Why Choose <br />
+              <span className={styles.titleEmphasis}>Caramel Advisors.</span>
             </h2>
-            <p className={styles.paragraph}>
-              We combine U.S. accountability with global delivery excellence—straightforward, battle-tested solutions built to let you focus on growth, not grind.
+            <p className={`${styles.description} reveal-left`}>
+              We combine U.S. accountability with global delivery excellence — built for scale, precision, and long-term growth.
             </p>
 
-            <div ref={imageRef} className={styles.imageWrapper}>
+            <div className={`${styles.imageContainer} reveal-left`}>
               <Image 
                 src="/images/team-leaders.png"
-                alt="Leadership Team"
-                width={600}
-                height={400}
+                alt="Caramel Advisors Team"
+                width={800}
+                height={500}
                 className={styles.image}
               />
               <div className={styles.imageOverlay}></div>
@@ -110,20 +85,19 @@ export default function WhyUs() {
           </div>
 
           {/* Right Column */}
-          <div className={styles.right}>
-            {points.map((point, index) => (
-              <div key={index} className={`whyUsPoint ${styles.pointItem}`}>
-                <div className={styles.divider}></div>
-                <div className={styles.pointContent}>
+          <div className={styles.rightColumn}>
+            <div className={styles.pointsList}>
+              {points.map((point, index) => (
+                <div key={index} className={`${styles.pointCard} reveal-point group`}>
+                  <div className={styles.accentLine}></div>
                   <span className={styles.pointNum}>{point.num}</span>
-                  <div className={styles.pointText}>
+                  <div className={styles.pointContent}>
                     <h4 className={styles.pointTitle}>{point.title}</h4>
                     <p className={styles.pointDesc}>{point.desc}</p>
                   </div>
                 </div>
-              </div>
-            ))}
-            <div className={styles.divider}></div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

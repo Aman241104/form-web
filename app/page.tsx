@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import Overview from '@/components/Overview';
+import Leadership from '@/components/Leadership';
 import Services from '@/components/Services';
 import WhyUs from '@/components/WhyUs';
 import HowWeWork from '@/components/HowWeWork';
@@ -22,6 +23,10 @@ export default function Home() {
       
       <div id="overview">
         <Overview />
+      </div>
+
+      <div id="leadership">
+        <Leadership />
       </div>
 
       <div id="services">

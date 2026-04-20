@@ -1,213 +1,249 @@
 .footer {
-  padding: 120px 0 60px;
-  background-color: #080a0f;
-  border-top: 1px solid var(--glass-border);
+  padding: 120px 40px 0;
+  background: linear-gradient(to bottom, #05080f, #02050a);
   position: relative;
   overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.bgLogo {
+.watermark {
   position: absolute;
-  bottom: -20px;
+  bottom: 0;
   left: 0;
-  width: 100%;
   font-family: var(--font-display);
-  font-size: 20vw;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.015);
-  text-align: center;
+  font-size: clamp(100px, 15vw, 180px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.02);
   pointer-events: none;
-  letter-spacing: -0.05em;
-  line-height: 1;
+  user-select: none;
+  line-height: 0.8;
   z-index: 0;
+}
+
+.subtleGlow {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, rgba(230, 57, 70, 0.08), transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 60px;
   position: relative;
   z-index: 1;
 }
 
-.top {
+/* Status Strip */
+.statusStrip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 80px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.statusLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00ff88;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  background-color: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff88;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.statusRight {
+  letter-spacing: 0.05em;
+}
+
+/* Main Grid */
+.mainGrid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.2fr;
-  gap: 100px;
-  margin-bottom: 120px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 48px;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .mainGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px;
+  }
+}
+
+/* Column Styling */
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: 2px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+  color: #ffffff;
 }
 
 .dot {
-  color: var(--accent-red);
+  color: #ff4d4f;
 }
 
-.description {
-  font-size: 1rem;
-  color: #9ca3af;
+.brandDesc {
+  font-size: 14px;
   line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
   max-width: 320px;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .socials {
   display: flex;
-  gap: 20px;
+  gap: 16px;
 }
 
-.socialLink {
+.socialIcon {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--glass-border);
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.6);
   transition: all 0.3s ease;
 }
 
-.socialLink:hover {
-  background: var(--accent-red);
-  border-color: var(--accent-red);
+.socialIcon:hover {
+  border-color: #ff4d4f;
+  background-color: rgba(230, 57, 70, 0.1);
   color: #ffffff;
-  transform: translateY(-5px);
+  transform: translateY(-2px);
 }
 
 .label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--text-primary);
-  margin-bottom: 40px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 32px;
 }
 
-.nav {
+.navStack {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
-.link {
-  font-size: 0.95rem;
-  color: #9ca3af;
+.navLink {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
   width: fit-content;
 }
 
-.link:hover {
+.navLink:hover {
   color: #ffffff;
-  transform: translateX(8px);
+  transform: translateX(4px);
 }
 
-.presence {
+.presenceStack {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
-.location {
+.presenceItem {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.9rem;
-  color: #9ca3af;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.statusDot {
-  width: 6px;
-  height: 6px;
-  background: #00ff88;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #00ff88;
+.iconSpan {
+  font-size: 16px;
+  opacity: 0.8;
 }
 
-.bottom {
-  padding-top: 40px;
-  border-top: 1px solid var(--glass-border);
+.presenceItem a {
+  transition: color 0.3s ease;
+}
+
+.presenceItem a:hover {
+  color: #ffffff;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  padding: 32px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.legal {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
-
-.legal p {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  opacity: 0.5;
-}
-
-.legalLinks {
-  display: flex;
-  gap: 30px;
-}
-
-.legalLinks a {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-}
-
-.legalLinks a:hover {
-  opacity: 1;
-}
-
-.status {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 8px 16px;
-  border: 1px solid var(--glass-border);
-}
-
-.statusLabel {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-secondary);
-}
-
-.statusValue {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #00ff88;
-}
-
-@media (max-width: 1024px) {
-  .top {
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+@media (min-width: 768px) {
+  .bottomBar {
+    flex-direction: row;
+    justify-content: space-between;
   }
+}
+
+.bottomCenter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legalLink {
+  transition: color 0.3s ease;
+}
+
+.legalLink:hover {
+  color: #ffffff;
+}
+
+.separator {
+  opacity: 0.5;
+}
+
+.bottomRight {
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 768px) {
-  .top {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .bottom {
-    flex-direction: column;
-    gap: 40px;
-    align-items: flex-start;
-  }
-  .legal {
+  .statusStrip {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 12px;
   }
 }

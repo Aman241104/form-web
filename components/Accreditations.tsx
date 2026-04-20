@@ -4,18 +4,16 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Accreditations.module.css';
 
-const badges = [
-  { src: '/images/badge-iso-27001.png', alt: 'ISO 27001 Certified' },
-  { src: '/images/badge-iso-9001.png', alt: 'ISO 9001 Certified' },
-  { src: '/images/badge-quickbooks.png', alt: 'QuickBooks Certified ProAdvisor' },
-  { src: '/images/badge-sage-intacct.png', alt: 'Sage Intacct Certified' },
-  { src: '/images/badge-zoho-books.png', alt: 'Zoho Books Certified' },
-  { src: '/images/badge-certified-advisor.png', alt: 'Certified Advisor' },
-];
-
 const logos = [
+  { src: '/images/badge-iso-27001.png', alt: 'ISO 27001' },
+  { src: '/images/badge-iso-9001.png', alt: 'ISO 9001' },
+  { src: '/images/badge-quickbooks.png', alt: 'QuickBooks' },
+  { src: '/images/badge-sage-intacct.png', alt: 'Sage Intacct' },
+  { src: '/images/badge-zoho-books.png', alt: 'Zoho Books' },
+  { src: '/images/badge-certified-advisor.png', alt: 'Certified Advisor' },
   { src: '/images/logo-cpa.png', alt: 'CPA' },
   { src: '/images/logo-icai.png', alt: 'ICAI' },
   { src: '/images/logo-xero.png', alt: 'Xero' },
@@ -23,58 +21,81 @@ const logos = [
   { src: '/images/logo-picpa.png', alt: 'PICPA' },
 ];
 
+const stats = [
+  { label: 'Professionals', value: '100+' },
+  { label: 'Years Experience', value: '15+' },
+  { label: 'Global Clients', value: '200+' },
+];
+
 export default function Accreditations() {
-  const containerRef = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo('.badgeItem', 
-      { opacity: 0, scale: 0.8 },
-      { 
-        opacity: 1, 
-        scale: 1, 
-        stagger: 0.1, 
-        duration: 0.8, 
-        ease: 'back.out(1.7)',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 85%'
-        }
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
       }
+    });
+
+    // Header Reveal
+    tl.fromTo('.reveal-header', 
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.2 }
     );
-  }, { scope: containerRef });
+
+    // Logos Reveal
+    tl.fromTo('.reveal-logo',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.08 },
+      '-=0.6'
+    );
+
+    // Stats Reveal
+    tl.fromTo('.reveal-stat',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.15 },
+      '-=0.4'
+    );
+  }, { scope: sectionRef });
 
   return (
-    <section ref={containerRef} className={styles.section}>
+    <section id="accreditations" ref={sectionRef} className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.label}>Accreditations and Certifications</span>
-          <h2 className={styles.title}>Global Excellence Verified</h2>
+          <span className={`${styles.tag} reveal-header`}>GLOBAL EXCELLENCE VERIFIED</span>
+          <h2 className={`${styles.title} reveal-header`}>
+            Trusted by the <br />
+            <span className={styles.titleEmphasis}>Best in Industry.</span>
+          </h2>
+          <p className={`${styles.description} reveal-header`}>
+            Recognized by global standards and trusted platforms for precision, compliance, and excellence.
+          </p>
         </div>
 
-        <div className={styles.badgeGrid}>
-          {badges.map((badge, idx) => (
-            <div key={idx} className={`badgeItem ${styles.badgeWrapper}`}>
+        <div className={styles.divider}></div>
+
+        <div className={styles.logoGrid}>
+          {logos.map((logo, index) => (
+            <div key={index} className={`${styles.logoWrapper} reveal-logo group`}>
               <Image 
-                src={badge.src} 
-                alt={badge.alt} 
-                width={120} 
-                height={120} 
-                className={styles.badge}
+                src={logo.src} 
+                alt={logo.alt} 
+                width={140} 
+                height={60} 
+                className={styles.logo}
               />
             </div>
           ))}
         </div>
 
-        <div className={styles.logoRow}>
-          {logos.map((logo, idx) => (
-            <div key={idx} className={`badgeItem ${styles.logoWrapper}`}>
-              <Image 
-                src={logo.src} 
-                alt={logo.alt} 
-                width={100} 
-                height={50} 
-                className={styles.logo}
-              />
+        <div className={`${styles.statsContainer} reveal-stat`}>
+          {stats.map((stat, index) => (
+            <div key={index} className={styles.statItem}>
+              <span className={styles.statValue}>{stat.value}</span>
+              <span className={styles.statLabel}>{stat.label}</span>
             </div>
           ))}
         </div>

@@ -1,115 +1,143 @@
 .section {
-  padding: 100px 40px;
-  background-color: var(--bg-secondary);
-  border-top: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
+  padding: 120px 40px;
+  background: linear-gradient(to bottom, #05080f, #070b14);
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
 }
 
 .header {
-  margin-bottom: 60px;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.label {
+.tag {
   display: block;
-  font-family: var(--font-display);
-  color: var(--accent-red);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  letter-spacing: 0.4em;
+  color: rgba(230, 57, 70, 0.7);
+  margin-bottom: 16px;
 }
 
 .title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--text-primary);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.02em;
 }
 
-.badgeGrid {
+.titleEmphasis {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  max-width: 520px;
+  margin-top: 24px;
+  line-height: 1.6;
+}
+
+.divider {
+  width: 64px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 40px auto;
+}
+
+.logoGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
   align-items: center;
   justify-items: center;
-  margin-bottom: 80px;
+  margin-top: 48px;
 }
 
-.badgeWrapper {
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--glass-border);
-  border-radius: 50%;
-  padding: 20px;
-  transition: all 0.4s ease;
+@media (min-width: 640px) {
+  .logoGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.badgeWrapper:hover {
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateY(-10px);
-  border-color: var(--accent-red);
-}
-
-.badge {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: grayscale(1) brightness(1.5);
-  transition: all 0.4s ease;
-}
-
-.badgeWrapper:hover .badge {
-  filter: grayscale(0) brightness(1);
-}
-
-.logoRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  opacity: 0.6;
+@media (min-width: 1024px) {
+  .logoGrid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 48px;
+  }
 }
 
 .logoWrapper {
-  transition: all 0.4s ease;
-}
-
-.logoWrapper:hover {
-  opacity: 1;
-  transform: scale(1.1);
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .logo {
-  height: 40px;
   width: auto;
+  max-width: 140px;
+  height: auto;
+  max-height: 48px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (max-width: 768px) {
-  .badgeGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
-  .badgeWrapper {
-    width: 100px;
-    height: 100px;
+.logoWrapper:hover .logo {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  drop-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 48px;
+  margin-top: 80px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 768px) {
+  .statsContainer {
+    gap: 80px;
   }
 }
 
-@media (max-width: 480px) {
-  .badgeGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.statLabel {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
 }

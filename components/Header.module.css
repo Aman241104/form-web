@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
+  height: 96px;
   z-index: 1000;
   background: transparent;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -12,10 +12,10 @@
 }
 
 .scrolled {
-  height: 70px;
-  background: rgba(11, 15, 20, 0.85);
+  height: 80px;
+  background: rgba(5, 8, 15, 0.7);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -27,74 +27,177 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-.logo {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 3px;
-  color: var(--text-primary);
-}
-
-.dot {
-  color: var(--accent-red);
-}
-
-.nav {
+.logoGroup {
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.logoGroup:hover {
+  opacity: 0.8;
+}
+
+.logoImage {
+  height: auto;
+  width: auto;
+}
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .navLink {
-  font-size: 0.7rem;
+  font-size: 13px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--text-primary);
-  opacity: 0.7;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ff4d4f;
   transition: all 0.3s ease;
 }
 
 .navLink:hover {
-  color: var(--accent-red);
-  opacity: 1;
-}
-
-.cta {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  padding: 12px 28px;
-  border: 1px solid var(--glass-border);
-  color: var(--text-primary);
-  font-weight: 700;
-  transition: all 0.4s ease;
-}
-
-.ctaPrimary {
-  background: var(--accent-red);
-  border-color: var(--accent-red);
   color: #ffffff;
 }
 
-.ctaPrimary:hover {
-  background: #ffffff;
-  color: var(--accent-red);
-  border-color: #ffffff;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+.navLink:hover::after {
+  width: 100%;
 }
 
-.cta:hover {
-  background: var(--text-primary);
-  color: var(--bg-deep);
-  border-color: var(--text-primary);
+.active {
+  color: #ffffff !important;
+}
+
+.active::after {
+  width: 100% !important;
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ctaButton {
+  background: #ff4d4f;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 20px rgba(255, 77, 79, 0.2);
+  border: 1px solid #ff4d4f;
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+  background: #ff7875;
+  border-color: #ff7875;
+  box-shadow: 0 0 30px rgba(255, 77, 79, 0.4);
+}
+
+/* Mobile Toggle */
+.mobileToggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.mobileToggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.toggleActive span:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.toggleActive span:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 15, 0.98);
+  backdrop-filter: blur(20px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.mobileLink {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.mobileCta {
+  background: #ff4d4f;
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
 }
 
 @media (max-width: 1024px) {
-  .nav {
+  .desktopNav {
     display: none;
+  }
+
+  .mobileToggle {
+    display: flex;
+  }
+
+  .ctaButton {
+    display: none;
+  }
+
+  .container {
+    padding: 0 24px;
   }
 }

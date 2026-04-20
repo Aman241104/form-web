@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -35,69 +35,58 @@ export default function HowWeWork() {
   const imageRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-      // Header Reveal
-      gsap.fromTo('.headerReveal', 
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%'
-          }
-        }
-      );
+    gsap.registerPlugin(ScrollTrigger);
 
-      // Steps Stagger Reveal (Left -> Right)
-      gsap.fromTo('.stepReveal', 
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.15,
-          duration: 1.2,
-          ease: 'power4.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%'
-          }
-        }
-      );
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+      }
+    });
 
-      // Image animation
-      gsap.fromTo(imageRef.current,
-        { opacity: 0, scale: 0.9, rotate: -5 },
-        {
-          opacity: 1,
-          scale: 1,
-          rotate: 0,
-          duration: 1.5,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%'
-          }
-        }
-      );
-    }, { scope: sectionRef });
+    // Header Reveal
+    tl.fromTo('.reveal-header', 
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.2 }
+    );
+
+    // Steps Reveal
+    tl.fromTo('.reveal-step',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.15 },
+      '-=0.6'
+    );
+
+    // Image Reveal
+    tl.fromTo(imageRef.current,
+      { opacity: 0, scale: 1.1 },
+      { opacity: 1, scale: 1, duration: 1.2, ease: 'power3.out' },
+      '-=1'
+    );
+  }, { scope: sectionRef });
 
   return (
     <section id="how-it-works" ref={sectionRef} className={styles.section}>
       <div className={styles.container}>
-        <div className={`headerReveal ${styles.header}`}>
-          <span className={styles.label}>Execution Model</span>
-          <h2 className={styles.title}>The Caramel Blueprint<span className={styles.dot}>.</span></h2>
+        <div className={styles.header}>
+          <span className={`${styles.label} reveal-header`}>Execution Model</span>
+          <h2 className={`${styles.title} reveal-header`}>
+            The Caramel <br />
+            Blueprint<span className={styles.dot}>.</span>
+          </h2>
         </div>
 
         <div className={styles.mainGrid}>
-          <div className={styles.stepsGrid}>
+          {/* Left Column: Steps */}
+          <div className={styles.stepsContainer}>
+            <div className={styles.timeline}></div>
             {steps.map((step, index) => (
-              <div key={index} className={`stepReveal ${styles.stepItem}`}>
-                <div className={styles.divider}></div>
-                <div className={styles.content}>
-                  <span className={styles.stepNum}>{step.num}</span>
+              <div key={index} className={`${styles.stepItem} reveal-step group`}>
+                <div className={styles.stepIndicator}>
+                  <div className={styles.stepCircle}>{step.num}</div>
+                  <div className={styles.highlightLine}></div>
+                </div>
+                <div className={styles.stepContent}>
                   <h4 className={styles.stepTitle}>{step.title}</h4>
                   <p className={styles.stepDesc}>{step.desc}</p>
                 </div>
@@ -105,15 +94,18 @@ export default function HowWeWork() {
             ))}
           </div>
 
+          {/* Right Column: Visual */}
           <div ref={imageRef} className={styles.imageSection}>
-            <div className={styles.imageWrapper}>
+            <div className={styles.imageCard}>
+              <div className={styles.imageGlow}></div>
               <Image 
-                src="/images/presentation-blob.png"
-                alt="Process Presentation"
-                width={600}
-                height={600}
+                src="/images/ca-notebook.png" // Replaced blob with notebook as placeholder for clean rectangular visual
+                alt="Process Visual"
+                width={800}
+                height={1000}
                 className={styles.image}
               />
+              <div className={styles.imageOverlay}></div>
             </div>
           </div>
         </div>

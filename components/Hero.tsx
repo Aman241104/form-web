@@ -9,99 +9,77 @@ import { getWhatsAppLink } from './StickyWhatsApp';
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const subtextRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+  const rightRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const tl = gsap.timeline();
 
-    tl.fromTo(badgeRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 0.5, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.5 }
-    )
-    .fromTo('.heroLine', 
+    tl.fromTo('.reveal-hero', 
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: 'power3.out' },
-      '-=0.4'
+      { opacity: 1, y: 0, stagger: 0.15, duration: 1, ease: 'power3.out', delay: 0.5 }
     )
-    .fromTo(subtextRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 0.7, y: 0, duration: 0.8, ease: 'power3.out' },
-      '-=0.6'
-    )
-    .fromTo('.heroCta',
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out' },
-      '-=0.6'
-    )
-    .fromTo(imageContainerRef.current,
-      { opacity: 0, scale: 1.05, rotate: 2 },
-      { opacity: 1, scale: 1, rotate: -1, duration: 1.5, ease: 'expo.out' },
-      '-=1.2'
+    .fromTo(rightRef.current,
+      { opacity: 0, scale: 1.05 },
+      { opacity: 1, scale: 1, duration: 1.5, ease: 'power3.out' },
+      '-=0.8'
     );
   }, { scope: sectionRef });
 
   return (
     <section id="hero" ref={sectionRef} className={styles.hero}>
       <div className={styles.backgroundLayer}>
-        <div className={styles.radialHighlight}></div>
-        <div className={styles.grainTexture}></div>
+        <div className={styles.glowEffect}></div>
       </div>
 
       <div className={styles.container}>
-        <div className={styles.contentGrid}>
-          <div className={styles.leftContent}>
-            <div ref={badgeRef} className={styles.badge}>
-              Serving US-based accounting firms
-            </div>
-
-            <div ref={titleRef} className={styles.headline}>
-              <div className={`${styles.line} heroLine`}>LET US HANDLE</div>
-              <div className={`${styles.line} heroLine`}>THE WORK.</div>
-              <div className={`${styles.lineSmall} heroLine`}>You focus on</div>
-              <div className={`${styles.line} ${styles.accentLine} heroLine`}>
-                FOCUS ON GROWTH
-              </div>
-            </div>
-
-            <p ref={subtextRef} className={styles.subtext}>
+        <div className={styles.layoutGrid}>
+          {/* Left Column: Content */}
+          <div ref={leftRef} className={styles.leftContent}>
+            <span className={`${styles.tag} reveal-hero`}>SERVING US-BASED ACCOUNTING FIRMS</span>
+            
+            <h1 className={`${styles.headline} reveal-hero`}>
+              Let us handle the work. <br />
+              You focus on <span className={styles.highlight}>growth.</span>
+            </h1>
+            
+            <p className={`${styles.subtext} reveal-hero`}>
               Unlock Scalable Growth: More Capacity with Expert US Outsourcing for CPA firms and mid-market businesses.
             </p>
 
-            <div ref={ctaRef} className={styles.ctaWrapper}>
+            <div className={`${styles.ctaGroup} reveal-hero`}>
               <a 
                 href={getWhatsAppLink("Hello Caramel Advisors, I'd like to book a consultation.")} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className={`${styles.primaryBtn} heroCta`}
+                className={styles.primaryBtn}
               >
                 Book Consultation
               </a>
               <a 
                 href="#services" 
-                className={`${styles.secondaryBtn} heroCta`}
+                className={styles.secondaryBtn}
               >
                 Explore Services
               </a>
             </div>
           </div>
 
-          <div ref={imageContainerRef} className={styles.rightContent}>
-            <div className={styles.imageCard}>
+          {/* Right Column: Image */}
+          <div ref={rightRef} className={styles.rightContent}>
+            <div className={styles.imageWrapper}>
+              <div className={styles.imageOverlay}></div>
               <Image 
                 src="/images/office-discussion.png" 
                 alt="Professional Team Collaboration" 
-                width={700} 
-                height={500} 
+                width={800} 
+                height={600} 
                 priority 
                 className={styles.heroImage}
               />
-              <div className={styles.glassGlow}></div>
+              <div className={styles.imageGlow}></div>
             </div>
-            <div className={styles.imageBgDepth}></div>
+            <div className={styles.floatingGlow}></div>
           </div>
         </div>
       </div>
