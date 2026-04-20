@@ -1,13 +1,11 @@
 .section {
-  padding: 160px 0;
+  padding: 120px 40px;
   background-color: var(--bg-deep);
-  border-top: 1px solid var(--glass-border);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 40px;
 }
 
 .header {
@@ -16,19 +14,17 @@
 
 .label {
   display: block;
-  font-size: 0.75rem;
+  font-family: var(--font-display);
+  color: var(--accent-red);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--text-secondary);
-  opacity: 0.8;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   color: var(--text-primary);
 }
 
@@ -36,72 +32,91 @@
   color: var(--accent-red);
 }
 
-.grid {
+.mainGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
 .stepItem {
   position: relative;
-  transition: all 0.3s ease;
 }
 
 .divider {
   width: 100%;
   height: 1px;
   background: var(--glass-border);
-  margin-bottom: 32px;
-  transition: background 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
 }
 
 .stepNum {
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  opacity: 0.4;
-  display: block;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent-red);
+  opacity: 0.8;
 }
 
 .stepTitle {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 12px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
   color: var(--text-primary);
-  letter-spacing: -0.01em;
 }
 
 .stepDesc {
-  font-size: 0.9rem;
-  color: #9ca3af;
-  line-height: 1.5;
-  max-width: 240px; /* Force 2 lines max roughly */
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 400px;
 }
 
-.stepItem:hover {
-  transform: translateY(-5px);
+.imageSection {
+  display: flex;
+  justify-content: center;
 }
 
-.stepItem:hover .divider {
-  background: var(--accent-red);
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
 }
 
-.stepItem:hover .stepTitle {
-  color: var(--accent-red);
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
 }
 
 @media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 48px;
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .imageSection {
+    order: -1;
+  }
+
+  .imageWrapper {
+    max-width: 400px;
   }
 }
 
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 15px;
   }
 }

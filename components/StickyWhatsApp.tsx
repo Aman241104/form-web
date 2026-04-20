@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import styles from './StickyWhatsApp.module.css';
 
-const WHATSAPP_NUMBER = '1234567890'; // Placeholder - replace with client number
+const WHATSAPP_NUMBER = '12674169800'; // US Office Number
 const DEFAULT_MESSAGE = "Hello Caramel Advisors, I'm interested in a consultation for my firm.";
 
 export const getWhatsAppLink = (message = DEFAULT_MESSAGE) => {

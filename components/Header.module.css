@@ -66,18 +66,31 @@
 .cta {
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   padding: 12px 28px;
-  border: 1px solid var(--accent-red);
+  border: 1px solid var(--glass-border);
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.4s ease;
 }
 
-.cta:hover {
+.ctaPrimary {
   background: var(--accent-red);
+  border-color: var(--accent-red);
   color: #ffffff;
-  box-shadow: 0 0 20px rgba(230, 57, 70, 0.3);
+}
+
+.ctaPrimary:hover {
+  background: #ffffff;
+  color: var(--accent-red);
+  border-color: #ffffff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.cta:hover {
+  background: var(--text-primary);
+  color: var(--bg-deep);
+  border-color: var(--text-primary);
 }
 
 @media (max-width: 1024px) {

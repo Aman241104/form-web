@@ -5,10 +5,12 @@ import WhyUs from '@/components/WhyUs';
 import HowWeWork from '@/components/HowWeWork';
 import Projects from '@/components/Projects';
 import Industries from '@/components/Industries';
+import Accreditations from '@/components/Accreditations';
 import Testimonials from '@/components/Testimonials';
 import Blogs from '@/components/Blogs';
 import Security from '@/components/Security';
 import FAQ from '@/components/FAQ';
+import ContactCTA from '@/components/ContactCTA';
 import GatekeeperForm from '@/components/GatekeeperForm';
 
 export default function Home() {
@@ -42,6 +44,10 @@ export default function Home() {
         <Industries />
       </div>
 
+      <div id="accreditations">
+        <Accreditations />
+      </div>
+
       <div id="testimonials">
         <Testimonials />
       </div>
@@ -57,6 +63,8 @@ export default function Home() {
       <div id="faq">
         <FAQ />
       </div>
+
+      <ContactCTA />
 
       <div id="contact">
         <GatekeeperForm />

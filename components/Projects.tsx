@@ -8,22 +8,22 @@ import styles from './Projects.module.css';
 
 const projects = [
   {
-    category: 'Tax & Compliance',
-    title: 'Fortune 500 Tax Scale',
-    result: '30% Margin Increase',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80'
+    category: 'Construction',
+    title: 'Financial Controls for a Seattle Firm',
+    result: 'Commercial construction company in Seattle',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680fb3ba66?auto=format&fit=crop&w=1000&q=80'
   },
   {
-    category: 'Strategic Finance',
-    title: 'Fintech vCFO Advisory',
-    result: 'Zero Audit Deficiencies',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80'
+    category: 'Manufacturing',
+    title: 'Efficiency for Textile Manufacturer',
+    result: 'Textile manufacturer in North Carolina',
+    image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=1000&q=80'
   },
   {
-    category: 'Audit Support',
-    title: 'Real Estate Fund Audit',
-    result: '100% Backlog Cleared',
-    image: 'https://images.unsplash.com/photo-1551288049-bbbda5366991?auto=format&fit=crop&w=1000&q=80'
+    category: 'Healthcare',
+    title: 'Harmonizing Multi-Site Dental Group',
+    result: 'Dental services group in Denver',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80'
   }
 ];
 
@@ -67,10 +67,10 @@ export default function Projects() {
     <section id="projects" ref={sectionRef} className={styles.section}>
       <div className={styles.container}>
         <div className={`headerReveal ${styles.header}`}>
-          <span className={styles.label}>Success Stories</span>
+          <span className={styles.label}>Case Studies</span>
           <h2 className={styles.title}>
-            Institutional impact<br />
-            across diverse sectors.
+            Financial Success<br />
+            Stories.
           </h2>
         </div>
 

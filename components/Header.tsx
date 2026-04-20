@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
@@ -38,15 +39,22 @@ export default function Header() {
       <div className={styles.container}>
         <div className={styles.logoGroup}>
           <a href="#hero" onClick={(e) => scrollToSection(e, '#hero')} className={styles.logo}>
-            CARAMEL<span className={styles.dot}>.</span>
+            <Image 
+              src="/images/logo.png" 
+              alt="Caramel Advisors" 
+              width={180} 
+              height={50} 
+              priority
+              className={styles.logoImage}
+            />
           </a>
         </div>
         
         <nav className={styles.nav}>
-          <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className={styles.navLink}>Services</a>
-          <a href="#projects" onClick={(e) => scrollToSection(e, '#projects')} className={styles.navLink}>Work</a>
-          <a href="#how-it-works" onClick={(e) => scrollToSection(e, '#how-it-works')} className={styles.navLink}>Process</a>
-          <a href="#security" onClick={(e) => scrollToSection(e, '#security')} className={styles.navLink}>Security</a>
+          <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className={styles.navLink}>SERVICES</a>
+          <a href="#projects" onClick={(e) => scrollToSection(e, '#projects')} className={styles.navLink}>WORK</a>
+          <a href="#how-it-works" onClick={(e) => scrollToSection(e, '#how-it-works')} className={styles.navLink}>PROCESS</a>
+          <a href="#security" onClick={(e) => scrollToSection(e, '#security')} className={styles.navLink}>SECURITY</a>
         </nav>
 
         <div className={styles.ctaGroup}>
@@ -54,9 +62,9 @@ export default function Header() {
             href={getWhatsAppLink("Hello Caramel Advisors, I'd like to book a consultation.")} 
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.cta}
+            className={`${styles.cta} ${styles.ctaPrimary}`}
           >
-            Consultation
+            CONSULTATION
           </a>
         </div>
       </div>

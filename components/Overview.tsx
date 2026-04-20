@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,95 +9,126 @@ import styles from './Overview.module.css';
 
 export default function Overview() {
   const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-      // Left Content Animation
-      gsap.fromTo('.overviewContent', 
-        { opacity: 0, x: -50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          ease: 'power4.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%',
-          }
-        }
-      );
+    gsap.registerPlugin(ScrollTrigger);
 
-      // Stats Stagger Animation
-      gsap.fromTo('.statItemReveal', 
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 90%',
-          }
-        }
-      );
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+      }
+    });
 
-      // Count-up Animation for Numbers
-      const numbers = gsap.utils.toArray('.statNum');
-      numbers.forEach((num: any) => {
-        const targetValue = parseInt(num.getAttribute('data-value') || '0');
-        gsap.fromTo(num, 
-          { innerText: 0 },
-          {
-            innerText: targetValue,
-            duration: 2,
-            snap: { innerText: 1 },
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: num,
-              start: 'top 90%',
-            },
-            onUpdate: function() {
-              const val = Math.ceil(Number(this.targets()[0].innerText));
-              num.innerHTML = val + (num.getAttribute('data-suffix') || '');
-            }
-          }
-        );
-      });
-    }, { scope: sectionRef });
+    tl.fromTo('.revealText', 
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: 'power3.out' }
+    )
+    .fromTo('.revealStat',
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out' },
+      '-=0.6'
+    )
+    .fromTo(imageRef.current,
+      { opacity: 0, scale: 1.05 },
+      { opacity: 1, scale: 1, duration: 1.2, ease: 'power3.out' },
+      '-=1.2'
+    );
+  }, { scope: sectionRef });
 
   return (
     <section id="overview" ref={sectionRef} className={styles.section}>
+      <div className={styles.backgroundLayer}>
+        <div className={styles.radialHighlight}></div>
+      </div>
+
       <div className={styles.container}>
         <div className={styles.grid}>
           {/* Left Column: Content */}
-          <div className={`overviewContent ${styles.left}`}>
-            <span className={styles.label}>Firm Overview</span>
-            <h2 className={styles.title}>
-              Strategic scaling<br />
-              for the modern<br />
-              economy.
+          <div ref={contentRef} className={styles.left}>
+            <span className={`${styles.label} revealText`}>ABOUT US</span>
+            
+            <h2 className={`${styles.title} revealText`}>
+              Your Strategic <br />
+              <span className={styles.titleEmphasis}>Finance Ally.</span>
             </h2>
-            <p className={styles.paragraph}>
-              Founded in 2017, Caramel Advisors bridges the critical talent gap in North American finance. 
-              We operate as an integrated extension of your team, providing institutional-grade expertise 
-              without the overhead of local recruitment.
-            </p>
+            
+            <div className={`${styles.paragraphWrapper} revealText`}>
+              <p className={styles.paragraph}>
+                Founded in 2021 as a dedicated U.S. entity, Caramel Advisors unites more than 100 years of combined partner experience.
+              </p>
+              <p className={styles.paragraph}>
+                We guide accounting firms and businesses through their most pressing financial needs and day-to-day operational challenges with precision.
+              </p>
+            </div>
+
+            <div className={`${styles.credibility} revealText`}>
+              Trusted by 200+ accounting firms
+            </div>
+
+            <div ref={statsRef} className={styles.statsGrid}>
+              <div className={`${styles.statItem} revealStat`}>
+                <span className={styles.num}>100+</span>
+                <span className={styles.statLabel}>Partner Exp.</span>
+              </div>
+              <div className={`${styles.statItem} revealStat`}>
+                <span className={styles.num}>100+</span>
+                <span className={styles.statLabel}>Professionals</span>
+              </div>
+              <div className={`${styles.statItem} revealStat`}>
+                <span className={styles.num}>2021</span>
+                <span className={styles.statLabel}>Founded</span>
+              </div>
+            </div>
           </div>
 
-          {/* Right Column: Stats */}
-          <div className={styles.right}>
-            <div className={`statItemReveal ${styles.statItem}`}>
-              <span className={`statNum ${styles.num}`} data-value="250" data-suffix="+">0</span>
-              <span className={styles.statLabel}>CAs & CPAs</span>
+          {/* Right Column: Image */}
+          <div ref={imageRef} className={styles.right}>
+            <div className={styles.imageCard}>
+              <div className={styles.imageOverlay}></div>
+              <Image 
+                src="/images/office-discussion.png"
+                alt="Caramel Advisors Team"
+                width={800}
+                height={1000}
+                className={styles.image}
+              />
+              <div className={styles.imageGlow}></div>
             </div>
-            <div className={`statItemReveal ${styles.statItem}`}>
-              <span className={`statNum ${styles.num}`} data-value="500" data-suffix="M+">0</span>
-              <span className={styles.statLabel}>Capital Advised</span>
+          </div>
+        </div>
+
+        {/* Leadership Team Section */}
+        <div className={styles.leadershipSection}>
+          <div className={styles.leadershipHeader}>
+            <span className={styles.label}>People Who Lead Us</span>
+            <h2 className={styles.leadershipTitle}>Leadership Team</h2>
+          </div>
+          
+          <div className={styles.leadershipGrid}>
+            <div className={styles.leaderCard}>
+              <div className={styles.leaderImageWrapper}>
+                <Image src="/images/team-leaders.png" alt="Deep Parmar" fill className={styles.leaderImage} />
+              </div>
+              <h4 className={styles.leaderName}>Deep Parmar</h4>
+              <p className={styles.leaderRole}>Founder, CEO</p>
             </div>
-            <div className={`statItemReveal ${styles.statItem}`}>
-              <span className={`statNum ${styles.num}`} data-value="15" data-suffix="+">0</span>
-              <span className={styles.statLabel}>US States Reached</span>
+            <div className={styles.leaderCard}>
+              <div className={styles.leaderImageWrapper}>
+                <Image src="/images/team-meeting.png" alt="Rajat Shah" fill className={styles.leaderImage} />
+              </div>
+              <h4 className={styles.leaderName}>Rajat Shah</h4>
+              <p className={styles.leaderRole}>Founder, COO</p>
+            </div>
+            <div className={styles.leaderCard}>
+              <div className={styles.leaderImageWrapper}>
+                <Image src="/images/team-collab.png" alt="Charmi Shah" fill className={styles.leaderImage} />
+              </div>
+              <h4 className={styles.leaderName}>Charmi Shah</h4>
+              <p className={styles.leaderRole}>Chartered Accountant</p>
             </div>
           </div>
         </div>

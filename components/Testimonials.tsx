@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,22 +9,22 @@ import styles from './Testimonials.module.css';
 
 const testimonials = [
   {
-    logo: 'RAMP',
-    quote: "Caramel Advisors transformed our audit capacity overnight. Their integration with our tech stack was seamless, delivering precision at a scale we didn't think possible.",
-    author: "Head of Engineering",
-    company: "Ramp Financial"
+    logo: 'CPA FIRM',
+    quote: "We are grateful to the Caramel Advisors team for managing and successfully completing our accounting function and helping us clear an audit from a regional CPA firm. Their expertise and dedication made it possible for us to achieve this – we are truly thankful!",
+    author: "Founder – Owner",
+    company: "CPA Firm – TX"
   },
   {
-    logo: 'OPENAI',
-    quote: "The precision and trust they radiate is unparalleled in the offshore sector. They function not as a vendor, but as a core strategic extension of our finance team.",
-    author: "Gabriel Peal",
-    company: "OpenAI"
+    logo: 'CONSULTING',
+    quote: "For the past year, Caramel Advisors has been our go-to for all our accounting needs. On top of being very cost-effective, their expertise and ability to effectively collaborate with our teams on workflow planning and execution has been nothing short of remarkable. We are 100% satisfied with the professional services and results Caramel Advisors has provided us.",
+    author: "Managing Director",
+    company: "Management Consulting Firm – PA"
   },
   {
-    logo: 'MERCURY',
-    quote: "Our speed is intense, and Caramel helps us maintain that action bias without compromising quality. They are the gold standard for institutional offshore talent.",
+    logo: 'FINANCE',
+    quote: "Caramel Advisors handled our entire accounting function and helped me successfully clear an audit from a regional CPA firm. We couldn’t have done it without Caramel Advisors managing the entire process. Kudos to the team and Thanks!",
     author: "CFO",
-    company: "Mercury Banking"
+    company: "Consumer Lending industry – TX"
   }
 ];
 
@@ -47,6 +48,18 @@ export default function Testimonials() {
           }
         }
       );
+
+      // Background image parallax
+      gsap.to('.bgImage', {
+        y: '20%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
     }, { scope: sectionRef });
 
   useEffect(() => {
@@ -70,11 +83,19 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" ref={sectionRef} className={styles.section}>
-      <div className={styles.bgText}>TRUST</div>
+      <div className={styles.bgContainer}>
+        <Image 
+          src="/images/team-meeting.png"
+          alt="Team Meeting"
+          fill
+          className={`bgImage ${styles.bgImage}`}
+        />
+        <div className={styles.bgOverlay}></div>
+      </div>
       
       <div className={styles.container}>
         <div className={`testimonialReveal ${styles.header}`}>
-          <span className={styles.label}>Institutional Endorsements</span>
+          <span className={styles.label}>What our Customers Say</span>
         </div>
 
         <div ref={quoteRef} className={styles.content}>

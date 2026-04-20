@@ -1,0 +1,115 @@
+.section {
+  padding: 100px 40px;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 60px;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--accent-red);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text-primary);
+}
+
+.badgeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 80px;
+}
+
+.badgeWrapper {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  padding: 20px;
+  transition: all 0.4s ease;
+}
+
+.badgeWrapper:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-10px);
+  border-color: var(--accent-red);
+}
+
+.badge {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.5);
+  transition: all 0.4s ease;
+}
+
+.badgeWrapper:hover .badge {
+  filter: grayscale(0) brightness(1);
+}
+
+.logoRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  opacity: 0.6;
+}
+
+.logoWrapper {
+  transition: all 0.4s ease;
+}
+
+.logoWrapper:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+  .badgeGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .badgeWrapper {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .badgeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

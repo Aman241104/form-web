@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,23 +10,29 @@ import styles from './WhyUs.module.css';
 const points = [
   {
     num: '01',
-    title: 'Elite Talent Pool',
-    desc: 'We hire strictly top-tier Chartered Accountants trained in US GAAP and tax laws.'
+    title: 'U.S. Accountability',
+    desc: 'As a U.S. Entity offering domestic contracts and invoicing, we provide the legal security you expect.'
   },
   {
     num: '02',
-    title: 'Zero-Friction Integration',
-    desc: 'Our professionals adapt to your tech stack—QBO, Xero, NetSuite—seamlessly.'
+    title: 'Expert Delivery',
+    desc: 'Backed by a Chartered Accountant-led delivery team in India for high-precision accounting.'
   },
   {
     num: '03',
-    title: 'Bank-Level Security',
-    desc: 'Multi-layered protocols including CISM leadership and restricted data residency.'
+    title: 'Scalable & Secure',
+    desc: 'Delivering secure, scalable, and predictable support with deep expertise across leading tools.'
+  },
+  {
+    num: '04',
+    title: 'Proven Experience',
+    desc: 'With 15+ years of experience and 100+ professionals helping firms scale with confidence.'
   }
 ];
 
 export default function WhyUs() {
   const sectionRef = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
       // Left side: fade + slide from left
@@ -58,6 +65,21 @@ export default function WhyUs() {
           }
         }
       );
+
+      // Image reveal
+      gsap.fromTo(imageRef.current,
+        { opacity: 0, scale: 1.1 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%'
+          }
+        }
+      );
     }, { scope: sectionRef });
 
   return (
@@ -66,15 +88,25 @@ export default function WhyUs() {
         <div className={styles.grid}>
           {/* Left Column */}
           <div className={`whyUsLeft ${styles.left}`}>
-            <span className={styles.label}>The Difference</span>
+            <span className={styles.label}>Why Choose Us</span>
             <h2 className={styles.title}>
-              Institutional trust meets<br />
-              <span className={styles.highlight}>offshore agility.</span>
+              Caramel <br />
+              <span className={styles.highlight}>Advisors?</span>
             </h2>
             <p className={styles.paragraph}>
-              We don&apos;t just provide staff; we build strategic talent extensions. 
-              Our model is built on unshakeable pillars of precision and accountability.
+              We combine U.S. accountability with global delivery excellence—straightforward, battle-tested solutions built to let you focus on growth, not grind.
             </p>
+
+            <div ref={imageRef} className={styles.imageWrapper}>
+              <Image 
+                src="/images/team-leaders.png"
+                alt="Leadership Team"
+                width={600}
+                height={400}
+                className={styles.image}
+              />
+              <div className={styles.imageOverlay}></div>
+            </div>
           </div>
 
           {/* Right Column */}

@@ -8,22 +8,22 @@ import styles from './Blogs.module.css';
 
 const posts = [
   {
-    title: 'The 2026 CPA Talent Crisis',
-    date: 'APR 15, 2026',
+    title: 'PE/VC Valuations: From Cost to Calibration',
+    date: 'APR 18, 2026',
     category: 'INDUSTRY',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=800&q=80'
+    image: '/images/office-discussion.png'
   },
   {
-    title: 'Navigating Cross-Border Tax',
-    date: 'MAR 28, 2026',
+    title: 'Enter Calibration: What Better Funds Do Differently',
+    date: 'APR 18, 2026',
     category: 'TECHNICAL',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'
+    image: '/images/finance-growth.png'
   },
   {
-    title: 'AI in Fractional CFO Services',
-    date: 'MAR 12, 2026',
+    title: 'AI is Now Part of the 12/31/2025 Cycle',
+    date: 'APR 18, 2026',
     category: 'TECHNOLOGY',
-    image: 'https://images.unsplash.com/photo-1664575198308-3959901b0b5c?auto=format&fit=crop&w=800&q=80'
+    image: '/images/finance-piggybank.png'
   }
 ];
 
@@ -71,9 +71,9 @@ export default function Blogs() {
           <div className={`blogHeaderReveal ${styles.left}`}>
             <span className={styles.label}>Intelligence</span>
             <h2 className={styles.title}>
-              Thought leadership<br />
-              for strategic<br />
-              growth<span className={styles.dot}>.</span>
+              Insights from<br />
+              Latest<br />
+              Blog<span className={styles.dot}>.</span>
             </h2>
           </div>
 

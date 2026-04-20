@@ -8,19 +8,19 @@ import styles from './FAQ.module.css';
 
 const faqs = [
   {
-    category: 'Security',
-    q: "How do you ensure data security with offshore talent?",
-    a: "We utilize CISM-certified leadership, bank-level encryption, and restricted VPN tunnels. All data remains within the US residency controls, ensuring 100% compliance with domestic standards."
+    category: 'Compliance',
+    q: "How does Caramel ensure US compliance?",
+    a: "Via AICPA-aligned processes and real-time IRS monitoring—zero penalties for 98% of clients. We maintain rigorous standards to ensure every filing is accurate and timely."
+  },
+  {
+    category: 'Clients',
+    q: "Who do you typically work with?",
+    a: "We work with U.S. CPA firms, accounting practices, growing and mid-market businesses, and PE-backed companies across industries."
   },
   {
     category: 'Integration',
     q: "What software stack are your professionals trained in?",
     a: "Our team is proficient in QuickBooks Online, Xero, Sage Intacct, NetSuite, and major US tax platforms like ProConnect and UltraTax. We adapt to your firm's specific workflow rituals."
-  },
-  {
-    category: 'Engagement',
-    q: "Is there a minimum engagement period?",
-    a: "We offer both FTE (Full-Time Equivalent) and project-based models to suit firm capacity needs, starting from 3-month integration trials to ensure a perfect strategic fit."
   },
   {
     category: 'Operations',
@@ -87,7 +87,7 @@ export default function FAQ() {
           {/* Left: Branding */}
           <div className={styles.left}>
             <div className={styles.sticky}>
-              <span className={styles.label}>Transparency Portal</span>
+              <span className={styles.label}>Quick Help Guide</span>
               <h2 ref={titleRef} className={styles.title}>
                 COMMON INQUIRIES
               </h2>

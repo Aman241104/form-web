@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -19,18 +20,19 @@ const steps = [
   },
   {
     num: '03',
-    title: 'Secure Onboarding',
-    desc: 'Establishing encrypted tunnels and data residency controls.'
+    title: 'Direct Partnership',
+    desc: 'Integrated extension of your team with direct communication and sync.'
   },
   {
     num: '04',
-    title: 'Seamless Integration',
-    desc: 'Direct integration into your daily rituals and financial software.'
+    title: 'White-Label Option',
+    desc: 'Seamlessly flex behind your brand for a consistent client experience.'
   }
 ];
 
 export default function HowWeWork() {
   const sectionRef = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
       // Header Reveal
@@ -63,6 +65,22 @@ export default function HowWeWork() {
           }
         }
       );
+
+      // Image animation
+      gsap.fromTo(imageRef.current,
+        { opacity: 0, scale: 0.9, rotate: -5 },
+        {
+          opacity: 1,
+          scale: 1,
+          rotate: 0,
+          duration: 1.5,
+          ease: 'expo.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%'
+          }
+        }
+      );
     }, { scope: sectionRef });
 
   return (
@@ -73,17 +91,31 @@ export default function HowWeWork() {
           <h2 className={styles.title}>The Caramel Blueprint<span className={styles.dot}>.</span></h2>
         </div>
 
-        <div className={styles.grid}>
-          {steps.map((step, index) => (
-            <div key={index} className={`stepReveal ${styles.stepItem}`}>
-              <div className={styles.divider}></div>
-              <div className={styles.content}>
-                <span className={styles.stepNum}>{step.num}</span>
-                <h4 className={styles.stepTitle}>{step.title}</h4>
-                <p className={styles.stepDesc}>{step.desc}</p>
+        <div className={styles.mainGrid}>
+          <div className={styles.stepsGrid}>
+            {steps.map((step, index) => (
+              <div key={index} className={`stepReveal ${styles.stepItem}`}>
+                <div className={styles.divider}></div>
+                <div className={styles.content}>
+                  <span className={styles.stepNum}>{step.num}</span>
+                  <h4 className={styles.stepTitle}>{step.title}</h4>
+                  <p className={styles.stepDesc}>{step.desc}</p>
+                </div>
               </div>
+            ))}
+          </div>
+
+          <div ref={imageRef} className={styles.imageSection}>
+            <div className={styles.imageWrapper}>
+              <Image 
+                src="/images/presentation-blob.png"
+                alt="Process Presentation"
+                width={600}
+                height={600}
+                className={styles.image}
+              />
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
