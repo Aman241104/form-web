@@ -33,6 +33,7 @@
   height: 28px;
   color: #ffffff;
   z-index: 2;
+  position: relative;
 }
 
 .pulse {

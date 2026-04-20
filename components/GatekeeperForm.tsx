@@ -35,7 +35,7 @@ export default function GatekeeperForm() {
     const tl = gsap.timeline();
     
     // Selection feedback
-    tl.to(`.option-${value.replace(/\s+/g, '-')}`, {
+    tl.to(`.option-${sanitize(value)}`, {
       scale: 1.02,
       duration: 0.2,
       ease: 'power2.out'
@@ -132,7 +132,7 @@ export default function GatekeeperForm() {
                     <div 
                       key={opt.label}
                       onClick={() => transitionStep(2, 'persona', opt.label)}
-                      className={`${styles.optionCard} ${selectedOption === opt.label ? styles.active : ''} option-${opt.label.replace(/\s+/g, '-')}`}
+                      className={`${styles.optionCard} ${selectedOption === opt.label ? styles.active : ''} option-${sanitize(opt.label)}`}
                     >
                       <div className={styles.cardContent}>
                         <p className={styles.optionLabel}>{opt.label}</p>
@@ -154,7 +154,7 @@ export default function GatekeeperForm() {
                     <div 
                       key={opt.label}
                       onClick={() => transitionStep(3, 'bottleneck', opt.label)}
-                      className={`${styles.optionCard} ${selectedOption === opt.label ? styles.active : ''} option-${opt.label.replace(/\s+/g, '-')}`}
+                      className={`${styles.optionCard} ${selectedOption === opt.label ? styles.active : ''} option-${sanitize(opt.label)}`}
                     >
                       <div className={styles.cardContent}>
                         <p className={styles.optionLabel}>{opt.label}</p>
@@ -176,7 +176,7 @@ export default function GatekeeperForm() {
                     <div 
                       key={opt.label}
                       onClick={() => transitionStep(4, 'size', opt.label)}
-                      className={`${styles.optionCard} ${selectedOption === opt.label ? styles.active : ''} option-${opt.label.replace(/\s+/g, '-')}`}
+                      className={`${styles.optionCard} ${selectedOption === opt.label ? styles.active : ''} option-${sanitize(opt.label)}`}
                     >
                       <div className={styles.cardContent}>
                         <p className={styles.optionLabel}>{opt.label}</p>
