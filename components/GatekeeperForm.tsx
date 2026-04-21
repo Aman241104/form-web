@@ -60,7 +60,7 @@ export default function GatekeeperForm() {
   };
 
   const handleSubmit = () => {
-    const message = `Hello Caramel Advisors, I've completed the intake brief:
+    const message = `Hello Elite Cloud Books, I've completed the intake brief:
 - Persona: ${data.persona}
 - Bottleneck: ${data.bottleneck}
 - Firm Size: ${data.size}
@@ -112,7 +112,7 @@ export default function GatekeeperForm() {
             
             {step === 1 && (
               <button 
-                onClick={() => window.open(getWhatsAppLink("Hello, I am looking for career opportunities at Caramel Advisors."), '_blank')} 
+                onClick={() => window.open(getWhatsAppLink("Hello, I am looking for career opportunities at Elite Cloud Books."), '_blank')} 
                 className={styles.careerLink}
               >
                 Looking for a career instead? <span className={styles.arrowSmall}>→</span>

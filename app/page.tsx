@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import TrustTicker from '@/components/TrustTicker';
 import Overview from '@/components/Overview';
 import Services from '@/components/Services';
 import WhyUs from '@/components/WhyUs';
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <TrustTicker />
       <Overview />
       <Services />
       <WhyUs />

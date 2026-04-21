@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   if (!post) return { title: 'Post Not Found' };
 
   return {
-    title: `${post.title} | Caramel Advisors`,
+    title: `${post.title} | Elite Cloud Books`,
     description: post.excerpt,
   };
 }

@@ -1,6 +1,6 @@
-# Caramel Advisors Website Project Documentation & Strategy Report
+# Elite Cloud Books Website Project Documentation & Strategy Report
 
-**Prepared for:** Caramel Advisors  
+**Prepared for:** Elite Cloud Books  
 **Project Scope:** Full Website Redesign, UX/UI Strategy, Technical Architecture, and Competitive Benchmarking  
 **Theme Requirements:** Modern, Black & Red accent theme, Professional, Trustworthy, Global Financial Standards
 
@@ -9,11 +9,11 @@
 ## SECTION 1 — COMPANY RESEARCH
 
 ### 1. Company Overview
-Caramel Advisors (also known as **Caramel Global Services**) is a premium offshore accounting, tax, and financial advisory firm founded in 2017 by **Deep Parmar**. Headquartered in **Philadelphia, PA**, with a large-scale operations center in **Ahmedabad, India**, the firm operates a robust global delivery model. It solves the critical talent gap in the North American financial sector by leveraging highly qualified professionals (CAs, CPAs, and financial analysts). Caramel Advisors functions not merely as a business process outsourcing (BPO) vendor, but as an integrated, strategic extension of their clients' in-house teams.
+Elite Cloud Books (also known as **Caramel Global Services**) is a premium offshore accounting, tax, and financial advisory firm founded in 2017 by **Deep Parmar**. Headquartered in **Philadelphia, PA**, with a large-scale operations center in **Ahmedabad, India**, the firm operates a robust global delivery model. It solves the critical talent gap in the North American financial sector by leveraging highly qualified professionals (CAs, CPAs, and financial analysts). Elite Cloud Books functions not merely as a business process outsourcing (BPO) vendor, but as an integrated, strategic extension of their clients' in-house teams.
 
 ### 2. Company Mission and Value Proposition
 *   **Mission:** To empower global accounting firms and mid-sized enterprises by providing seamless, high-quality, and scalable offshore financial talent, enabling them to focus on growth, client advisory, and strategic milestones without capacity constraints.
-*   **Value Proposition:** "Institutional-grade financial expertise at your fingertips." Caramel Advisors delivers the reliability of a top-tier US accounting firm combined with the scalability and economic advantages of an offshore talent center. Led by Deep Parmar (25+ years of experience and mentor at the Founder Institute), the firm brings high-level accountability to every engagement.
+*   **Value Proposition:** "Institutional-grade financial expertise at your fingertips." Elite Cloud Books delivers the reliability of a top-tier US accounting firm combined with the scalability and economic advantages of an offshore talent center. Led by Deep Parmar (25+ years of experience and mentor at the Founder Institute), the firm brings high-level accountability to every engagement.
 
 ### 3. Services Offered
 *   **Outsourced Accounting & Bookkeeping:** End-to-end ledger management, month-end closing, and financial statement preparation.
@@ -24,7 +24,7 @@ Caramel Advisors (also known as **Caramel Global Services**) is a premium offsho
 *   **Software Expertise:** Proficient in major US accounting platforms: **QuickBooks Online**, **Sage Intacct**, **Xero**, and **NetSuite**.
 
 ### 4. Industry Positioning
-Caramel Advisors is positioned in the premium tier of the outsourced accounting market. They are an active participant in the **Pennsylvania Institute of CPAs (PICPA)** and distance themselves from volume-based, low-cost "data entry" sweatshops. They position themselves as a "Strategic Talent Partner." Their branding must reflect white-glove service, data security, uncompromising quality, and deep integration.
+Elite Cloud Books is positioned in the premium tier of the outsourced accounting market. They are an active participant in the **Pennsylvania Institute of CPAs (PICPA)** and distance themselves from volume-based, low-cost "data entry" sweatshops. They position themselves as a "Strategic Talent Partner." Their branding must reflect white-glove service, data security, uncompromising quality, and deep integration.
 
 ### 5. Target Audience
 *   **US-based CPA and Accounting Firms:** Facing severe talent shortages, aging workforces, and burnout.
@@ -50,7 +50,7 @@ Caramel Advisors is positioned in the premium tier of the outsourced accounting 
 
 ### 1. Competitor Landscape Analysis
 
-| Feature | **TOA Global** (Enterprise) | **The Back Room** (Modern Boutique) | **QX Accounting** (Corporate) | **Caramel Advisors** (Target) |
+| Feature | **TOA Global** (Enterprise) | **The Back Room** (Modern Boutique) | **QX Accounting** (Corporate) | **Elite Cloud Books** (Target) |
 | :--- | :--- | :--- | :--- | :--- |
 | **Visual Aesthetic** | High-end "Tech-SaaS". Real team photography. | Minimalist, clean, lifestyle-oriented. | Traditional corporate. Blue/Grey palette. | **Modern Fintech (Black & Red).** |
 | **Value Prop** | Elite Talent & Massive Scale. | "Freedom" and "Time" for owners. | Global BPM & Institutional Trust. | **Strategic Talent Extension.** |

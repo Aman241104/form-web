@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   if (!project) return { title: 'Project Not Found' };
 
   return {
-    title: `${project.title} | Case Study | Caramel Advisors`,
+    title: `${project.title} | Case Study | Elite Cloud Books`,
     description: project.subtext,
   };
 }

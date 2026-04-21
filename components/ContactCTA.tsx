@@ -34,7 +34,7 @@ export default function ContactCTA() {
             <p className={styles.text}>Discover Tailored Solutions – book a Free Consultation</p>
           </div>
           <a 
-            href={getWhatsAppLink("Hello Caramel Advisors, I'd like to book a free consultation to discuss our accounting challenges.")} 
+            href={getWhatsAppLink("Hello Elite Cloud Books, I'd like to book a free consultation to discuss our accounting challenges.")} 
             target="_blank" 
             rel="noopener noreferrer" 
             className={styles.button}

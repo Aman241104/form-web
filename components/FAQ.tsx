@@ -9,7 +9,7 @@ import styles from './FAQ.module.css';
 const faqs = [
   {
     category: 'COMPLIANCE',
-    q: "How does Caramel ensure US compliance?",
+    q: "How does Elite Cloud Books ensure US compliance?",
     a: "We operate as a U.S.-based entity with compliant contracts, invoicing, and data protection protocols. Our processes are AICPA-aligned, ensuring zero penalties for 98% of our clients through rigorous IRS monitoring."
   },
   {
@@ -66,7 +66,7 @@ export default function FAQ() {
               Questions.
             </h2>
             <p className={`${styles.description} reveal-left`}>
-              Everything you need to know about working with Caramel Advisors — from compliance to collaboration.
+              Everything you need to know about working with Elite Cloud Books — from compliance to collaboration.
             </p>
             
             <div className={`${styles.ctaBlock} reveal-left`}>

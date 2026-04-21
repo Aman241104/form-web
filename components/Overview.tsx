@@ -7,12 +7,6 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Overview.module.css';
 
-const stats = [
-  { value: '100+', label: 'Partner Exp.' },
-  { value: '100+', label: 'Professionals' },
-  { value: '2021', label: 'Founded' },
-];
-
 export default function Overview() {
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -36,11 +30,6 @@ export default function Overview() {
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: 'power3.out' },
       '-=0.8'
-    )
-    .fromTo('.reveal-stat-about',
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out' },
-      '-=0.6'
     );
   }, { scope: sectionRef });
 
@@ -54,7 +43,7 @@ export default function Overview() {
               <div className={styles.imageOverlay}></div>
               <Image 
                 src="/images/office-discussion.png"
-                alt="Caramel Advisors Team"
+                alt="Elite Cloud Books Team"
                 width={700}
                 height={900}
                 className={styles.aboutImage}
@@ -76,7 +65,7 @@ export default function Overview() {
 
             <div className={`${styles.paragraphWrapper} reveal-about`}>
               <p className={styles.paragraph}>
-                Founded in 2021 as a dedicated U.S. entity, Caramel Advisors unites more than 100 years of combined partner experience.
+                Founded in 2021 as a dedicated U.S. entity, Elite Cloud Books unites more than 100 years of combined partner experience.
               </p>
               <p className={styles.paragraph}>
                 We guide accounting firms and businesses through their most pressing financial needs and day-to-day operational challenges with precision.
@@ -85,16 +74,6 @@ export default function Overview() {
 
             <div className={`${styles.credibility} reveal-about`}>
               Trusted by 200+ accounting firms worldwide
-            </div>
-
-            {/* Stats Grid */}
-            <div className={styles.statsGrid}>
-              {stats.map((stat, idx) => (
-                <div key={idx} className={`${styles.statItem} reveal-stat-about`}>
-                  <span className={styles.statValue}>{stat.value}</span>
-                  <span className={styles.statLabel}>{stat.label}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>

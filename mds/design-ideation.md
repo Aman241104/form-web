@@ -1,6 +1,6 @@
-# Caramel Advisors: Comprehensive Web Design Ideation & UI Strategy (2025/2026)
+# Elite Cloud Books: Comprehensive Web Design Ideation & UI Strategy (2025/2026)
 
-**Project Goal:** To establish a premium, high-conversion digital presence for Caramel Advisors that balances offshore scalability with onshore institutional trust. 
+**Project Goal:** To establish a premium, high-conversion digital presence for Elite Cloud Books that balances offshore scalability with onshore institutional trust. 
 
 This document outlines three distinct, modern design directions. Each version caters to the "Modern, Black & Red accent theme" requirement but interprets it through a different strategic lens.
 

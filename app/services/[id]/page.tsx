@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   if (!service) return { title: 'Service Not Found' };
 
   return {
-    title: `${service.title} | Services | Caramel Advisors`,
+    title: `${service.title} | Services | Elite Cloud Books`,
     description: service.desc,
   };
 }

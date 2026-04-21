@@ -32,7 +32,7 @@ export default function Footer() {
   return (
     <footer ref={footerRef} className={styles.footer}>
       {/* Background Watermark */}
-      <div className={styles.watermark}>CARAMEL</div>
+      <div className={styles.watermark}>ELITE CLOUD BOOKS</div>
       <div className={styles.subtleGlow}></div>
 
       <div className={styles.container}>
@@ -51,9 +51,9 @@ export default function Footer() {
         <div className={styles.mainGrid}>
           {/* Column 1: Brand */}
           <div className={`${styles.column} reveal-footer`}>
-            <h2 className={styles.logo}>CARAMEL<span className={styles.dot}>.</span></h2>
+            <h2 className={styles.logo}>ELITE CLOUD BOOKS<span className={styles.dot}>.</span></h2>
             <p className={styles.brandDesc}>
-              Caramel Advisors is a U.S.-based accounting partner helping firms scale with precision, reliability, and global expertise.
+              Elite Cloud Books is a U.S.-based accounting partner helping firms scale with precision, reliability, and global expertise.
             </p>
             <div className={styles.socials}>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
@@ -107,7 +107,7 @@ export default function Footer() {
               </div>
               <div className={styles.presenceItem}>
                 <span className={styles.iconSpan}>✉️</span>
-                <a href="mailto:admin@carameladvisors.com">admin@carameladvisors.com</a>
+                <a href="mailto:admin@elitecloudbooks.com">admin@elitecloudbooks.com</a>
               </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className={`${styles.bottomBar} reveal-footer`}>
           <div className={styles.bottomLeft}>
-            © {new Date().getFullYear()} Caramel Advisors. All rights reserved.
+            © {new Date().getFullYear()} Elite Cloud Books. All rights reserved.
           </div>
           <div className={styles.bottomCenter}>
             <Link href="#" className={styles.legalLink}>Privacy Policy</Link>

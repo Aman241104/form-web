@@ -49,7 +49,7 @@ export default function Preloader() {
   return (
     <div ref={loaderRef} className={styles.preloader}>
       <div ref={logoRef} className={styles.logo}>
-        CARAMEL<span className={styles.dot}>.</span>
+        ELITE CLOUD BOOKS<span className={styles.dot}>.</span>
       </div>
       <div className={styles.progressLine}></div>
     </div>

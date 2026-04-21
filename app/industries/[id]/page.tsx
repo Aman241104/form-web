@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   if (!industry) return { title: 'Industry Not Found' };
 
   return {
-    title: `${industry.name} | Industries | Caramel Advisors`,
+    title: `${industry.name} | Industries | Elite Cloud Books`,
     description: industry.desc,
   };
 }

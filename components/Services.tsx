@@ -32,8 +32,18 @@ export default function Services() {
     );
   }, { scope: sectionRef });
 
-  const featuredService = services.find(s => s.featured) || services[0];
-  const otherServices = services.filter(s => s.id !== featuredService.id);
+  // Typescript check for features
+  interface Service {
+    id: string;
+    title: string;
+    desc: string;
+    features?: string[];
+    featured?: boolean;
+    icon: React.ReactNode;
+  }
+
+  const featuredService = (services as Service[]).find(s => s.featured) || (services as Service[])[0];
+  const otherServices = (services as Service[]).filter(s => s.id !== featuredService.id);
 
   return (
     <section id="services" ref={sectionRef} className={styles.section}>
@@ -41,30 +51,40 @@ export default function Services() {
       
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={`${styles.tag} reveal-header`}>OUR SERVICES</span>
+          <span className={`${styles.tag} reveal-header`}>PRECISION SOLUTIONS</span>
           <h2 className={`${styles.title} reveal-header`}>
-            Proven Services <span className={styles.desktopBreak}><br /></span>
-            <span className={styles.titleEmphasis}>for Scalable Growth.</span>
+            Specialized Services <span className={styles.desktopBreak}><br /></span>
+            <span className={styles.titleEmphasis}>for Modern Firms.</span>
           </h2>
           <p className={`${styles.description} reveal-header`}>
-            Built for accounting firms and businesses ready to scale efficiently.
+            Elite Cloud Books provides institutional-grade accounting infrastructure designed to scale with your firm.
           </p>
         </div>
 
         <div className={styles.layoutGrid}>
           {/* Featured Card */}
           <Link href={`/services/${featuredService.id}`} className={`${styles.featuredCard} reveal-card group`}>
-            <div className={styles.depthLayer}></div>
-            <div className={styles.featuredContent}>
+            <div className={styles.featuredTop}>
               <div className={styles.iconWrapper}>
                 {featuredService.icon}
               </div>
               <h3 className={styles.featuredTitle}>{featuredService.title}</h3>
               <p className={styles.featuredDesc}>{featuredService.desc}</p>
               
-              <div className={styles.cta}>
-                EXPLORE SERVICE <span className={styles.arrow}>→</span>
-              </div>
+              {featuredService.features && (
+                <ul className={styles.featuresList}>
+                  {featuredService.features.map((feature, i) => (
+                    <li key={i} className={styles.featureItem}>
+                      <span className={styles.bullet}></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            
+            <div className={styles.cta}>
+              EXPLORE SERVICE <span className={styles.arrow}>→</span>
             </div>
           </Link>
 
@@ -79,8 +99,19 @@ export default function Services() {
                   <h4 className={styles.secondaryTitle}>{service.title}</h4>
                   <p className={styles.secondaryDesc}>{service.desc}</p>
                 </div>
-                <div className={styles.smallCta}>
-                  <span className={styles.arrow}>→</span>
+                
+                {service.features && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
+                        {service.features.slice(0, 2).map((f, i) => (
+                            <span key={i} style={{ fontSize: '10px', padding: '4px 8px', background: 'rgba(255,255,255,0.05)', borderRadius: '4px', color: 'rgba(255,255,255,0.5)' }}>
+                                {f}
+                            </span>
+                        ))}
+                    </div>
+                )}
+
+                <div className={styles.cta}>
+                  Learn More <span className={styles.arrow}>→</span>
                 </div>
               </Link>
             ))}

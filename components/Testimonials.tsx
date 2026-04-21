@@ -9,8 +9,8 @@ import styles from './Testimonials.module.css';
 
 const testimonials = [
   {
-    shortQuote: "Caramel Advisors transformed our accounting operations and helped us clear a complex audit with confidence.",
-    fullQuote: "We are grateful to the Caramel Advisors team for managing and successfully completing our accounting function and helping us clear an audit from a regional CPA firm. Their expertise and dedication made it possible for us to achieve this.",
+    shortQuote: "Elite Cloud Books transformed our accounting operations and helped us clear a complex audit with confidence.",
+    fullQuote: "We are grateful to the Elite Cloud Books team for managing and successfully completing our accounting function and helping us clear an audit from a regional CPA firm. Their expertise and dedication made it possible for us to achieve this.",
     name: "John Carter",
     role: "Founder",
     company: "CPA Firm — Texas",
@@ -18,15 +18,15 @@ const testimonials = [
   },
   {
     shortQuote: "Their expertise and ability to collaborate on workflow planning has been remarkable. 100% satisfied with the results.",
-    fullQuote: "For the past year, Caramel Advisors has been our go-to for all our accounting needs. On top of being very cost-effective, their expertise and ability to effectively collaborate with our teams on workflow planning and execution has been nothing short of remarkable.",
+    fullQuote: "For the past year, Elite Cloud Books has been our go-to for all our accounting needs. On top of being very cost-effective, their expertise and ability to effectively collaborate with our teams on workflow planning and execution has been nothing short of remarkable.",
     name: "Sarah Jenkins",
     role: "Managing Director",
     company: "Consulting Group — PA",
     avatar: "/images/team-meeting.png"
   },
   {
-    shortQuote: "We couldn’t have done it without Caramel Advisors managing the entire process. They are our go-to for all accounting needs.",
-    fullQuote: "Caramel Advisors handled our entire accounting function and helped me successfully clear an audit from a regional CPA firm. We couldn’t have done it without Caramel Advisors managing the entire process. Kudos to the team and Thanks!",
+    shortQuote: "We couldn’t have done it without Elite Cloud Books managing the entire process. They are our go-to for all accounting needs.",
+    fullQuote: "Elite Cloud Books handled our entire accounting function and helped me successfully clear an audit from a regional CPA firm. We couldn’t have done it without Elite Cloud Books managing the entire process. Kudos to the team and Thanks!",
     name: "Michael Chen",
     role: "CFO",
     company: "Consumer Lending — TX",

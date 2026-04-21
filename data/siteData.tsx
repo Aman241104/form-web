@@ -4,7 +4,8 @@ export const services = [
   {
     id: 'bookkeeping',
     title: 'Bookkeeping & Accounting',
-    desc: 'Stay on top of your books with clean, timely records that make sense and keep your business compliant.',
+    desc: 'Maintain impeccable financial records with our high-precision bookkeeping solutions.',
+    features: ['Monthly Financial Reporting', 'Bank & CC Reconciliation', 'Accounts Payable/Receivable', 'Year-end Cleanup'],
     fullContent: `Our bookkeeping services are designed to give you peace of mind. We handle everything from daily transaction entry to month-end close, ensuring your financial records are accurate and IRS-compliant. We specialize in Xero and QuickBooks Online workflows.
 
     Key Benefits:
@@ -20,7 +21,8 @@ export const services = [
   {
     id: 'tax',
     title: 'Tax Preparation',
-    desc: 'Handle multi-state returns and compliance without the stress—smooth and spot-on.',
+    desc: 'Expert tax strategies to minimize liability and ensure 100% multi-state compliance.',
+    features: ['Corporate Tax Filing', 'Multi-state Compliance', 'R&D Tax Credits', 'Sales Tax Management'],
     fullContent: `Our tax experts manage the complexities of multi-state returns and federal compliance. We ensure you maximize deductions and stay ahead of filing deadlines, using advanced tax platforms like ProConnect and UltraTax.
 
     Our Approach:
@@ -36,7 +38,8 @@ export const services = [
   {
     id: 'fpa',
     title: 'FP&A (Planning)',
-    desc: 'Turn numbers into action with forecasting and budgeting that drives growth.',
+    desc: 'Actionable financial insights and forecasting to drive your business growth.',
+    features: ['Budgeting & Forecasting', 'Variance Analysis', 'KPI Dashboarding', 'Cash Flow Projections'],
     fullContent: `Strategic financial planning and analysis to help your business scale. We build custom forecasting models, cash flow projections, and scenario plans that provide actionable insights for founders and CFOs.
 
     What We Offer:
@@ -52,7 +55,8 @@ export const services = [
   {
     id: 'audit',
     title: 'Audit Services',
-    desc: 'Get thorough, reliable audits that ensure you are always audit-ready.',
+    desc: 'Stay audit-ready year-round with our rigorous internal controls and documentation.',
+    features: ['Audit Workpaper Prep', 'Internal Control Review', 'Compliance Audits', 'External Auditor Liaison'],
     fullContent: `We provide audit support and internal control reviews. Our team ensures your records are meticulously organized, making the external audit process smooth and penalty-free.
 
     Our Focus:
@@ -68,7 +72,8 @@ export const services = [
   {
     id: 'advisory',
     title: 'Advisory',
-    desc: 'Bridging the gap between accounting, valuation, and transactions.',
+    desc: 'Bridging the gap between high-level strategy and daily financial operations.',
+    features: ['Fractional CFO', 'M&A Support', 'Business Valuation', 'Strategic Consulting'],
     fullContent: `Fractional CFO and transaction advisory services. We help businesses navigate valuations, M&A preparation, and high-level financial strategy to drive long-term value.
 
     Advisory Areas:
@@ -147,7 +152,7 @@ export const projects = [
     category: 'Construction',
     title: 'Financial Controls for a Seattle Firm',
     subtext: 'Optimized internal controls and cash flow management for a premier commercial construction group.',
-    fullStory: `This Seattle-based firm was struggling with cash flow visibility and project-level profitability tracking. Caramel Advisors stepped in to overhaul their financial operations.
+    fullStory: `This Seattle-based firm was struggling with cash flow visibility and project-level profitability tracking. Elite Cloud Books stepped in to overhaul their financial operations.
 
     The Challenge:
     - Fragmented reporting across multiple project sites

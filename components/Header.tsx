@@ -44,7 +44,7 @@ export default function Header() {
         <Link href="/" className={styles.logoGroup}>
           <Image 
             src="/images/logo.png" 
-            alt="Caramel Advisors" 
+            alt="Elite Cloud Books" 
             width={160} 
             height={44} 
             priority
@@ -97,7 +97,7 @@ export default function Header() {
         {/* CTA */}
         <div className={styles.ctaGroup}>
           <a 
-            href={getWhatsAppLink("Hello Caramel Advisors, I'd like to book a consultation.")} 
+            href={getWhatsAppLink("Hello Elite Cloud Books, I'd like to book a consultation.")} 
             target="_blank"
             rel="noopener noreferrer"
             className={styles.ctaButton}
@@ -124,7 +124,7 @@ export default function Header() {
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={styles.logoGroup}>
               <Image 
                 src="/images/logo.png" 
-                alt="Caramel Advisors" 
+                alt="Elite Cloud Books" 
                 width={140} 
                 height={38} 
               />

@@ -71,7 +71,7 @@ export default function HowWeWork() {
         <div className={styles.header}>
           <span className={`${styles.label} reveal-header`}>Execution Model</span>
           <h2 className={`${styles.title} reveal-work-header`}>
-            The Caramel <span className={styles.desktopBreak}><br /></span>
+            The Elite <span className={styles.desktopBreak}><br /></span>
             Methodology<span className={styles.dot}>.</span>
           </h2>
 

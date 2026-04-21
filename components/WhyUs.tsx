@@ -66,7 +66,7 @@ export default function WhyUs() {
             <span className={`${styles.tag} reveal-left`}>WHY CHOOSE US</span>
             <h2 className={`${styles.title} reveal-left`}>
               Why Choose <span className={styles.desktopBreak}><br /></span>
-              <span className={styles.titleEmphasis}>Caramel Advisors.</span>
+              <span className={styles.titleEmphasis}>Elite Cloud Books.</span>
             </h2>
             <p className={`${styles.description} reveal-left`}>
               We combine U.S. accountability with global delivery excellence — built for scale, precision, and long-term growth.
@@ -75,7 +75,7 @@ export default function WhyUs() {
             <div className={`${styles.imageContainer} reveal-left`}>
               <Image 
                 src="/images/team-leaders.png"
-                alt="Caramel Advisors Team"
+                alt="Elite Cloud Books Team"
                 width={800}
                 height={500}
                 className={styles.image}

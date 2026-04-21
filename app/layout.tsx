@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
 
 export const metadata: Metadata = {
-  title: 'Caramel Advisors | Premium Offshore Financial Talent',
+  title: 'Elite Cloud Books | Premium Offshore Financial Talent',
   description: 'Scalable offshore accounting, tax, and fractional CFO services for US firms and mid-market enterprises.',
 };
 
