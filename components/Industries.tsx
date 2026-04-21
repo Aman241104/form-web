@@ -2,43 +2,12 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Industries.module.css';
-
-const industries = [
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
-    name: 'CPA & Accounting Firms',
-    desc: 'Empowering accounting practices with scalable offshore talent extensions and high-precision delivery models.'
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>,
-    name: 'Healthcare & Dental Groups',
-    desc: 'Specialized financial controls and consolidated reporting for multi-site medical and dental operations.'
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>,
-    name: 'Manufacturing & Textile',
-    desc: 'Inventory management and cost accounting for high-volume producers across diverse global sectors.'
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9 12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
-    name: 'Construction & Real Estate',
-    desc: 'Project-based accounting and financial oversight for developers and heavy industry enterprises.'
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>,
-    name: 'Technology & SaaS',
-    desc: 'Revenue recognition and KPI dashboarding for high-growth tech firms scaling through complex cycles.'
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
-    name: 'Consumer Lending',
-    desc: 'Comprehensive accounting support for financial services and private lending groups requiring precision.'
-  }
-];
+import { industries } from '@/data/siteData';
 
 export default function Industries() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -104,9 +73,11 @@ export default function Industries() {
 
         <div className={styles.grid}>
           {industries.map((industry, index) => (
-            <div 
+            <Link 
+              href={`/industries/${industry.id}`}
               key={index} 
               className={`${styles.card} reveal-card group ${index === 0 ? styles.featuredCard : ''}`}
+              style={{ textDecoration: 'none' }}
             >
               <div className={styles.accentLine}></div>
               <div className={styles.glowOverlay}></div>
@@ -123,7 +94,7 @@ export default function Industries() {
               <div className={styles.cta}>
                 Explore Vertical <span className={styles.arrow}>→</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

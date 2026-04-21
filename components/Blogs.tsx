@@ -2,34 +2,12 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Blogs.module.css';
-
-const posts = [
-  {
-    title: 'PE/VC Valuations: From Cost to Calibration',
-    date: 'APR 18, 2026',
-    category: 'INDUSTRY',
-    readTime: '6 min read',
-    image: '/images/office-discussion.png'
-  },
-  {
-    title: 'Enter Calibration: What Better Funds Do Differently',
-    date: 'APR 15, 2026',
-    category: 'TECHNICAL',
-    readTime: '4 min read',
-    image: '/images/finance-growth.png'
-  },
-  {
-    title: 'AI is Now Part of the 12/31/2025 Cycle',
-    date: 'APR 12, 2026',
-    category: 'TECHNOLOGY',
-    readTime: '5 min read',
-    image: '/images/finance-piggybank.png'
-  }
-];
+import { blogPosts } from '@/data/siteData';
 
 export default function Blogs() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -60,8 +38,8 @@ export default function Blogs() {
     );
   }, { scope: sectionRef });
 
-  const featuredPost = posts[0];
-  const otherPosts = posts.slice(1);
+  const featuredPost = blogPosts[0];
+  const otherPosts = blogPosts.slice(1);
 
   return (
     <section id="blogs" ref={sectionRef} className={styles.section}>
@@ -78,15 +56,15 @@ export default function Blogs() {
             <p className={`${styles.description} reveal-left`}>
               Perspectives, strategies, and insights shaping modern finance and business operations.
             </p>
-            <a href="#" className={`${styles.ctaButton} reveal-left`}>
+            <Link href="/blog" className={`${styles.ctaButton} reveal-left`}>
               View All Insights <span className={styles.arrow}>→</span>
-            </a>
+            </Link>
           </div>
 
           {/* Right Column */}
           <div className={styles.rightColumn}>
             {/* Featured Post */}
-            <div className={`${styles.featuredCard} reveal-featured group`}>
+            <Link href={`/blog/${featuredPost.id}`} className={`${styles.featuredCard} reveal-featured group`}>
               <div className={styles.featuredImageWrapper}>
                 <Image 
                   src={featuredPost.image} 
@@ -99,18 +77,16 @@ export default function Blogs() {
               <div className={styles.featuredContent}>
                 <div className={styles.postMeta}>
                   <span className={styles.category}>{featuredPost.category}</span>
-                  <span className={styles.dot}>•</span>
-                  <span className={styles.readTime}>{featuredPost.readTime}</span>
                 </div>
                 <h4 className={styles.featuredTitle}>{featuredPost.title}</h4>
                 <div className={styles.date}>{featuredPost.date}</div>
               </div>
-            </div>
+            </Link>
 
             {/* Other Posts List */}
             <div className={styles.postsList}>
               {otherPosts.map((post, index) => (
-                <div key={index} className={`${styles.postItem} reveal-post group`}>
+                <Link href={`/blog/${post.id}`} key={index} className={`${styles.postItem} reveal-post group`}>
                   <div className={styles.thumbnailWrapper}>
                     <Image 
                       src={post.image} 
@@ -127,8 +103,7 @@ export default function Blogs() {
                     </div>
                     <h5 className={styles.postItemTitle}>{post.title}</h5>
                   </div>
-                  <span className={styles.itemArrow}>→</span>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

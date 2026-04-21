@@ -8,15 +8,6 @@ import gsap from 'gsap';
 import styles from './Header.module.css';
 import { getWhatsAppLink } from './StickyWhatsApp';
 
-const navLinks = [
-  { label: 'HOME', href: '/' },
-  { label: 'SERVICES', href: '/services' },
-  { label: 'ABOUT', href: '/about' },
-  { label: 'INDUSTRIES', href: '/industries' },
-  { label: 'WORK', href: '/projects' },
-  { label: 'BLOG', href: '/blog' },
-];
-
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -63,15 +54,44 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className={styles.desktopNav}>
-          {navLinks.map((link) => (
-            <Link 
-              key={link.label}
-              href={link.href}
-              className={`${styles.navLink} ${pathname === link.href ? styles.active : ''}`}
-            >
-              {link.label}
+          <Link href="/" className={`${styles.navLink} ${pathname === '/' ? styles.active : ''}`}>
+            HOME
+          </Link>
+
+          <div className={styles.navItem}>
+            <Link href="/services" className={`${styles.navLink} ${pathname.startsWith('/services') ? styles.active : ''}`}>
+              SERVICES
             </Link>
-          ))}
+            <div className={styles.megaMenu}>
+              <Link href="/services#bookkeeping" className={styles.megaMenuLink}>Bookkeeping & Accounting</Link>
+              <Link href="/services#tax" className={styles.megaMenuLink}>Tax Preparation</Link>
+              <Link href="/services#audit" className={styles.megaMenuLink}>Audit Services</Link>
+              <Link href="/services#cas" className={styles.megaMenuLink}>Client Advisory Services</Link>
+              <Link href="/services#fpa" className={styles.megaMenuLink}>FP&A (Planning)</Link>
+            </div>
+          </div>
+
+          <Link href="/about" className={`${styles.navLink} ${pathname === '/about' ? styles.active : ''}`}>
+            ABOUT
+          </Link>
+
+          <div className={styles.navItem}>
+            <Link href="/industries" className={`${styles.navLink} ${pathname.startsWith('/industries') ? styles.active : ''}`}>
+              INDUSTRIES
+            </Link>
+            <div className={styles.megaMenu}>
+              <Link href="/industries#cpa" className={styles.megaMenuLink}>Accounting Firms</Link>
+              <Link href="/industries#businesses" className={styles.megaMenuLink}>Businesses</Link>
+            </div>
+          </div>
+
+          <Link href="/projects" className={`${styles.navLink} ${pathname === '/projects' ? styles.active : ''}`}>
+            WORK
+          </Link>
+          
+          <Link href="/blog" className={`${styles.navLink} ${pathname === '/blog' ? styles.active : ''}`}>
+            BLOG
+          </Link>
         </nav>
 
         {/* CTA */}
@@ -118,16 +138,12 @@ export default function Header() {
           </div>
 
           <nav className={styles.mobileNav}>
-            {navLinks.map((link) => (
-              <Link 
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`${styles.mobileLink} ${pathname === link.href ? styles.mobileActive : ''}`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.mobileLink} ${pathname === '/' ? styles.mobileActive : ''}`}>HOME</Link>
+            <Link href="/services" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.mobileLink} ${pathname.startsWith('/services') ? styles.mobileActive : ''}`}>SERVICES</Link>
+            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.mobileLink} ${pathname === '/about' ? styles.mobileActive : ''}`}>ABOUT</Link>
+            <Link href="/industries" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.mobileLink} ${pathname.startsWith('/industries') ? styles.mobileActive : ''}`}>INDUSTRIES</Link>
+            <Link href="/projects" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.mobileLink} ${pathname === '/projects' ? styles.mobileActive : ''}`}>WORK</Link>
+            <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className={`${styles.mobileLink} ${pathname === '/blog' ? styles.mobileActive : ''}`}>BLOG</Link>
           </nav>
 
           <a 

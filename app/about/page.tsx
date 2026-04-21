@@ -10,9 +10,9 @@ export default function AboutPage() {
       <div style={{ paddingTop: '80px' }}> {/* Offset for fixed header */}
         <Overview />
         <Leadership />
-        <HowWeWork />
-        <Accreditations />
         <Security />
+        <Accreditations />
+        <HowWeWork />
       </div>
     </main>
   );
