@@ -39,13 +39,25 @@
   margin-bottom: 16px;
 }
 
+.desktopBreak {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopBreak {
+    display: inline;
+  }
+}
+
 .title {
-  font-size: clamp(2.5rem, 6vw, 4.2rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 6vw, 4.2rem);
+  line-height: 1.1;
   letter-spacing: -0.02em;
   font-weight: 600;
   color: #ffffff;
   max-width: 800px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .titleEmphasis {
@@ -248,5 +260,41 @@
 @media (max-width: 1024px) {
   .layoutGrid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .featuredCard, .secondaryGrid {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .header {
+    margin-bottom: 48px;
+  }
+
+  .featuredCard {
+    padding: 28px 20px;
+    min-height: auto;
+  }
+
+  .featuredTitle {
+    font-size: 22px;
+  }
+
+  .featuredDesc {
+    font-size: 15px;
+  }
+
+  .secondaryCard {
+    padding: 20px;
   }
 }

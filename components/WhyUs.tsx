@@ -65,7 +65,7 @@ export default function WhyUs() {
           <div className={styles.leftColumn}>
             <span className={`${styles.tag} reveal-left`}>WHY CHOOSE US</span>
             <h2 className={`${styles.title} reveal-left`}>
-              Why Choose <br />
+              Why Choose <span className={styles.desktopBreak}><br /></span>
               <span className={styles.titleEmphasis}>Caramel Advisors.</span>
             </h2>
             <p className={`${styles.description} reveal-left`}>

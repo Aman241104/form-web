@@ -68,9 +68,10 @@ export default function Leadership() {
         <div className={styles.header}>
           <span className={`${styles.sectionLabel} reveal-header`}>People Who Lead Us</span>
           <h2 className={`${styles.title} reveal-header`}>
-            Leadership <br />
-            <span className={styles.titleEmphasis}>Team.</span>
+            Leadership <span className={styles.desktopBreak}><br /></span>
+            <span className={styles.titleEmphasis}>& Expertise.</span>
           </h2>
+
           <p className={`${styles.introText} reveal-header`}>
             A team built on experience, precision, and trust.
           </p>

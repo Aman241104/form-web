@@ -86,8 +86,8 @@ export default function Projects() {
           <div className={`${styles.introBlock} reveal-intro`}>
             <span className={styles.tag}>CASE STUDIES</span>
             <h2 className={styles.title}>
-              Financial <br />
-              Success <br />
+              Financial <span className={styles.desktopBreak}><br /></span>
+              Success <span className={styles.desktopBreak}><br /></span>
               <span className={styles.titleEmphasis}>Stories.</span>
             </h2>
             <p className={styles.supportingText}>

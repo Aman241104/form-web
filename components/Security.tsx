@@ -78,7 +78,7 @@ export default function Security() {
           <div className={`${styles.headerContent} reveal-header`}>
             <span className={styles.tag}>Ironclad Compliance</span>
             <h2 className={styles.title}>
-              Data residency and <br />
+              Data residency and <span className={styles.desktopBreak}><br /></span>
               multi-layer protection.
             </h2>
             <p className={styles.description}>

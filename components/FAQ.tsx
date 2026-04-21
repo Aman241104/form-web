@@ -62,7 +62,7 @@ export default function FAQ() {
           <div className={styles.leftColumn}>
             <span className={`${styles.tag} reveal-left`}>QUICK HELP GUIDE</span>
             <h2 className={`${styles.title} reveal-left`}>
-              Common <br />
+              Common <span className={styles.desktopBreak}><br /></span>
               Questions.
             </h2>
             <p className={`${styles.description} reveal-left`}>

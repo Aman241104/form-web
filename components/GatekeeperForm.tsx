@@ -98,10 +98,10 @@ export default function GatekeeperForm() {
           <div ref={questionRef} className={`${styles.leftColumn} reveal-gatekeeper`}>
             <span className={styles.stepTag}>STEP 0{step}</span>
             <h2 className={styles.title}>
-              {step === 1 && <>Tell us who <br /> you represent.</>}
-              {step === 2 && <>Identify your primary <br /> bottleneck.</>}
-              {step === 3 && <>What is your <br /> annual revenue?</>}
-              {step === 4 && <>Where should we send <br /> your brief?</>}
+              {step === 1 && <>Tell us who <span className={styles.desktopBreak}><br /></span> you represent.</>}
+              {step === 2 && <>Identify your primary <span className={styles.desktopBreak}><br /></span> bottleneck.</>}
+              {step === 3 && <>What is your <span className={styles.desktopBreak}><br /></span> annual revenue?</>}
+              {step === 4 && <>Where should we send <span className={styles.desktopBreak}><br /></span> your brief?</>}
             </h2>
             <p className={styles.description}>
               {step === 1 && "Choose your profile to get a customized experience and relevant solutions."}

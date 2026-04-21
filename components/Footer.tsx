@@ -69,11 +69,11 @@ export default function Footer() {
           <div className={`${styles.column} reveal-footer`}>
             <h3 className={styles.label}>Services</h3>
             <nav className={styles.navStack}>
-              <Link href="#services" className={styles.navLink}>Bookkeeping & Accounting</Link>
-              <Link href="#services" className={styles.navLink}>Tax Preparation</Link>
-              <Link href="#services" className={styles.navLink}>FP&A (Planning)</Link>
-              <Link href="#services" className={styles.navLink}>Audit Services</Link>
-              <Link href="#services" className={styles.navLink}>Advisory Services</Link>
+              <Link href="/services" className={styles.navLink}>Bookkeeping & Accounting</Link>
+              <Link href="/services" className={styles.navLink}>Tax Preparation</Link>
+              <Link href="/services" className={styles.navLink}>FP&A (Planning)</Link>
+              <Link href="/services" className={styles.navLink}>Audit Services</Link>
+              <Link href="/services" className={styles.navLink}>Advisory Services</Link>
             </nav>
           </div>
 
@@ -81,11 +81,11 @@ export default function Footer() {
           <div className={`${styles.column} reveal-footer`}>
             <h3 className={styles.label}>Company</h3>
             <nav className={styles.navStack}>
-              <Link href="#overview" className={styles.navLink}>Our Story</Link>
-              <Link href="#leadership" className={styles.navLink}>Leadership</Link>
-              <Link href="#industries" className={styles.navLink}>Industries</Link>
-              <Link href="#contact" className={styles.navLink}>Careers</Link>
-              <Link href="#contact" className={styles.navLink}>Contact</Link>
+              <Link href="/about" className={styles.navLink}>Our Story</Link>
+              <Link href="/about" className={styles.navLink}>Leadership</Link>
+              <Link href="/industries" className={styles.navLink}>Industries</Link>
+              <Link href="/contact" className={styles.navLink}>Careers</Link>
+              <Link href="/contact" className={styles.navLink}>Contact</Link>
             </nav>
           </div>
 

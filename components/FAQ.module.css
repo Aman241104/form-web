@@ -1,9 +1,14 @@
 .section {
-  padding: 120px 40px;
+  padding: 64px 20px 100px; /* px-5 py-16, plus pb-20 (80px-100px) for WhatsApp clearance */
   background: linear-gradient(to bottom, #05080f, #070b14);
   position: relative;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden; /* Fix 1: Prevent side scroll */
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 120px 40px;
+  }
 }
 
 .container {
@@ -12,21 +17,25 @@
 }
 
 .layoutGrid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 48px;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* mt-10 (40px) before accordion */
 }
 
 @media (min-width: 1024px) {
   .layoutGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     gap: 80px;
+    align-items: flex-start;
   }
 }
 
 /* Left Column */
 .leftColumn {
-  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Fix 2 & 9: gap-6 between header elements */
 }
 
 @media (min-width: 1024px) {
@@ -44,58 +53,81 @@
   text-transform: uppercase;
   letter-spacing: 0.4em;
   color: rgba(230, 57, 70, 0.7);
-  margin-bottom: 16px;
 }
 
 .title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  line-height: 1.1;
-  font-weight: 600;
+  font-size: 1.875rem; /* Fix 2: text-3xl */
+  line-height: 1.25; /* leading-tight */
+  font-weight: 600; /* font-semibold */
   color: #ffffff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+  }
+}
+
+.desktopBreak {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopBreak {
+    display: inline;
+  }
 }
 
 .description {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 16px;
-  max-width: 380px;
-  margin-top: 24px;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6); /* white/60 */
+  font-size: 0.875rem; /* Fix 2: text-sm */
+  line-height: 1.625; /* leading-relaxed */
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .description {
+    font-size: 16px;
+    max-width: 380px;
+  }
 }
 
 .ctaBlock {
-  margin-top: 48px;
+  margin-top: 16px; /* mt-4 */
 }
 
 .ctaText {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .ctaButton {
-  display: inline-flex;
+  display: inline-flex; /* Fix 3 */
   align-items: center;
-  padding: 12px 28px;
+  justify-content: center;
+  padding: 10px 20px; /* px-5 py-2.5 */
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 9999px;
+  border-radius: 9999px; /* rounded-full */
   color: #ffffff;
-  font-size: 14px;
+  font-size: 0.875rem; /* text-sm */
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .ctaButton:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: rgba(255, 255, 255, 0.1);
   border-color: #ffffff;
 }
 
 /* Right Column: Accordion */
 .accordion {
-  grid-column: span 12;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 16px; /* Fix 4 & 9: gap-4 between cards */
 }
 
 @media (min-width: 1024px) {
@@ -105,58 +137,57 @@
 }
 
 .item {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05); /* Fix 5: bg-white/5 */
+  backdrop-filter: blur(8px); /* backdrop-blur-sm */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
+  border-radius: 12px; /* rounded-xl */
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  width: 100%;
 }
 
 .item:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .active {
-  background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .itemHeader {
-  padding: 24px 32px;
+  padding: 16px; /* Fix 5: p-4 */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
+  width: 100%;
 }
 
 .headerLeft {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .categoryTag {
-  font-size: 10px;
+  font-size: 10px; /* Fix 6: text-[10px] */
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: #ff4d4f;
+  letter-spacing: 0.1em; /* tracking-widest approx */
+  color: #ff4d4f; /* text-red-500 */
+  margin-bottom: 4px;
 }
 
 .question {
-  font-size: 18px;
+  font-size: 0.875rem; /* Fix 6: text-sm */
   font-weight: 500;
   color: #ffffff;
-  line-height: 1.4;
+  line-height: 1.375; /* leading-snug */
   transition: color 0.3s ease;
-}
-
-.item:hover .question {
-  color: #ff4d4f;
+  word-break: break-word; /* Fix 10: break-words */
 }
 
 .iconWrapper {
@@ -166,22 +197,24 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.6); /* Fix 7: text-white/60 */
+  font-size: 1.125rem; /* text-lg */
 }
 
 .plusIcon {
   position: relative;
   width: 14px;
   height: 14px;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease; /* Fix 7: 200ms */
 }
 
 .active .plusIcon {
-  transform: rotate(45deg);
+  transform: rotate(45deg); /* Fix 7 */
 }
 
 .line {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: currentColor;
   transition: background-color 0.3s ease;
 }
 
@@ -199,18 +232,10 @@
   left: 6px;
 }
 
-.item:hover .line {
-  background-color: #ffffff;
-}
-
-.active .line {
-  background-color: #ff4d4f;
-}
-
 .answerWrapper {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: grid-template-rows 0.3s ease-in-out; /* Fix Optional Polish */
 }
 
 .active .answerWrapper {
@@ -222,30 +247,19 @@
 }
 
 .answer {
-  padding: 0 32px 32px 32px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 600px;
+  padding: 0 16px 16px 16px; /* Fix 8: px-4 pb-4 */
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.625; /* leading-relaxed */
+  color: rgba(255, 255, 255, 0.6); /* white/60 */
 }
 
-@media (max-width: 1024px) {
-  .leftColumn {
-    position: static;
-    margin-bottom: 48px;
-  }
-}
-
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
   .itemHeader {
-    padding: 24px;
+    padding: 24px 32px;
   }
-  
   .answer {
-    padding: 0 24px 24px 24px;
-  }
-  
-  .question {
-    font-size: 16px;
+    padding: 0 32px 32px 32px;
+    font-size: 14px;
+    max-width: 600px;
   }
 }

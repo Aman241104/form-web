@@ -39,11 +39,23 @@
   margin-bottom: 16px;
 }
 
+.desktopBreak {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopBreak {
+    display: inline;
+  }
+}
+
 .title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   line-height: 1.1;
   font-weight: 600;
   color: #ffffff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .description {
@@ -60,10 +72,53 @@
   justify-content: center;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .isoBadgeContainer {
     grid-column: span 4;
     justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .topSection {
+    margin-bottom: 48px;
+    gap: 32px;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .description {
+    margin-top: 16px;
+    font-size: 15px;
+  }
+
+  .isoBadgeWrapper {
+    width: 96px;
+    height: 96px;
+  }
+
+  .grid {
+    margin-bottom: 48px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .complianceBar {
+    margin-top: 48px;
+    gap: 12px;
+  }
+
+  .complianceItem {
+    padding: 6px 12px;
+    font-size: 11px;
   }
 }
 

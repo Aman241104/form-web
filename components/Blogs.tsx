@@ -71,9 +71,10 @@ export default function Blogs() {
           <div className={styles.leftColumn}>
             <span className={`${styles.tag} reveal-left`}>INTELLIGENCE</span>
             <h2 className={`${styles.title} reveal-header reveal-left`}>
-              Insights from <br />
+              Insights from <span className={styles.desktopBreak}><br /></span>
               <span className={styles.titleEmphasis}>Latest Blog.</span>
             </h2>
+
             <p className={`${styles.description} reveal-left`}>
               Perspectives, strategies, and insights shaping modern finance and business operations.
             </p>

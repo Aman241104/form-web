@@ -41,11 +41,23 @@
   margin-bottom: 16px;
 }
 
+.desktopBreak {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopBreak {
+    display: inline;
+  }
+}
+
 .title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   line-height: 1.1;
   font-weight: 600;
   color: #ffffff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .titleEmphasis {
@@ -103,10 +115,47 @@
   background: linear-gradient(to bottom right, rgba(230, 57, 70, 0.05), rgba(255, 255, 255, 0.02));
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .featuredCard {
     grid-column: span 2;
     padding: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .backgroundText {
+    font-size: 60px;
+    opacity: 0.02;
+    top: 30%;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .header {
+    margin-bottom: 48px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .featuredCard {
+    grid-column: span 1;
+    padding: 24px;
+  }
+
+  .featuredCard .cardTitle {
+    font-size: 20px;
   }
 }
 

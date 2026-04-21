@@ -28,12 +28,24 @@
   margin-bottom: 16px;
 }
 
+.desktopBreak {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopBreak {
+    display: inline;
+  }
+}
+
 .title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.1;
   font-weight: 600;
   color: #ffffff;
   letter-spacing: -0.02em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .titleEmphasis {
@@ -140,4 +152,23 @@
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .logoGrid {
+    gap: 24px;
+  }
+
+  .statsContainer {
+    gap: 32px;
+    margin-top: 60px;
+  }
 }

@@ -62,12 +62,24 @@
   margin-bottom: 20px;
 }
 
+.desktopBreak {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopBreak {
+    display: inline;
+  }
+}
+
 .title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   line-height: 1.05;
   font-weight: 600;
   color: #ffffff;
   letter-spacing: -0.01em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .description {
@@ -352,5 +364,39 @@
   
   .careerLink {
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  .optionCard {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .optionLabel {
+    font-size: 16px;
+  }
+
+  .optionDesc {
+    font-size: 13px;
+  }
+
+  .bottomArea {
+    margin-top: 48px;
+    padding-top: 32px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .progressIndicator {
+    justify-content: center;
   }
 }

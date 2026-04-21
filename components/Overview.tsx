@@ -68,7 +68,7 @@ export default function Overview() {
             <span className={`${styles.tag} reveal-about`}>ABOUT US</span>
             
             <h2 className={`${styles.title} reveal-about`}>
-              Your Strategic <br />
+              Your Strategic <span className={styles.desktopBreak}><br /></span>
               <span className={styles.titleEmphasis}>Finance Ally.</span>
             </h2>
             

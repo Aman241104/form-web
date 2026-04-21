@@ -67,9 +67,10 @@ export default function Accreditations() {
         <div className={styles.header}>
           <span className={`${styles.tag} reveal-header`}>GLOBAL EXCELLENCE VERIFIED</span>
           <h2 className={`${styles.title} reveal-header`}>
-            Trusted by the <br />
-            <span className={styles.titleEmphasis}>Best in Industry.</span>
+            Trusted by the <span className={styles.desktopBreak}><br /></span>
+            <span className={styles.titleEmphasis}>Industry's Best.</span>
           </h2>
+
           <p className={`${styles.description} reveal-header`}>
             Recognized by global standards and trusted platforms for precision, compliance, and excellence.
           </p>

@@ -70,10 +70,11 @@ export default function HowWeWork() {
       <div className={styles.container}>
         <div className={styles.header}>
           <span className={`${styles.label} reveal-header`}>Execution Model</span>
-          <h2 className={`${styles.title} reveal-header`}>
-            The Caramel <br />
-            Blueprint<span className={styles.dot}>.</span>
+          <h2 className={`${styles.title} reveal-work-header`}>
+            The Caramel <span className={styles.desktopBreak}><br /></span>
+            Methodology<span className={styles.dot}>.</span>
           </h2>
+
         </div>
 
         <div className={styles.mainGrid}>

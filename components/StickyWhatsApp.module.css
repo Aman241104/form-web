@@ -4,6 +4,14 @@
   right: 24px;
   z-index: 2000;
   pointer-events: auto;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Fix 8: Hide WhatsApp button when mobile menu is open */
+:global(body[data-menu-open="true"]) .wrapper {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .stickyBtn {
@@ -79,13 +87,19 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    bottom: 20px;
-    right: 16px;
+    bottom: 20px; /* bottom-5 */
+    right: 16px; /* right-4 */
+    z-index: 40;
   }
   
   .stickyBtn {
-    width: 50px;
-    height: 50px;
+    width: 48px; /* w-12 */
+    height: 48px; /* h-12 */
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
   }
   
   .tooltip {

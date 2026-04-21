@@ -84,7 +84,7 @@ export default function Services() {
         <div className={styles.header}>
           <span className={`${styles.tag} reveal-header`}>OUR SERVICES</span>
           <h2 className={`${styles.title} reveal-header`}>
-            Proven Services <br />
+            Proven Services <span className={styles.desktopBreak}><br /></span>
             <span className={styles.titleEmphasis}>for Scalable Growth.</span>
           </h2>
           <p className={`${styles.description} reveal-header`}>

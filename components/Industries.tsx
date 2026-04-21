@@ -93,9 +93,10 @@ export default function Industries() {
         <div className={styles.header}>
           <span className={`${styles.tag} reveal-header`}>SPECIALIZED VERTICALS</span>
           <h2 className={`${styles.title} reveal-header`}>
-            Tailored for <br />
-            <span className={styles.titleEmphasis}>your sector.</span>
+            Tailored for <span className={styles.desktopBreak}><br /></span>
+            <span className={styles.titleEmphasis}>Critical Sectors.</span>
           </h2>
+
           <p className={`${styles.description} reveal-header`}>
             Specialized expertise across industries — built for scale, compliance, and performance.
           </p>

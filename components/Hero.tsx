@@ -39,8 +39,8 @@ export default function Hero() {
             <span className={`${styles.tag} reveal-hero`}>SERVING US-BASED ACCOUNTING FIRMS</span>
             
             <h1 className={`${styles.headline} reveal-hero`}>
-              Let us handle the work. <br />
-              You focus on <span className={styles.highlight}>growth.</span>
+              Let us handle the work.<br />
+              Focus on <span className={styles.highlight}>growth.</span>
             </h1>
             
             <p className={`${styles.subtext} reveal-hero`}>
@@ -57,7 +57,7 @@ export default function Hero() {
                 Book Consultation
               </a>
               <a 
-                href="#services" 
+                href="/services" 
                 className={styles.secondaryBtn}
               >
                 Explore Services
