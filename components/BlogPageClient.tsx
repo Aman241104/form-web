@@ -18,6 +18,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { blogPosts } from '@/data/siteData';
+import { getWhatsAppLink } from '@/components/StickyWhatsApp';
 
 const categories = ['All', 'Accounting', 'Tax', 'SaaS', 'Compliance', 'AI'];
 

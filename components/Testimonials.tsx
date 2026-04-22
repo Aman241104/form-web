@@ -159,7 +159,7 @@ export default function Testimonials() {
               <div className="group relative p-8 md:p-12 lg:p-16 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl transition-all duration-500 hover:bg-white/[0.08] hover:border-red-500/20">
                 {/* Decorative Quote Mark */}
                 <div className="absolute top-10 left-10 text-white/5 opacity-10 transition-opacity group-hover:opacity-20">
-                  <Quote size={120} weight="fill" />
+                  <Quote size={120} fill="currentColor" />
                 </div>
 
                 <div className="relative z-10 flex flex-col items-center text-center">

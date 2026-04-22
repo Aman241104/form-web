@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Send, CheckCircle2, Building2, UserCircle2, BarChart3, AlertCircle } from 'lucide-react';
+import { ArrowRight, Send, CheckCircle2, Building2, UserCircle2, BarChart3, AlertCircle, Zap, TrendingUp } from 'lucide-react';
 import { getWhatsAppLink } from './StickyWhatsApp';
 
 type FormData = {
