@@ -1,11 +1,11 @@
-import Industries from '@/components/Industries';
+import IndustriesPageClient from '@/components/IndustriesPageClient';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Industries | Elite Cloud Books',
+  description: 'Specialized accounting and financial solutions tailored for critical sectors including CPA firms, Healthcare, Technology, and more.',
+};
 
 export default function IndustriesPage() {
-  return (
-    <main>
-      <div style={{ paddingTop: '80px' }}>
-        <Industries />
-      </div>
-    </main>
-  );
+  return <IndustriesPageClient />;
 }
