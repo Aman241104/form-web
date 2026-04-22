@@ -171,7 +171,7 @@ export const projects = [
       { label: 'Turnaround', value: '-5 Days' },
       { label: 'Cost Savings', value: '35%' }
     ],
-    image: '/images/office-discussion.png',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
     featured: true
   },
   {
@@ -198,7 +198,7 @@ export const projects = [
       { label: 'Close Speed', value: '2x Faster' },
       { label: 'Compliance', value: '100%' }
     ],
-    image: '/images/team-meeting.png'
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80'
   },
   {
     id: 'saas-rev-rec',
@@ -224,7 +224,7 @@ export const projects = [
       { label: 'Metrics', value: 'Live' },
       { label: 'Scalability', value: 'Uncapped' }
     ],
-    image: '/images/presentation-blob.png'
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80'
   },
   {
     id: 'seattle-construction',
@@ -250,7 +250,7 @@ export const projects = [
       { label: 'Bonding Cap', value: '2x' },
       { label: 'Efficiency', value: '+32%' }
     ],
-    image: '/images/finance-growth.png'
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80'
   },
   {
     id: 'pe-portfolio-sync',
@@ -276,7 +276,7 @@ export const projects = [
       { label: 'Data Accuracy', value: '100%' },
       { label: 'Visibility', value: 'Instant' }
     ],
-    image: '/images/team-collab.png'
+    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80'
   },
   {
     id: 'textile-manufacturer',
@@ -302,7 +302,7 @@ export const projects = [
       { label: 'Penalty Risk', value: '$0' },
       { label: 'Speed', value: '2x' }
     ],
-    image: '/images/team-working-blob.png'
+    image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=1200&q=80'
   }
 ];
 
@@ -313,7 +313,7 @@ export const blogPosts = [
     date: 'APR 18, 2026',
     category: 'SaaS',
     readTime: '6 min read',
-    image: '/images/office-discussion.png',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'Exploring the shift in how private equity and venture capital funds are calibrating their valuations in a volatile market.',
     takeaway: 'Learn the 3 key calibration metrics top-tier VC funds are using in 2026.',
     featured: true,
@@ -325,7 +325,7 @@ export const blogPosts = [
     date: 'APR 12, 2026',
     category: 'AI',
     readTime: '5 min read',
-    image: '/images/finance-piggybank.png',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'How artificial intelligence is transforming the year-end close process for accounting firms.',
     takeaway: 'How to automate up to 80% of your bank reconciliation using AI nodes.',
     featured: false,
@@ -337,7 +337,7 @@ export const blogPosts = [
     date: 'APR 05, 2026',
     category: 'Compliance',
     readTime: '8 min read',
-    image: '/images/team-leaders.png',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'A comprehensive guide to maintaining ironclad data security and AICPA standards in a global model.',
     takeaway: 'The exact security checklist for CPA firms scaling with global talent.',
     featured: false,
@@ -349,7 +349,7 @@ export const blogPosts = [
     date: 'MAR 28, 2026',
     category: 'Tax',
     readTime: '7 min read',
-    image: '/images/presentation-blob.png',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'How to shave 15% off return turnaround time using advanced Intuit automation features.',
     takeaway: 'Step-by-step setup for automated data ingestion in ProConnect.',
     featured: false,
@@ -361,7 +361,7 @@ export const blogPosts = [
     date: 'MAR 15, 2026',
     category: 'SaaS',
     readTime: '10 min read',
-    image: '/images/finance-growth.png',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'Avoiding common revenue recognition errors that kill Series B valuations.',
     takeaway: 'Identify the top 3 RevRec red flags that auditors flag instantly.',
     featured: false,
@@ -373,7 +373,7 @@ export const blogPosts = [
     date: 'MAR 02, 2026',
     category: 'Accounting',
     readTime: '5 min read',
-    image: '/images/team-collab.png',
+    image: 'https://images.unsplash.com/photo-1573166364524-d9dbfd8bbf83?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'Breaking down the true cost of domestic hiring vs. high-precision global extensions.',
     takeaway: 'Calculate your firms potential margin increase in under 5 minutes.',
     featured: false,
@@ -385,7 +385,7 @@ export const blogPosts = [
     date: 'FEB 20, 2026',
     category: 'Tax',
     readTime: '6 min read',
-    image: '/images/team-meeting.png',
+    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'Why your remote employees are creating hidden tax liabilities in 15+ states.',
     takeaway: 'The latest 2026 state-by-state remote work nexus thresholds.',
     featured: false,
@@ -397,7 +397,7 @@ export const blogPosts = [
     date: 'FEB 10, 2026',
     category: 'Accounting',
     readTime: '7 min read',
-    image: '/images/team-group-large.png',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'Signs your mid-market business has outgrown its current financial leadership.',
     takeaway: '5 signs your Controller is actually doing CFO work without the title.',
     featured: false,
@@ -409,7 +409,7 @@ export const blogPosts = [
     date: 'JAN 25, 2026',
     category: 'Compliance',
     readTime: '9 min read',
-    image: '/images/badge-iso-27001.png',
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'How data residency and security certifications are winning larger enterprise audits.',
     takeaway: 'How to use your security posture as a competitive sales advantage.',
     featured: false,

@@ -38,10 +38,10 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
   ];
 
   const toolBadges = [
-    { src: "/images/badge-quickbooks.png", alt: "QuickBooks" },
-    { src: "/images/logo-xero.png", alt: "Xero" },
-    { src: "/images/badge-sage-intacct.png", alt: "Sage Intacct" },
-    { src: "/images/badge-zoho-books.png", alt: "Zoho Books" }
+    { src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80", alt: "QuickBooks" },
+    { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=200&q=80", alt: "Xero" },
+    { src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80", alt: "Sage Intacct" },
+    { src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80", alt: "Zoho Books" }
   ];
 
   return (
@@ -110,7 +110,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
 
             <motion.div initial={{ opacity: 0, scale: 0.9, x: 40 }} animate={{ opacity: 1, scale: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="lg:col-span-5 relative">
               <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
-                <Image src={isBookkeeping ? "/images/finance-growth.png" : "/images/office-discussion.png"} alt={service.title} fill className="object-cover" />
+                <Image src={isBookkeeping ? "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" : "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"} alt={service.title} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05080f]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-10 left-10 right-10 p-6 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
                    <div className="flex items-center gap-4 mb-3">
@@ -208,7 +208,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 order-2 lg:order-1">
                <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
-                  <Image src="/images/team-collab.png" alt="Collaborative Team" fill className="object-cover" />
+                  <Image src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Collaborative Team" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-red-600/20 to-transparent opacity-40" />
                </div>
             </div>

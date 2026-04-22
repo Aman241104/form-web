@@ -143,11 +143,11 @@ export default function Security() {
                    className="relative z-10 w-48 h-48 bg-gradient-to-br from-blue-600/20 to-green-600/20 backdrop-blur-3xl rounded-full border border-white/10 flex items-center justify-center shadow-[0_0_80px_rgba(59,130,246,0.2)]"
                  >
                     <Image 
-                      src="/images/badge-iso-27001.png"
+                      src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80"
                       alt="ISO 27001 Certified"
                       width={120}
                       height={120}
-                      className="object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                      className="object-cover rounded-full opacity-80"
                     />
                  </motion.div>
               </div>

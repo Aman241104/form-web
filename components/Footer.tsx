@@ -58,9 +58,9 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-8">
             <Link href="/" className="inline-block group">
-              <h2 className="text-xl font-bold text-white tracking-[0.2em] uppercase transition-colors group-hover:text-red-500">
-                Elite Cloud Books<span className="text-red-500">.</span>
-              </h2>
+              <span className="text-xl font-black tracking-[0.2em] text-white uppercase transition-colors group-hover:text-red-500">
+                ELITE CLOUD BOOKS<span className="text-red-500">.</span>
+              </span>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs font-light italic">
               "Built for precision. Designed for scale."

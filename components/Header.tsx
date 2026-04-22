@@ -112,18 +112,12 @@ export default function Header() {
         <div className="container mx-auto px-6 lg:px-12 max-w-7xl flex items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="relative group">
+          <Link href="/" className="relative group flex items-center">
             <div className="absolute -inset-2 bg-red-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-            <Image 
-              src="/images/logo.png" 
-              alt="Elite Cloud Books" 
-              width={160} 
-              height={44} 
-              priority
-              className="relative z-10 transition-transform group-hover:scale-[1.02]"
-            />
+            <span className="relative z-10 text-xl font-black tracking-[0.2em] text-white transition-transform group-hover:scale-[1.02]">
+              ELITE CLOUD BOOKS<span className="text-red-600">.</span>
+            </span>
           </Link>
-
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-2">
             {navLinks.map((link) => (
@@ -218,9 +212,10 @@ export default function Header() {
               className="fixed top-0 right-0 bottom-0 w-[85%] max-w-[400px] z-[1100] bg-[#05080f] flex flex-col shadow-[-20px_0_60px_rgba(0,0,0,1)] border-l border-white/10"
             >
               <div className="h-24 px-6 flex items-center justify-between border-b border-white/5 shrink-0">
-                <Image src="/images/logo.png" alt="Logo" width={140} height={38} />
+                <span className="text-lg font-black tracking-[0.2em] text-white">
+                  ELITE CLOUD BOOKS<span className="text-red-600">.</span>
+                </span>
               </div>
-
               <nav className="flex-grow p-8 space-y-8 overflow-y-auto custom-scrollbar">
                 {navLinks.map((link, i) => {
                   const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));

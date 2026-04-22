@@ -46,7 +46,7 @@ export default function Overview() {
               className="relative aspect-[4/5] w-full rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.6)] border border-white/10"
             >
               <Image 
-                src="/images/office-discussion.png"
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
                 alt="Elite Cloud Books Team Collaboration"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"

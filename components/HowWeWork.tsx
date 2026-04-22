@@ -21,7 +21,7 @@ const steps = [
     keyword: 'Discovery',
     desc: 'We analyze your capacity bottlenecks and tech stack requirements to build a tailored scaling plan.',
     icon: Search,
-    image: '/images/office-discussion.png'
+    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80'
   },
   {
     num: '02',
@@ -29,7 +29,7 @@ const steps = [
     keyword: 'Matching',
     desc: 'We pair your firm with top-tier Chartered Accountants who align with your specific industry expertise.',
     icon: Users,
-    image: '/images/team-group-large.png'
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80'
   },
   {
     num: '03',
@@ -37,7 +37,7 @@ const steps = [
     keyword: 'Partnership',
     desc: 'An integrated extension of your team with direct communication channels and daily ritual alignment.',
     icon: RefreshCcw,
-    image: '/images/team-collab.png'
+    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80'
   },
   {
     num: '04',
@@ -45,7 +45,7 @@ const steps = [
     keyword: 'White-Label',
     desc: 'Our experts operate seamlessly behind your brand, providing a consistent experience for your clients.',
     icon: Shield,
-    image: '/images/team-meeting.png'
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80'
   }
 ];
 

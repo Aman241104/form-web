@@ -7,13 +7,13 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const logos = [
-  { name: 'Xero', src: '/images/logo-xero.png' },
-  { name: 'QuickBooks', src: '/images/badge-quickbooks.png' },
-  { name: 'Sage Intacct', src: '/images/badge-sage-intacct.png' },
-  { name: 'Zoho Books', src: '/images/badge-zoho-books.png' },
-  { name: 'PICPA', src: '/images/logo-picpa.png' },
-  { name: 'ICAI', src: '/images/logo-icai.png' },
-  { name: 'CPA', src: '/images/logo-cpa.png' },
+  { name: 'Xero', src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=200&q=80' },
+  { name: 'QuickBooks', src: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80' },
+  { name: 'Sage Intacct', src: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80' },
+  { name: 'Zoho Books', src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80' },
+  { name: 'PICPA', src: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=200&q=80' },
+  { name: 'ICAI', src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=200&q=80' },
+  { name: 'CPA', src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=200&q=80' },
 ];
 
 const stats = [

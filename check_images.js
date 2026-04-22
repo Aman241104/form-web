@@ -1,31 +1,50 @@
 const fs = require('fs');
-const https = require('https');
 const path = require('path');
 
-const directoryPath = path.join(__dirname, 'components');
-const files = fs.readdirSync(directoryPath).filter(f => f.endsWith('.tsx'));
+const files = [
+  'data/siteData.tsx',
+  'components/Testimonials.tsx',
+  'components/ServiceDetailClient.tsx',
+  'components/IndustryDetailClient.tsx',
+  'components/IndustriesPageClient.tsx',
+  'components/HowWeWork.tsx',
+  'components/Leadership.tsx',
+  'components/Hero.tsx',
+  'components/Overview.tsx',
+  'components/WhyUs.tsx',
+  'components/Security.tsx',
+  'components/TrustTicker.tsx',
+  'components/Accreditations.tsx'
+];
 
-const urls = [];
+const urlRegex = /https:\/\/images\.unsplash\.com\/photo-[^?"]+/g;
 
-files.forEach(file => {
-  const content = fs.readFileSync(path.join(directoryPath, file), 'utf8');
-  const urlMatches = content.match(/https:\/\/images\.unsplash\.com\/[^"'\s]+/g);
-  if (urlMatches) {
-    urlMatches.forEach(url => {
-      urls.push({file, url});
-    });
-  }
-});
-
-let completed = 0;
-urls.forEach(({file, url}) => {
-  https.get(url, (res) => {
-    if (res.statusCode >= 400 && res.statusCode !== 403) {
-      console.log(`❌ Error ${res.statusCode} in ${file}: ${url}`);
-    } else {
-      console.log(`✅ OK ${res.statusCode} in ${file}`);
+async function checkUrls() {
+  const urls = new Set();
+  for (const file of files) {
+    if (fs.existsSync(file)) {
+      const content = fs.readFileSync(file, 'utf8');
+      const matches = content.match(urlRegex);
+      if (matches) {
+        matches.forEach(url => urls.add(url));
+      }
     }
-  }).on('error', (e) => {
-    console.error(`❌ Network Error in ${file}: ${url}`, e.message);
-  });
-});
+  }
+
+  console.log(`Checking ${urls.size} unique Unsplash URLs...`);
+
+  for (const url of urls) {
+    try {
+      const response = await fetch(url + '?auto=format&fit=crop&w=10&q=10');
+      if (response.ok) {
+        // console.log(`✅ ${url}`);
+      } else {
+        console.log(`❌ ${url} - Status: ${response.status}`);
+      }
+    } catch (error) {
+      console.log(`💥 ${url} - Error: ${error.message}`);
+    }
+  }
+}
+
+checkUrls();

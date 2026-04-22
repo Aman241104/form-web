@@ -22,32 +22,32 @@ import { getWhatsAppLink } from '@/components/StickyWhatsApp';
 const industryMetadata: Record<string, { tags: string[]; image: string; color: string }> = {
   'cpa-accounting': { 
     tags: ['High Volume', 'Talent Extension'], 
-    image: '/images/office-discussion.png',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
     color: 'from-blue-600/20'
   },
   'healthcare-dental': { 
     tags: ['Consolidated Reporting', 'HIPAA'], 
-    image: '/images/team-leaders.png',
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80',
     color: 'from-green-600/20'
   },
   'manufacturing-textile': { 
     tags: ['Cost Accounting', 'Inventory'], 
-    image: '/images/team-meeting.png',
+    image: 'https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=1200&q=80',
     color: 'from-orange-600/20'
   },
   'construction-real-estate': { 
     tags: ['Project Based', 'WIP Tracking'], 
-    image: '/images/finance-growth.png',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80',
     color: 'from-yellow-600/20'
   },
   'technology-saas': { 
     tags: ['RevRec', 'KPI Focused'], 
-    image: '/images/presentation-blob.png',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     color: 'from-purple-600/20'
   },
   'consumer-lending': { 
     tags: ['Precision', 'Audit Ready'], 
-    image: '/images/team-collab.png',
+    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80',
     color: 'from-red-600/20'
   }
 };

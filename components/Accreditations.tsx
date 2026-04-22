@@ -6,17 +6,17 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ShieldCheck, Award, Zap } from 'lucide-react';
 
 const logos = [
-  { src: '/images/badge-iso-27001.png', alt: 'ISO 27001' },
-  { src: '/images/badge-iso-9001.png', alt: 'ISO 9001' },
-  { src: '/images/badge-quickbooks.png', alt: 'QuickBooks' },
-  { src: '/images/badge-sage-intacct.png', alt: 'Sage Intacct' },
-  { src: '/images/badge-zoho-books.png', alt: 'Zoho Books' },
-  { src: '/images/badge-certified-advisor.png', alt: 'Certified Advisor' },
-  { src: '/images/logo-cpa.png', alt: 'CPA' },
-  { src: '/images/logo-icai.png', alt: 'ICAI' },
-  { src: '/images/logo-xero.png', alt: 'Xero' },
-  { src: '/images/logo-iima.png', alt: 'IIMA' },
-  { src: '/images/logo-picpa.png', alt: 'PICPA' },
+  { src: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=200&q=80', alt: 'ISO 27001' },
+  { src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=200&q=80', alt: 'ISO 9001' },
+  { src: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80', alt: 'QuickBooks' },
+  { src: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80', alt: 'Sage Intacct' },
+  { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80', alt: 'Zoho Books' },
+  { src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=200&q=80', alt: 'Certified Advisor' },
+  { src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=200&q=80', alt: 'CPA' },
+  { src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=200&q=80', alt: 'ICAI' },
+  { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=200&q=80', alt: 'Xero' },
+  { src: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=200&q=80', alt: 'IIMA' },
+  { src: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=200&q=80', alt: 'PICPA' },
 ];
 
 const stats = [

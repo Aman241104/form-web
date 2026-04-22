@@ -31,7 +31,7 @@ interface Industry {
 
 const industryContent: Record<string, any> = {
   'cpa-accounting': {
-    heroImage: '/images/office-discussion.png',
+    heroImage: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80',
     valueProp: "Stop managing hiring delays and seasonal bottlenecks. Get instant capacity with a team of high-precision Chartered Accountants.",
     challenges: [
       { q: "Hiring Bottlenecks", a: "Hard to find and retain qualified talent in the US market." },
@@ -62,7 +62,7 @@ const industryContent: Record<string, any> = {
   },
   // Default for other industries
   'default': {
-    heroImage: '/images/team-meeting.png',
+    heroImage: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80',
     valueProp: "Scale your financial operations with high-precision talent built specifically for your sector's complexity.",
     challenges: [
       { q: "Complexity", a: "Managing multi-site operations and consolidated reporting." },
@@ -365,9 +365,15 @@ export default function IndustryDetailClient({ industry }: { industry: Industry 
               </div>
               
               <div className="pt-12 flex items-center justify-center gap-8 opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-1000">
-                 <Image src="/images/badge-iso-27001.png" alt="ISO" width={60} height={60} />
-                 <Image src="/images/badge-quickbooks.png" alt="QB" width={100} height={30} className="object-contain" />
-                 <Image src="/images/logo-xero.png" alt="Xero" width={80} height={30} className="object-contain" />
+                 <div className="relative w-12 h-12">
+                   <Image src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=100&q=80" alt="ISO" fill className="object-cover rounded-full" />
+                 </div>
+                 <div className="relative w-24 h-8">
+                   <Image src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80" alt="QB" fill className="object-contain" />
+                 </div>
+                 <div className="relative w-20 h-8">
+                   <Image src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=200&q=80" alt="Xero" fill className="object-contain" />
+                 </div>
               </div>
             </motion.div>
         </div>

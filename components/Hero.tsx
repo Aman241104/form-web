@@ -123,7 +123,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#05080f]/80 via-transparent to-transparent z-10 transition-opacity group-hover:opacity-60" />
               
               <Image 
-                src="/images/team-meeting.png" 
+                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" 
                 alt="Elite Cloud Books Professional Team" 
                 fill
                 priority 

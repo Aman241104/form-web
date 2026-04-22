@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import styles from './Preloader.module.css';
+import { motion } from 'framer-motion';
 
 export default function Preloader() {
   const loaderRef = useRef<HTMLDivElement>(null);
@@ -47,11 +47,18 @@ export default function Preloader() {
   if (isLoaded) return null;
 
   return (
-    <div ref={loaderRef} className={styles.preloader}>
-      <div ref={logoRef} className={styles.logo}>
-        ELITE CLOUD BOOKS<span className={styles.dot}>.</span>
+    <div ref={loaderRef} className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#05080f]">
+      <div ref={logoRef} className="text-3xl md:text-5xl font-black tracking-[0.4em] text-white">
+        ELITE CLOUD BOOKS<span className="text-red-600">.</span>
       </div>
-      <div className={styles.progressLine}></div>
+      <div className="absolute bottom-20 left-0 h-[2px] bg-red-600/30 w-full overflow-hidden">
+         <motion.div 
+           initial={{ x: '-100%' }}
+           animate={{ x: '100%' }}
+           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+           className="h-full w-1/3 bg-red-600 shadow-[0_0_15px_rgba(239,68,68,0.8)]" 
+         />
+      </div>
     </div>
   );
 }
