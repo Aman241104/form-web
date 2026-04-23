@@ -17,6 +17,17 @@ const industryTags: Record<string, string[]> = {
   'consumer-lending': ['Precision', 'Audit Ready']
 };
 
+const industryImages: Record<string, string> = {
+  'cpa-accounting': '/images/ca-notebook.png',
+  'healthcare-dental': '/images/team-meeting.png',
+  'manufacturing-textile': '/images/team-working-blob.png',
+  'construction-real-estate': '/images/harbor-sunset.png',
+  'technology-saas': '/images/finance-growth.png',
+  'consumer-lending': '/images/finance-piggybank.png'
+};
+
+import Image from 'next/image';
+
 export default function Industries() {
   const sectionRef = useRef<HTMLElement>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -100,10 +111,21 @@ export default function Industries() {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
+                {/* Background Image with Overlay */}
+                <div className="absolute inset-0 z-0">
+                  <Image 
+                    src={industryImages[industry.id] || '/images/office-discussion.png'} 
+                    alt={industry.name}
+                    fill
+                    className="object-cover opacity-20 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700 grayscale group-hover:grayscale-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#05080f] via-[#05080f]/90 to-transparent" />
+                </div>
+
                 {/* Background Glow Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-transparent group-hover:from-red-600/10 transition-all duration-700 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-transparent group-hover:from-red-600/10 transition-all duration-700 pointer-events-none z-10" />
                 
-                <div className={`flex flex-col h-full ${isFeatured ? 'lg:flex-row lg:items-center lg:gap-12' : ''}`}>
+                <div className={`relative z-20 flex flex-col h-full ${isFeatured ? 'lg:flex-row lg:items-center lg:gap-12' : ''}`}>
                   
                   {/* Icon & Content Wrapper */}
                   <div className={`flex flex-col flex-grow ${isFeatured ? 'lg:w-full' : ''}`}>

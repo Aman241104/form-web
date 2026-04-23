@@ -137,7 +137,7 @@ export default function WhyUs() {
               <div className="relative aspect-[16/10] w-full rounded-[2rem] overflow-hidden shadow-2xl shadow-black/60 border border-white/10 group-hover:border-red-500/30 transition-all duration-700">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05080f]/80 via-transparent to-transparent z-10" />
                 <Image 
-                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80"
+                  src="/images/office-discussion.png"
                   alt="Elite Cloud Books Leadership Team"
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"

@@ -13,7 +13,7 @@ const testimonials = [
     name: "John Carter",
     role: "Founder",
     company: "CPA Firm — Texas",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
+    avatar: "/images/logo.png",
     rating: 5
   },
   {
@@ -23,7 +23,7 @@ const testimonials = [
     name: "Sarah Jenkins",
     role: "Managing Director",
     company: "Consulting Group — PA",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80",
+    avatar: "/images/logo.png",
     rating: 5
   },
   {
@@ -33,7 +33,7 @@ const testimonials = [
     name: "Michael Chen",
     role: "CFO",
     company: "Consumer Lending — TX",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+    avatar: "/images/logo.png",
     rating: 5
   },
   {

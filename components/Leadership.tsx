@@ -6,25 +6,11 @@ import { Linkedin } from 'lucide-react';
 
 const leaders = [
   {
-    name: 'Deep Parmar',
-    role: 'Founder, CEO',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80',
-    bio: 'Driving scalable finance systems for global firms with precision and strategic foresight.',
+    name: 'Mayursinh Chavda',
+    role: 'Founder',
+    image: '/images/team-leaders.png',
+    bio: 'Visionary leader driving the firm towards global excellence in offshore financial services.',
     isCEO: true
-  },
-  {
-    name: 'Rajat Shah',
-    role: 'Founder, COO',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
-    bio: 'Operational excellence architect, bridging US workflows with global delivery talent.',
-    isCEO: false
-  },
-  {
-    name: 'Charmi Shah',
-    role: 'Chartered Accountant',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
-    bio: 'Expert in high-precision audit preparation and institutional-grade bookkeeping.',
-    isCEO: false
   },
 ];
 

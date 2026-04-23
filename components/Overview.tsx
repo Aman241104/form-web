@@ -46,10 +46,10 @@ export default function Overview() {
               className="relative aspect-[4/5] w-full rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.6)] border border-white/10"
             >
               <Image 
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
-                alt="Elite Cloud Books Team Collaboration"
+                src="/images/team-collab.png" 
+                alt="Elite Cloud Books Operations" 
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#05080f]/80 via-transparent to-transparent" />
             </motion.div>
