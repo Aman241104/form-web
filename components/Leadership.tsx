@@ -89,9 +89,9 @@ export default function Leadership() {
                    <p className="text-white text-sm font-light leading-relaxed mb-4">
                      {leader.bio}
                    </p>
-                   <a 
-                     href="https://linkedin.com" 
-                     target="_blank" 
+                   <a
+                     href="https://www.linkedin.com/in/mayursinh-chavda"
+                     target="_blank"
                      rel="noopener noreferrer"
                      className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-lg hover:bg-red-500 transition-colors"
                    >

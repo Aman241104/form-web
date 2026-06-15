@@ -12,11 +12,11 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
-      { name: 'Bookkeeping & Accounting', href: '/services' },
-      { name: 'Tax Preparation', href: '/services' },
-      { name: 'FP&A (Planning)', href: '/services' },
-      { name: 'Audit Services', href: '/services' },
-      { name: 'Advisory Services', href: '/services' },
+      { name: 'Bookkeeping & Accounting', href: '/services/bookkeeping' },
+      { name: 'Tax Preparation', href: '/services/tax' },
+      { name: 'FP&A (Planning)', href: '/services/fpa' },
+      { name: 'Audit Services', href: '/services/audit' },
+      { name: 'Advisory Services', href: '/services/advisory' },
     ],
     company: [
       { name: 'Our Story', href: '/about' },
@@ -70,8 +70,8 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               {[
-                { icon: Linkedin, href: '#' },
-                { icon: Twitter, href: '#' }
+                { icon: Linkedin, href: 'https://www.linkedin.com/company/elite-cloud-books' },
+                { icon: Twitter, href: 'https://twitter.com/elitecloudbooks' }
               ].map((social, i) => (
                 <a 
                   key={i} 
@@ -161,9 +161,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Elite Cloud Books. All Rights Reserved.
           </div>
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link href="#" className="hover:text-white transition-colors">Legal Disclosures</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/legal" className="hover:text-white transition-colors">Legal Disclosures</Link>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 size={14} className="text-red-500" />
