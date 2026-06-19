@@ -56,7 +56,7 @@ export default function Header() {
         { name: 'Tax Preparation', href: '/services/tax' },
         { name: 'Audit Services', href: '/services/audit' },
         { name: 'Advisory Services', href: '/services/advisory' },
-        { name: 'FP&A (Planning)', href: '/services/fpa' },
+        { name: 'Financial Planning', href: '/services/financial-planning' },
       ]
     },
     { name: 'ABOUT', href: '/about', icon: Info },

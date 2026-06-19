@@ -63,7 +63,7 @@ export default function Overview() {
               <div className="w-12 h-12 rounded-2xl bg-red-600/20 flex items-center justify-center text-red-500 mb-4">
                 <TrendingUp size={24} />
               </div>
-              <div className="text-4xl font-black text-white mb-2">100+</div>
+              <div className="text-4xl font-black text-white mb-2">40+</div>
               <div className="text-[10px] font-black tracking-[0.2em] uppercase text-white/40 leading-tight">
                 Combined Years of <br />Partner Experience
               </div>
@@ -124,7 +124,7 @@ export default function Overview() {
                 transition={{ delay: 0.2 }}
                 className="text-xl md:text-2xl text-white/70 leading-relaxed font-light"
               >
-                Founded in 2021 as a <span className="text-white font-bold">dedicated U.S. entity</span>, Elite Cloud Books unites more than a century of combined expertise.
+                Founded as a <span className="text-white font-bold">dedicated U.S. entity</span>, Elite Cloud Books brings together <span className="text-white font-bold">40+ years of combined partner expertise</span>.
               </motion.p>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -164,7 +164,7 @@ export default function Overview() {
                 <div className="flex flex-col">
                   <span className="text-white font-bold text-xs uppercase tracking-widest flex items-center gap-1.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                    Trusted by 200+ Firms
+                    450+ Happy Clients
                   </span>
                 </div>
               </div>

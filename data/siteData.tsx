@@ -4,15 +4,16 @@ export const services = [
   {
     id: 'bookkeeping',
     title: 'Bookkeeping & Accounting',
-    desc: 'Flawless books. Zero chaos. Audit-ready at all times.',
-    features: ['Monthly Financial Reporting', 'Bank & CC Reconciliation', 'Accounts Payable/Receivable', 'Year-end Cleanup'],
-    fullContent: `Our bookkeeping services are designed to give you peace of mind. We handle everything from daily transaction entry to month-end close, ensuring your financial records are accurate and IRS-compliant. We specialize in Xero and QuickBooks Online workflows.
+    desc: 'Clean, categorized records — accurate, current, and audit-ready every month.',
+    features: ['Monthly & Quarterly Bookkeeping', 'Bank & CC Reconciliation', 'Accounts Payable/Receivable', 'Financial Statement Preparation', 'Payroll Support'],
+    fullContent: `Our bookkeeping team keeps your financial records accurate, current, and audit-ready — every single month — so you always know exactly where your business stands. We work across QuickBooks Online, Xero, Sage, NetSuite, and FreshBooks.
 
-    Key Benefits:
-    - Real-time visibility into your cash flow
-    - Meticulous reconciliation of all accounts
-    - Seamless integration with your existing tech stack
-    - Monthly financial reporting and insights`,
+    Key Services:
+    - Monthly & Quarterly Bookkeeping — Clean, categorized, up-to-date records, never a backlog
+    - Bank & Credit Card Reconciliation — Every transaction matched, every discrepancy caught
+    - Accounts Payable & Receivable Management — Get paid faster, pay on time, every time
+    - Financial Statement Preparation — P&L, balance sheet, and cash flow statements you can actually read
+    - Payroll Support — Accurate, on-time payroll with zero compliance headaches`,
     featured: true,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -21,32 +22,35 @@ export const services = [
   {
     id: 'tax',
     title: 'Tax Preparation',
-    desc: 'Maximize deductions. 100% compliance across all jurisdictions.',
-    features: ['Corporate Tax Filing', 'Multi-state Compliance', 'R&D Tax Credits', 'Sales Tax Management'],
-    fullContent: `Our tax experts manage the complexities of multi-state returns and federal compliance. We ensure you maximize deductions and stay ahead of filing deadlines, using advanced tax platforms like ProConnect and UltraTax.
+    desc: 'Pay exactly what you owe — not a dollar more. Filed on time, every time.',
+    features: ['Individual & Business Tax Returns', 'Multi-State Tax Compliance', 'Year-Round Tax Planning', 'IRS Notice & Audit Support'],
+    fullContent: `Tax season shouldn't feel like a scramble. We prepare and file with precision using Lacerte, ProSeries, UltraTax CS, Drake Tax, and Axcess — then plan year-round so there are no last-minute surprises.
 
-    Our Approach:
-    - Comprehensive multi-state tax planning
-    - Federal and state filing for corporations and partnerships
-    - Strategic advice on tax-saving opportunities
-    - Year-round support for tax-related inquiries`,
+    Our Services:
+    - Individual Tax Returns — Form 1040 filings handled with care and accuracy
+    - Business Tax Returns — S-Corp, C-Corp, Partnership, and LLC filings done right
+    - Year-Round Tax Planning — Strategic moves made before December 31st, not after
+    - Multi-State Tax Compliance — For businesses operating across state lines
+    - Quarterly Estimated Tax Calculations — No underpayment penalties, no guesswork
+    - IRS Notice & Audit Support — A professional in your corner if the IRS comes calling`,
     featured: false,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
     )
   },
   {
-    id: 'fpa',
-    title: 'FP&A (Planning)',
-    desc: 'Strategic forecasting and actionable KPI tracking to scale your firm.',
-    features: ['Budgeting & Forecasting', 'Variance Analysis', 'KPI Dashboarding', 'Cash Flow Projections'],
-    fullContent: `Strategic financial planning and analysis to help your business scale. We build custom forecasting models, cash flow projections, and scenario plans that provide actionable insights for founders and CFOs.
+    id: 'advisory',
+    title: 'Advisory Services',
+    desc: 'Your outsourced CFO — turning financial data into a clear strategy for growth.',
+    features: ['Cash Flow Forecasting', 'Budgeting & Financial Modeling', 'KPI Tracking & Benchmarking', 'Entity Structuring'],
+    fullContent: `Numbers tell a story, but only if someone's reading them. Our advisory team turns your financial data into a clear strategy for growth, profitability, and smarter decision-making.
 
     What We Offer:
-    - Annual budgeting and periodic forecasting
-    - Variance analysis (Actual vs. Budget)
-    - KPI development and tracking
-    - Capital allocation strategy`,
+    - Cash Flow Forecasting — See shortfalls and surpluses before they happen
+    - Budgeting & Financial Modeling — Plan with confidence, not crossed fingers
+    - KPI Tracking & Performance Benchmarking — Know exactly what's working and what isn't
+    - Growth & Expansion Strategy — Scale smart, with the financial guardrails in place
+    - Entity Structuring & Succession Planning — Set up — or hand off — your business the right way`,
     featured: false,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
@@ -55,32 +59,34 @@ export const services = [
   {
     id: 'audit',
     title: 'Audit Services',
-    desc: 'Rigorous internal controls. Pain-free and fully organized external audits.',
-    features: ['Audit Workpaper Prep', 'Internal Control Review', 'Compliance Audits', 'External Auditor Liaison'],
-    fullContent: `We provide audit support and internal control reviews. Our team ensures your records are meticulously organized, making the external audit process smooth and penalty-free.
+    desc: 'Confidence that holds up under scrutiny — thorough, transparent, audit-ready.',
+    features: ['Financial Statement Audits', 'Internal Controls Assessment', 'Compliance & Regulatory Audits', 'Nonprofit & Grant Audits'],
+    fullContent: `Whether required by lenders, investors, or regulators, our audit engagements are thorough, transparent, and built to give every stakeholder confidence in your numbers.
 
-    Our Focus:
-    - Internal control assessment and improvement
-    - Preparation of audit workpapers
-    - Coordination with external auditors
-    - Compliance readiness reviews`,
+    Our Services:
+    - Financial Statement Audits, Reviews & Compilations — Tailored to your level of assurance needed
+    - Internal Controls Assessment — Identify gaps before they become liabilities
+    - Compliance & Regulatory Audits — Stay ahead of industry-specific requirements
+    - Nonprofit & Grant Audits — Built for the unique reporting demands nonprofits face
+    - Agreed-Upon Procedures Engagements — Targeted reviews for specific financial concerns`,
     featured: false,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
     )
   },
   {
-    id: 'advisory',
-    title: 'Advisory',
-    desc: 'High-level financial strategy and fractional CFO leadership for growth.',
-    features: ['Fractional CFO', 'M&A Support', 'Business Valuation', 'Strategic Consulting'],
-    fullContent: `Fractional CFO and transaction advisory services. We help businesses navigate valuations, M&A preparation, and high-level financial strategy to drive long-term value.
+    id: 'financial-planning',
+    title: 'Financial Planning',
+    desc: 'Turning today\'s income into tomorrow\'s security — for business owners and individuals.',
+    features: ['Retirement Planning', 'Investment Guidance', 'Estate & Legacy Planning', 'Risk Management & Insurance'],
+    fullContent: `Running a profitable business is only half the equation — building lasting personal wealth is the other. We help business owners and individuals plan for the future with the same rigor we bring to their books.
 
-    Advisory Areas:
-    - Fractional CFO leadership
-    - M&A due diligence and preparation
-    - Business valuation support
-    - Strategic financial consulting`,
+    Our Services:
+    - Retirement Planning — 401(k), IRA, and SEP strategies built around your timeline
+    - Investment Guidance & Portfolio Review — Strategic, not speculative
+    - Estate & Legacy Planning — Protect what you've built for the next generation
+    - Education & College Savings Planning — 529 plans and beyond
+    - Risk Management & Insurance Review — Close the gaps before they cost you`,
     featured: false,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>

@@ -25,7 +25,7 @@ const points = [
   {
     num: '04',
     title: 'Proven Track Record',
-    desc: '15+ years of partner experience and 100+ professionals helping firms scale with confidence.'
+    desc: '40+ years of combined partner experience and 10+ qualified experts (CAs, CPAs & EAs) helping firms scale with confidence.'
   }
 ];
 
@@ -121,9 +121,9 @@ export default function WhyUs() {
               {/* Trust Signal Row */}
               <div className="reveal-why-header flex flex-wrap gap-8 pt-4">
                 {[
-                  { label: 'Exp', val: '15+ Yrs' },
-                  { label: 'Pros', val: '100+' },
-                  { label: 'Firms', val: '200+' }
+                  { label: 'Exp', val: '40+ Yrs' },
+                  { label: 'Experts', val: '10+' },
+                  { label: 'Clients', val: '450+' }
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col">
                     <span className="text-red-500 font-bold text-xl">{stat.val}</span>

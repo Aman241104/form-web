@@ -1,28 +1,38 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
-import Image from 'next/image';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Award, Zap } from 'lucide-react';
 
+const bookkeepingLogos = [
+  { src: '/images/badge-quickbooks.png', alt: 'QuickBooks' },
+  { src: '/images/logo-xero.png', alt: 'Xero' },
+  { src: '/images/badge-sage-intacct.png', alt: 'Sage' },
+  { src: '/images/badge-zoho-books.png', alt: 'Zoho Books' },
+];
+
+const taxLogos = [
+  { src: '/images/software/lacerte.svg', alt: 'Lacerte / ProSeries' },
+  { src: '/images/software/ultratax.svg', alt: 'UltraTax CS' },
+  { src: '/images/software/drake-tax.svg', alt: 'Drake Tax' },
+  { src: '/images/software/axcess.svg', alt: 'Axcess Tax' },
+];
+
 const logos = [
+  ...bookkeepingLogos,
+  ...taxLogos,
   { src: '/images/badge-iso-27001.png', alt: 'ISO 27001' },
   { src: '/images/badge-iso-9001.png', alt: 'ISO 9001' },
-  { src: '/images/badge-quickbooks.png', alt: 'QuickBooks' },
-  { src: '/images/badge-sage-intacct.png', alt: 'Sage Intacct' },
-  { src: '/images/badge-zoho-books.png', alt: 'Zoho Books' },
   { src: '/images/badge-certified-advisor.png', alt: 'Certified Advisor' },
   { src: '/images/logo-cpa.png', alt: 'CPA' },
   { src: '/images/logo-icai.png', alt: 'ICAI' },
-  { src: '/images/logo-xero.png', alt: 'Xero' },
-  { src: '/images/logo-iima.png', alt: 'IIMA' },
   { src: '/images/logo-picpa.png', alt: 'PICPA' },
 ];
 
 const stats = [
-  { label: 'Professionals', value: 100, suffix: '+' },
-  { label: 'Years Experience', value: 15, suffix: '+' },
-  { label: 'Global Clients', value: 200, suffix: '+' },
+  { label: 'Qualified Experts', value: 10, suffix: '+' },
+  { label: 'Years Experience', value: 40, suffix: '+' },
+  { label: 'Happy Clients', value: 450, suffix: '+' },
 ];
 
 function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
@@ -89,36 +99,36 @@ export default function Accreditations() {
         
         {/* Header Block */}
         <div className="flex flex-col items-center text-center mb-20 lg:mb-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-6"
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-red-500/10 text-red-500 text-[11px] font-black uppercase tracking-[0.3em] border border-red-500/20">
-              Global Excellence Verified
+              Technology & Accreditation Partners
             </span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-white mb-8"
           >
-            Trusted by the <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">Industry's Best.</span>
+            Powered by the <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">Best Platforms.</span>
           </motion.h2>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="max-w-2xl text-lg text-white/50 leading-relaxed font-light"
           >
-            Recognized by global platforms and compliance bodies trusted by leading firms. Built for precision. Designed for scale.
+            We use industry-leading accounting and tax software for US work — QuickBooks, Xero, Sage, Lacerte, UltraTax CS, Drake Tax, and more — backed by ISO-certified processes.
           </motion.p>
         </div>
 
@@ -129,15 +139,14 @@ export default function Accreditations() {
             className="flex whitespace-nowrap gap-12 lg:gap-24"
           >
             {[...logos, ...logos].map((logo, index) => (
-              <div 
-                key={index} 
-                className="relative w-32 h-12 lg:w-44 lg:h-16 flex-shrink-0 transition-all duration-500 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 group/logo"
+              <div
+                key={index}
+                className="relative w-32 h-12 lg:w-44 lg:h-16 flex-shrink-0 transition-all duration-500 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 group/logo flex items-center justify-center"
               >
-                <Image 
-                  src={logo.src} 
-                  alt={logo.alt} 
-                  fill 
-                  className="object-contain"
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-w-full max-h-full object-contain"
                 />
                 <div className="absolute inset-0 bg-red-500/0 group-hover/logo:bg-red-500/5 blur-xl transition-all rounded-full" />
               </div>
@@ -152,15 +161,14 @@ export default function Accreditations() {
             className="flex whitespace-nowrap gap-12 lg:gap-24"
           >
             {[...logos.reverse(), ...logos].map((logo, index) => (
-              <div 
-                key={index} 
-                className="relative w-32 h-12 lg:w-44 lg:h-16 flex-shrink-0 transition-all duration-500 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 group/logo"
+              <div
+                key={index}
+                className="relative w-32 h-12 lg:w-44 lg:h-16 flex-shrink-0 transition-all duration-500 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 group/logo flex items-center justify-center"
               >
-                <Image 
-                  src={logo.src} 
-                  alt={logo.alt} 
-                  fill 
-                  className="object-contain"
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-w-full max-h-full object-contain"
                 />
                 <div className="absolute inset-0 bg-red-500/0 group-hover/logo:bg-red-500/5 blur-xl transition-all rounded-full" />
               </div>

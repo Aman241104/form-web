@@ -17,9 +17,9 @@ import { services } from '@/data/siteData';
 const iconMap: Record<string, React.ElementType> = {
   'bookkeeping': BookOpenCheck,
   'tax': Calculator,
-  'fpa': LineChart,
+  'advisory': LineChart,
   'audit': ShieldCheck,
-  'advisory': Briefcase,
+  'financial-planning': Briefcase,
 };
 
 export default function Services() {

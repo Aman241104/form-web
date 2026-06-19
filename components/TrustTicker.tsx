@@ -7,19 +7,24 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const logos = [
-  { name: 'Xero', src: '/images/logo-xero.png' },
-  { name: 'QuickBooks', src: '/images/badge-quickbooks.png' },
-  { name: 'Sage Intacct', src: '/images/badge-sage-intacct.png' },
-  { name: 'Zoho Books', src: '/images/badge-zoho-books.png' },
-  { name: 'PICPA', src: '/images/logo-picpa.png' },
-  { name: 'ICAI', src: '/images/logo-icai.png' },
-  { name: 'CPA', src: '/images/logo-cpa.png' },
+  { name: 'Mopani', src: '/images/clients/mopani.png' },
+  { name: 'Orbit', src: '/images/clients/orbit.png' },
+  { name: 'Quicko', src: '/images/clients/quicko.png' },
+  { name: 'Raj Air Cooler', src: '/images/clients/raj-air-cooler.png' },
+  { name: 'KPMG', src: '/images/clients/kpmg.png' },
+  { name: 'Adani', src: '/images/clients/adani.png' },
+  { name: 'JSW', src: '/images/clients/jsw.png' },
+  { name: 'ESL Steel Limited', src: '/images/clients/esl-steel.png' },
+  { name: 'PwC', src: '/images/clients/pwc.png' },
+  { name: 'Kataria Enterprise', src: '/images/clients/kataria.png' },
+  { name: 'International Resources Holding', src: '/images/clients/irh.png' },
+  { name: 'Balaji Wafers', src: '/images/clients/balaji-wafers.png' },
 ];
 
 const stats = [
-  { id: 'exp', label: 'Partner Experience', value: 100, suffix: 'YRS+', emphasis: 'dominant' },
-  { id: 'pro', label: 'Qualified Experts', value: 150, suffix: '+', emphasis: 'vibrant' },
-  { id: 'firms', label: 'Firms Scaled', value: 200, suffix: '+', emphasis: 'standard' },
+  { id: 'exp', label: 'Partner Experience', value: 40, suffix: 'YRS+', emphasis: 'dominant' },
+  { id: 'pro', label: 'Qualified Experts', value: 10, suffix: '+', emphasis: 'vibrant' },
+  { id: 'clients', label: 'Happy Clients', value: 450, suffix: '+', emphasis: 'standard' },
   { id: 'accuracy', label: 'Reporting Precision', value: 99.9, suffix: '%', decimal: true, emphasis: 'standard' },
 ];
 
@@ -111,7 +116,7 @@ export default function TrustTicker() {
         <div className="mb-20 lg:mb-32 ticker-parallax-container">
           <div className="text-center mb-10">
             <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-white/40 border-b border-white/10 pb-2">
-              Technology & Accreditation Partners
+              Our Clients
             </span>
           </div>
           
@@ -125,10 +130,11 @@ export default function TrustTicker() {
                 {[...logos, ...logos, ...logos].map((logo, idx) => (
                   <div key={idx} className="flex-shrink-0 px-8 md:px-16 flex items-center justify-center">
                     <div className="relative w-24 h-10 md:w-32 md:h-12 opacity-50 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0 hover:scale-110 cursor-pointer">
-                      <Image 
-                        src={logo.src} 
-                        alt={logo.name} 
-                        fill 
+                      <Image
+                        src={logo.src}
+                        alt={logo.name}
+                        fill
+                        sizes="128px"
                         className="object-contain"
                       />
                     </div>

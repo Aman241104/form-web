@@ -144,8 +144,8 @@ export default function Hero() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-white text-sm font-bold">Trusted by 50+</div>
-                  <div className="text-white/60 text-[10px] uppercase tracking-wider">US CPA Firms</div>
+                  <div className="text-white text-sm font-bold">450+ Happy Clients</div>
+                  <div className="text-white/60 text-[10px] uppercase tracking-wider">40+ Yrs Experience</div>
                 </div>
               </div>
             </div>

@@ -14,9 +14,9 @@ export default function Footer() {
     services: [
       { name: 'Bookkeeping & Accounting', href: '/services/bookkeeping' },
       { name: 'Tax Preparation', href: '/services/tax' },
-      { name: 'FP&A (Planning)', href: '/services/fpa' },
-      { name: 'Audit Services', href: '/services/audit' },
       { name: 'Advisory Services', href: '/services/advisory' },
+      { name: 'Audit Services', href: '/services/audit' },
+      { name: 'Financial Planning', href: '/services/financial-planning' },
     ],
     company: [
       { name: 'Our Story', href: '/about' },
