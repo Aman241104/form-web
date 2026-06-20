@@ -4,29 +4,17 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Award, Zap } from 'lucide-react';
 
-const bookkeepingLogos = [
-  { src: '/images/badge-quickbooks.png', alt: 'QuickBooks' },
-  { src: '/images/logo-xero.png', alt: 'Xero' },
-  { src: '/images/badge-sage-intacct.png', alt: 'Sage' },
-  { src: '/images/badge-zoho-books.png', alt: 'Zoho Books' },
-];
-
-const taxLogos = [
-  { src: '/images/software/lacerte.svg', alt: 'Lacerte / ProSeries' },
-  { src: '/images/software/ultratax.svg', alt: 'UltraTax CS' },
-  { src: '/images/software/drake-tax.svg', alt: 'Drake Tax' },
-  { src: '/images/software/axcess.svg', alt: 'Axcess Tax' },
-];
-
 const logos = [
-  ...bookkeepingLogos,
-  ...taxLogos,
-  { src: '/images/badge-iso-27001.png', alt: 'ISO 27001' },
-  { src: '/images/badge-iso-9001.png', alt: 'ISO 9001' },
-  { src: '/images/badge-certified-advisor.png', alt: 'Certified Advisor' },
-  { src: '/images/logo-cpa.png', alt: 'CPA' },
-  { src: '/images/logo-icai.png', alt: 'ICAI' },
-  { src: '/images/logo-picpa.png', alt: 'PICPA' },
+  { src: '/images/software/quickbooks.png', alt: 'QuickBooks' },
+  { src: '/images/software/xero.png', alt: 'Xero' },
+  { src: '/images/software/sage.png', alt: 'Sage' },
+  { src: '/images/software/netsuite.png', alt: 'NetSuite' },
+  { src: '/images/software/freshbooks.png', alt: 'FreshBooks' },
+  { src: '/images/software/lacerte.png', alt: 'Lacerte Tax' },
+  { src: '/images/software/proseries.png', alt: 'ProConnect / ProSeries' },
+  { src: '/images/software/ultratax.png', alt: 'UltraTax Software' },
+  { src: '/images/software/drake.png', alt: 'Drake Software' },
+  { src: '/images/software/cch-axcess.png', alt: 'CCH AXcess' },
 ];
 
 const stats = [
@@ -141,7 +129,7 @@ export default function Accreditations() {
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={index}
-                className="relative w-32 h-12 lg:w-44 lg:h-16 flex-shrink-0 transition-all duration-500 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 group/logo flex items-center justify-center"
+                className="relative w-36 h-14 lg:w-48 lg:h-16 flex-shrink-0 transition-all duration-500 hover:scale-110 group/logo flex items-center justify-center"
               >
                 <img
                   src={logo.src}
@@ -160,10 +148,10 @@ export default function Accreditations() {
             style={{ x: x2 }}
             className="flex whitespace-nowrap gap-12 lg:gap-24"
           >
-            {[...logos.reverse(), ...logos].map((logo, index) => (
+            {[...[...logos].reverse(), ...[...logos].reverse()].map((logo, index) => (
               <div
                 key={index}
-                className="relative w-32 h-12 lg:w-44 lg:h-16 flex-shrink-0 transition-all duration-500 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 group/logo flex items-center justify-center"
+                className="relative w-36 h-14 lg:w-48 lg:h-16 flex-shrink-0 transition-all duration-500 hover:scale-110 group/logo flex items-center justify-center"
               >
                 <img
                   src={logo.src}

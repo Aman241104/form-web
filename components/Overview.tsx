@@ -117,23 +117,23 @@ export default function Overview() {
             />
 
             <div className="space-y-8 max-w-xl">
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
                 className="text-xl md:text-2xl text-white/70 leading-relaxed font-light"
               >
-                Founded as a <span className="text-white font-bold">dedicated U.S. entity</span>, Elite Cloud Books brings together <span className="text-white font-bold">40+ years of combined partner expertise</span>.
+                EliteCloudBooks handles the one thing every business owner wishes they had more time for: <span className="text-white font-bold">their finances</span>.
               </motion.p>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
                 className="text-xl md:text-2xl text-white/70 leading-relaxed font-light"
               >
-                We guide <span className="text-white font-bold underline decoration-red-500/40 decoration-2 underline-offset-4">accounting firms</span> and mid-market businesses through complex financial cycles with high-precision offshore talent.
+                We combine <span className="text-white font-bold">cloud-based technology</span> with real accounting expertise — bringing together <span className="text-white font-bold underline decoration-red-500/40 decoration-2 underline-offset-4">40+ years of combined partner experience</span> to serve CPA firms and mid-market businesses across the U.S.
               </motion.p>
             </div>
 

@@ -57,6 +57,7 @@ export default function Header() {
         { name: 'Audit Services', href: '/services/audit' },
         { name: 'Advisory Services', href: '/services/advisory' },
         { name: 'Financial Planning', href: '/services/financial-planning' },
+        { name: 'Client Advisory Services', href: '/services/cas' },
       ]
     },
     { name: 'ABOUT', href: '/about', icon: Info },

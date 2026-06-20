@@ -17,6 +17,7 @@ export default function Footer() {
       { name: 'Advisory Services', href: '/services/advisory' },
       { name: 'Audit Services', href: '/services/audit' },
       { name: 'Financial Planning', href: '/services/financial-planning' },
+      { name: 'Client Advisory Services', href: '/services/cas' },
     ],
     company: [
       { name: 'Our Story', href: '/about' },
@@ -119,36 +120,37 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Contact / Offices Column */}
           <div className="lg:col-span-4 space-y-8">
-            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-8">Global Presence</h4>
-            <div className="space-y-6">
-              <a href="tel:+12674169800" className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
-                  <Phone size={18} />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-white font-medium text-sm">+1 267-416-9800</p>
-                  <p className="text-white/40 text-[10px] uppercase tracking-wider font-bold">US Office (Bala Cynwyd, PA)</p>
-                </div>
+            <h4 className="text-white font-bold text-sm uppercase tracking-widest">Our Offices</h4>
+
+            {/* USA Office */}
+            <div className="space-y-3 pb-6 border-b border-white/5">
+              <p className="text-red-500 text-[10px] font-black uppercase tracking-[0.25em]">United States</p>
+              <a href="tel:+12674169800" className="flex items-center gap-3 group">
+                <Phone size={14} className="text-white/30 group-hover:text-red-500 transition-colors flex-shrink-0" />
+                <span className="text-white/70 text-sm group-hover:text-white transition-colors">+1 267-416-9800</span>
               </a>
-              <a href="mailto:admin@elitecloudbooks.com" className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
-                  <Mail size={18} />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-white font-medium text-sm underline underline-offset-4 decoration-red-500/30 group-hover:decoration-red-500 transition-colors">admin@elitecloudbooks.com</p>
-                  <p className="text-white/40 text-[10px] uppercase tracking-wider font-bold">Inquiries & Support</p>
-                </div>
+              <a href="mailto:admin@elitecloudbooks.com" className="flex items-center gap-3 group">
+                <Mail size={14} className="text-white/30 group-hover:text-red-500 transition-colors flex-shrink-0" />
+                <span className="text-white/70 text-sm group-hover:text-white transition-colors">admin@elitecloudbooks.com</span>
               </a>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500">
-                  <MapPin size={18} />
-                </div>
-                <div className="space-y-1">
-                  <p className="text-white font-medium text-sm">Domestic & Offshore Delivery</p>
-                  <p className="text-white/40 text-[10px] uppercase tracking-wider font-bold">Strategic Talent Hubs</p>
-                </div>
+              <div className="flex items-start gap-3">
+                <MapPin size={14} className="text-white/30 flex-shrink-0 mt-0.5" />
+                <span className="text-white/50 text-sm leading-relaxed">Bala Cynwyd, Pennsylvania, USA</span>
+              </div>
+            </div>
+
+            {/* India Office */}
+            <div className="space-y-3">
+              <p className="text-red-500 text-[10px] font-black uppercase tracking-[0.25em]">India</p>
+              <div className="flex items-start gap-3">
+                <MapPin size={14} className="text-white/30 flex-shrink-0 mt-0.5" />
+                <span className="text-white/50 text-sm leading-relaxed">Ahmedabad, Gujarat, India</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse flex-shrink-0" />
+                <span className="text-white/40 text-[11px] uppercase tracking-widest font-bold">Delivery Hub — Active</span>
               </div>
             </div>
           </div>

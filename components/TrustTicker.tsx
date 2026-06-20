@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -128,14 +127,12 @@ export default function TrustTicker() {
             <div className="overflow-hidden mask-blur">
               <div ref={marqueeRef} className="flex whitespace-nowrap">
                 {[...logos, ...logos, ...logos].map((logo, idx) => (
-                  <div key={idx} className="flex-shrink-0 px-8 md:px-16 flex items-center justify-center">
-                    <div className="relative w-24 h-10 md:w-32 md:h-12 opacity-50 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0 hover:scale-110 cursor-pointer">
-                      <Image
+                  <div key={idx} className="flex-shrink-0 px-10 md:px-16 flex items-center justify-center">
+                    <div className="transition-all duration-500 hover:scale-110 cursor-pointer flex items-center justify-center" style={{ height: '80px', maxWidth: '180px' }}>
+                      <img
                         src={logo.src}
                         alt={logo.name}
-                        fill
-                        sizes="128px"
-                        className="object-contain"
+                        style={{ maxHeight: '80px', maxWidth: '180px', width: 'auto', height: 'auto', objectFit: 'contain' }}
                       />
                     </div>
                   </div>

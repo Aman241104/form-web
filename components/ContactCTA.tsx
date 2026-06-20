@@ -69,7 +69,7 @@ export default function ContactCTA() {
             transition={{ delay: 0.2 }}
             className="max-w-2xl text-xl md:text-2xl text-white/60 font-light leading-relaxed mb-16"
           >
-            Stop managing chaos and start focusing on growth. Join 200+ firms leveraging our high-precision offshore talent.
+            Stop managing chaos and start focusing on growth. Join 450+ happy clients leveraging our high-precision offshore talent.
           </motion.p>
 
           {/* CTA Grid */}
@@ -123,7 +123,7 @@ export default function ContactCTA() {
             {[
               "Free Consultation",
               "No Commitment",
-              "Trusted by 200+ Firms"
+              "450+ Happy Clients"
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2.5 text-white/40 text-[11px] font-black uppercase tracking-[0.2em]">
                 <CheckCircle2 size={16} className="text-red-500/60" />

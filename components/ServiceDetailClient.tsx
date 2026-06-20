@@ -38,10 +38,16 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
   ];
 
   const toolBadges = [
-    { src: "/images/badge-quickbooks.png", alt: "QuickBooks" },
-    { src: "/images/logo-xero.png", alt: "Xero" },
-    { src: "/images/badge-sage-intacct.png", alt: "Sage Intacct" },
-    { src: "/images/badge-zoho-books.png", alt: "Zoho Books" }
+    { src: "/images/software/quickbooks.png", alt: "QuickBooks" },
+    { src: "/images/software/xero.png", alt: "Xero" },
+    { src: "/images/software/sage.png", alt: "Sage" },
+    { src: "/images/software/netsuite.png", alt: "NetSuite" },
+    { src: "/images/software/freshbooks.png", alt: "FreshBooks" },
+    { src: "/images/software/lacerte.png", alt: "Lacerte Tax" },
+    { src: "/images/software/proseries.png", alt: "ProConnect / ProSeries" },
+    { src: "/images/software/ultratax.png", alt: "UltraTax Software" },
+    { src: "/images/software/drake.png", alt: "Drake Software" },
+    { src: "/images/software/cch-axcess.png", alt: "CCH AXcess" },
   ];
 
   return (
@@ -87,13 +93,13 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                   
                   <div className="flex items-center gap-6">
                     <div className="flex flex-col">
-                      <span className="text-white font-bold text-xl">100+</span>
-                      <span className="text-white/40 text-[10px] uppercase tracking-widest font-black">Firms Served</span>
+                      <span className="text-white font-bold text-xl">450+</span>
+                      <span className="text-white/40 text-[10px] uppercase tracking-widest font-black">Happy Clients</span>
                     </div>
                     <div className="w-px h-8 bg-white/10" />
                     <div className="flex flex-col">
-                      <span className="text-white font-bold text-xl">99.9%</span>
-                      <span className="text-white/40 text-[10px] uppercase tracking-widest font-black">Accuracy</span>
+                      <span className="text-white font-bold text-xl">40+ Yrs</span>
+                      <span className="text-white/40 text-[10px] uppercase tracking-widest font-black">Partner Exp.</span>
                     </div>
                   </div>
                 </div>
@@ -221,9 +227,9 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                  </p>
                </div>
 
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-1000">
+               <div className="grid grid-cols-3 md:grid-cols-4 gap-6 items-center">
                   {toolBadges.map((badge, i) => (
-                    <div key={i} className="relative h-12">
+                    <div key={i} className="relative h-10">
                       <Image src={badge.src} alt={badge.alt} fill className="object-contain" />
                     </div>
                   ))}
@@ -262,7 +268,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                   Learn About Pricing <ChevronRight size={16} />
                 </Link>
               </div>
-              <p className="text-white/30 text-[10px] font-black uppercase tracking-[0.4em]">Trusted by 200+ Firms Nationwide</p>
+              <p className="text-white/30 text-[10px] font-black uppercase tracking-[0.4em]">450+ Happy Clients · 40+ Years Combined Partner Experience</p>
             </motion.div>
         </div>
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[140px] opacity-20" />
