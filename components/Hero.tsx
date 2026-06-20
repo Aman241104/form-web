@@ -111,19 +111,19 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="flex flex-col gap-1">
-              <span className="hero-h1-line block text-white/40 text-sm md:text-base font-bold tracking-[0.3em] uppercase">
+              <span className="hero-h1-line block text-white/40 text-xs md:text-sm font-bold tracking-[0.3em] uppercase">
                 Let Us Handle The Work
               </span>
-              <span className="hero-h1-line block text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight text-white">
+              <span className="hero-h1-line block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight text-white">
                 FOCUS ON
               </span>
-              <span className="hero-h1-line block text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 drop-shadow-[0_0_20px_rgba(239,68,68,0.4)]">
+              <span className="hero-h1-line block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 drop-shadow-[0_0_20px_rgba(239,68,68,0.4)]">
                 GROWTH.
               </span>
             </h1>
 
             {/* Subtext */}
-            <p className="hero-sub max-w-md text-base md:text-lg text-white/60 leading-relaxed font-light">
+            <p className="hero-sub max-w-md text-sm md:text-base lg:text-lg text-white/60 leading-relaxed font-light">
               Precision Bookkeeping. Strategic Advisory. Total Financial Clarity — for CPA firms and growing businesses across the U.S.
             </p>
 

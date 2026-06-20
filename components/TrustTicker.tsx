@@ -127,12 +127,12 @@ export default function TrustTicker() {
             <div className="overflow-hidden mask-blur">
               <div ref={marqueeRef} className="flex whitespace-nowrap">
                 {[...logos, ...logos, ...logos].map((logo, idx) => (
-                  <div key={idx} className="flex-shrink-0 px-10 md:px-16 flex items-center justify-center">
-                    <div className="transition-all duration-500 hover:scale-110 cursor-pointer flex items-center justify-center" style={{ height: '80px', maxWidth: '180px' }}>
+                  <div key={idx} className="flex-shrink-0 px-6 md:px-10 lg:px-16 flex items-center justify-center">
+                    <div className="transition-all duration-500 hover:scale-110 cursor-pointer flex items-center justify-center" style={{ height: '60px', maxWidth: '140px' }}>
                       <img
                         src={logo.src}
                         alt={logo.name}
-                        style={{ maxHeight: '80px', maxWidth: '180px', width: 'auto', height: 'auto', objectFit: 'contain' }}
+                        style={{ maxHeight: '60px', maxWidth: '140px', width: 'auto', height: 'auto', objectFit: 'contain' }}
                       />
                     </div>
                   </div>
@@ -147,7 +147,7 @@ export default function TrustTicker() {
           {stats.map((stat) => (
             <div 
               key={stat.id} 
-              className="reveal-card group relative p-8 lg:p-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white/10 hover:border-red-500/30 hover:shadow-2xl hover:shadow-red-500/5"
+              className="reveal-card group relative p-6 md:p-8 lg:p-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white/10 hover:border-red-500/30 hover:shadow-2xl hover:shadow-red-500/5"
             >
               {/* Card Glow Effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-600/0 to-red-600/0 group-hover:from-red-600/5 group-hover:to-transparent transition-all duration-500" />
@@ -156,9 +156,9 @@ export default function TrustTicker() {
                 <div 
                   id={`stat-val-${stat.id}`}
                   className={`font-display font-bold leading-none mb-3 tracking-tighter
-                    ${stat.emphasis === 'dominant' ? 'text-5xl lg:text-6xl text-red-500' : ''}
-                    ${stat.emphasis === 'vibrant' ? 'text-5xl lg:text-6xl text-white' : ''}
-                    ${stat.emphasis === 'standard' ? 'text-4xl lg:text-5xl text-white/90' : ''}
+                    ${stat.emphasis === 'dominant' ? 'text-4xl md:text-5xl lg:text-6xl text-red-500' : ''}
+                    ${stat.emphasis === 'vibrant' ? 'text-4xl md:text-5xl lg:text-6xl text-white' : ''}
+                    ${stat.emphasis === 'standard' ? 'text-3xl md:text-4xl lg:text-5xl text-white/90' : ''}
                   `}
                 >
                   0{stat.suffix}

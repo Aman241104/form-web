@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-8 pb-16 md:pb-20">
           
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-8">
@@ -158,7 +158,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] text-white/30 font-bold tracking-[0.1em] uppercase">
+        <div className="py-8 md:py-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-[11px] text-white/30 font-bold tracking-[0.1em] uppercase">
           <div>
             © {new Date().getFullYear()} Elite Cloud Books. All Rights Reserved.
           </div>

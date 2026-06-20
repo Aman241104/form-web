@@ -6,7 +6,7 @@ import { getWhatsAppLink } from './StickyWhatsApp';
 
 export default function ContactCTA() {
   return (
-    <section className="relative py-32 lg:py-48 bg-[#05080f] overflow-hidden">
+    <section className="relative py-20 md:py-32 lg:py-48 bg-[#05080f] overflow-hidden">
       {/* Dynamic Background System */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Animated Gradient Shift */}
@@ -53,7 +53,7 @@ export default function ContactCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-white mb-10"
+            className="text-4xl md:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-white mb-10"
           >
             Scale Faster.<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600 drop-shadow-[0_0_15px_rgba(239,68,68,0.3)]">
@@ -67,7 +67,7 @@ export default function ContactCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="max-w-2xl text-xl md:text-2xl text-white/60 font-light leading-relaxed mb-16"
+            className="max-w-2xl text-base md:text-xl lg:text-2xl text-white/60 font-light leading-relaxed mb-12 md:mb-16"
           >
             Stop managing chaos and start focusing on growth. Join 450+ happy clients leveraging our high-precision offshore talent.
           </motion.p>
@@ -87,7 +87,7 @@ export default function ContactCTA() {
               href={getWhatsAppLink("Hello Elite Cloud Books, I'd like to book a consultation to scale our firm's operations.")} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="group relative px-10 py-6 bg-red-600 hover:bg-red-500 text-white rounded-2xl font-bold text-xl transition-all duration-300 flex items-center justify-center gap-4 shadow-[0_20px_50px_-15px_rgba(230,57,70,0.5)] overflow-hidden w-full sm:w-auto"
+              className="group relative px-8 md:px-10 py-5 md:py-6 bg-red-600 hover:bg-red-500 text-white rounded-2xl font-bold text-lg md:text-xl transition-all duration-300 flex items-center justify-center gap-4 shadow-[0_20px_50px_-15px_rgba(230,57,70,0.5)] overflow-hidden w-full sm:w-auto"
             >
               <span className="relative z-10">Book Consultation</span>
               <ArrowRight size={22} className="relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
@@ -105,7 +105,7 @@ export default function ContactCTA() {
               href={getWhatsAppLink("Hi! I have a quick question.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-6 bg-white/5 border border-white/10 hover:border-white/20 text-white rounded-2xl font-bold text-xl transition-all duration-300 flex items-center justify-center gap-4 w-full sm:w-auto"
+              className="px-8 md:px-10 py-5 md:py-6 bg-white/5 border border-white/10 hover:border-white/20 text-white rounded-2xl font-bold text-lg md:text-xl transition-all duration-300 flex items-center justify-center gap-4 w-full sm:w-auto"
             >
               <MessageCircle size={22} className="text-red-500" />
               Chat on WhatsApp

@@ -92,7 +92,7 @@ export default function Principles() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.08] hover:border-red-500/30 hover:shadow-2xl hover:shadow-red-500/5"
+              className="group relative p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.08] hover:border-red-500/30 hover:shadow-2xl hover:shadow-red-500/5"
             >
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-600/0 group-hover:bg-red-600 transition-all duration-500 rounded-l-3xl" />
               <div className="text-5xl font-black text-white/5 group-hover:text-red-500/10 transition-colors duration-500 mb-4 leading-none font-display">
@@ -114,9 +114,9 @@ export default function Principles() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="group relative mt-6 p-8 lg:p-12 rounded-3xl bg-gradient-to-r from-red-600/10 to-red-600/5 border border-red-500/20 backdrop-blur-sm transition-all duration-500 hover:border-red-500/40 flex flex-col md:flex-row items-start md:items-center gap-6"
+          className="group relative mt-6 p-5 md:p-8 lg:p-12 rounded-2xl md:rounded-3xl bg-gradient-to-r from-red-600/10 to-red-600/5 border border-red-500/20 backdrop-blur-sm transition-all duration-500 hover:border-red-500/40 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6"
         >
-          <div className="text-6xl font-black text-red-500/20 font-display leading-none flex-shrink-0">
+          <div className="text-4xl md:text-6xl font-black text-red-500/20 font-display leading-none flex-shrink-0">
             {principles[6].num}
           </div>
           <div>

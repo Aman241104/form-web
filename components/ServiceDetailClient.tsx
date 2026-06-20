@@ -53,7 +53,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
   return (
     <main className="bg-[#05080f] text-white min-h-screen">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-red-600/5 rounded-full blur-[180px] opacity-40" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[120px] opacity-20" />
@@ -74,19 +74,19 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-red-500/10 text-red-500 text-[11px] font-black uppercase tracking-[0.3em] border border-red-500/20 mb-6">
                   Elite Specialized Service
                 </span>
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6 md:mb-8">
                   {service.title.split('&').map((part, i) => (
                     <span key={i} className={i === 1 ? "text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400" : ""}>
                       {i === 1 ? ` & ${part}` : part}
                     </span>
                   ))}
                 </h1>
-                <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed max-w-2xl mb-12">
+                <p className="text-base md:text-xl lg:text-2xl text-white/60 font-light leading-relaxed max-w-2xl mb-8 md:mb-12">
                   {service.desc}
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-6 mb-12">
-                  <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} href={getWhatsAppLink(`Hello! I'd like to discuss your ${service.title} services.`)} className="px-10 py-5 bg-red-600 hover:bg-red-500 text-white rounded-2xl font-bold text-lg shadow-xl shadow-red-600/20 transition-all flex items-center justify-center gap-3">
+                <div className="flex flex-col sm:flex-row gap-4 md:gap-6 mb-8 md:mb-12">
+                  <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} href={getWhatsAppLink(`Hello! I'd like to discuss your ${service.title} services.`)} className="px-8 md:px-10 py-4 md:py-5 bg-red-600 hover:bg-red-500 text-white rounded-2xl font-bold text-base md:text-lg shadow-xl shadow-red-600/20 transition-all flex items-center justify-center gap-3">
                     Start Consulting
                     <ArrowRight size={20} />
                   </motion.a>
@@ -115,7 +115,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
             </div>
 
             <motion.div initial={{ opacity: 0, scale: 0.9, x: 40 }} animate={{ opacity: 1, scale: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="lg:col-span-5 relative">
-              <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
+              <div className="relative aspect-[4/5] rounded-2xl md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
                 <Image src={isBookkeeping ? "/images/ca-notebook.png" : "/images/office-discussion.png"} alt={service.title} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05080f]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-10 left-10 right-10 p-6 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
@@ -134,9 +134,9 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
       </section>
 
       {/* 2. OVERVIEW & BENEFITS */}
-      <section className="py-24 bg-[#080c14] border-y border-white/5">
+      <section className="py-16 md:py-24 bg-[#080c14] border-y border-white/5">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-20 items-start">
+          <div className="grid lg:grid-cols-12 gap-12 md:gap-16 lg:gap-20 items-start">
             <div className="lg:col-span-6 space-y-8">
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight">Institutional-Grade <br /><span className="text-red-500">Service Overview.</span></h2>
@@ -150,7 +150,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
             <div className="lg:col-span-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {benefits.map((benefit, i) => (
-                  <motion.div key={i} whileHover={{ y: -5 }} className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/[0.08] hover:border-red-500/30">
+                  <motion.div key={i} whileHover={{ y: -5 }} className="p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/[0.08] hover:border-red-500/30">
                     <div className="w-12 h-12 rounded-2xl bg-red-600/10 flex items-center justify-center text-red-500 mb-6">
                       <CheckCircle2 size={24} />
                     </div>
@@ -168,9 +168,9 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
       <section className="py-20 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-red-600/5" />
         <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
-           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} className="p-12 lg:p-20 rounded-[4rem] bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-2xl shadow-3xl">
-              <h3 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to see how we plug into your firm?</h3>
-              <p className="text-xl text-white/60 font-light mb-12 max-w-2xl mx-auto">Get a tailored walk-through of our workflows and how we guarantee 99.9% precision.</p>
+           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} className="p-7 md:p-12 lg:p-20 rounded-2xl md:rounded-[3rem] bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-2xl shadow-3xl">
+              <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-5 md:mb-8">Ready to see how we plug into your firm?</h3>
+              <p className="text-base md:text-xl text-white/60 font-light mb-8 md:mb-12 max-w-2xl mx-auto">Get a tailored walk-through of our workflows and how we guarantee 99.9% precision.</p>
               <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} href={getWhatsAppLink(`I'd like a workflow walk-through for ${service.title}.`)} className="inline-flex items-center gap-4 px-10 py-5 bg-white text-black rounded-2xl font-black uppercase text-sm tracking-[0.2em] transition-all hover:bg-red-600 hover:text-white">
                 Request Workflow Demo
                 <ArrowRight size={18} />
@@ -180,14 +180,14 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
       </section>
 
       {/* 4. PROCESS WORKFLOW */}
-      <section className="py-24 lg:py-32 bg-[#05080f]">
+      <section className="py-16 md:py-24 lg:py-32 bg-[#05080f]">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12 md:mb-20">
             <span className="text-[10px] font-black text-red-500 uppercase tracking-[0.4em] mb-4 block">The ECB Ritual</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-white">Our 4-Step <span className="text-red-500">Alignment.</span></h2>
+            <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white">Our 4-Step <span className="text-red-500">Alignment.</span></h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {processSteps.map((step, i) => (
               <div key={i} className="relative group">
                 <div className="mb-10 flex items-center justify-center">
@@ -213,7 +213,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 order-2 lg:order-1">
-               <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
+               <div className="relative aspect-square rounded-2xl md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
                   <Image src="/images/team-leaders.png" alt="Collaborative Team" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-red-600/20 to-transparent opacity-40" />
                </div>
@@ -227,7 +227,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                  </p>
                </div>
 
-               <div className="grid grid-cols-3 md:grid-cols-4 gap-6 items-center">
+               <div className="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 items-center">
                   {toolBadges.map((badge, i) => (
                     <div key={i} className="relative h-10">
                       <Image src={badge.src} alt={badge.alt} fill className="object-contain" />
@@ -235,7 +235,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                   ))}
                </div>
 
-               <div className="p-10 rounded-[2.5rem] bg-white/5 border border-white/10 relative">
+               <div className="p-6 md:p-10 rounded-2xl md:rounded-[2.5rem] bg-white/5 border border-white/10 relative">
                   <div className="flex gap-1 text-yellow-500 mb-6">
                     {[...Array(5)].map((_, i) => <CheckCircle2 key={i} size={14} className="fill-current" />)}
                   </div>
@@ -256,12 +256,12 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
       </section>
 
       {/* 6. FINAL CTA */}
-      <section className="relative py-32 bg-[#05080f] overflow-hidden">
+      <section className="relative py-20 md:py-32 bg-[#05080f] overflow-hidden">
         <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className="space-y-12">
-              <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight">Zero Chaos. <br />Maximum Growth.</h2>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                 <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} href={getWhatsAppLink(`I'm ready to scale my ${service.title} with Elite Cloud Books.`)} className="px-12 py-6 bg-red-600 hover:bg-red-500 text-white rounded-2xl font-black uppercase text-sm tracking-[0.3em] transition-all shadow-2xl shadow-red-600/30">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} className="space-y-8 md:space-y-12">
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight">Zero Chaos. <br />Maximum Growth.</h2>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+                 <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} href={getWhatsAppLink(`I'm ready to scale my ${service.title} with Elite Cloud Books.`)} className="w-full sm:w-auto px-8 md:px-12 py-5 md:py-6 bg-red-600 hover:bg-red-500 text-white rounded-2xl font-black uppercase text-sm tracking-[0.3em] transition-all shadow-2xl shadow-red-600/30">
                   Book Consultation Now
                 </motion.a>
                 <Link href="/contact" className="text-white/50 hover:text-white font-bold uppercase text-xs tracking-widest transition-colors flex items-center gap-2">

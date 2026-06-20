@@ -32,7 +32,7 @@ export default function FAQ() {
   const [active, setActive] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative py-24 lg:py-32 bg-[#05080f] overflow-hidden">
+    <section id="faq" className="relative py-16 md:py-24 lg:py-32 bg-[#05080f] overflow-hidden">
       {/* Background Depth */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] bg-red-600/5 rounded-full blur-[140px] opacity-30" />
@@ -61,7 +61,7 @@ export default function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white"
+                className="text-3xl md:text-4xl lg:text-6xl font-bold leading-tight tracking-tight text-white"
               >
                 Common <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">Questions.</span>
@@ -83,7 +83,7 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl"
+              className="p-6 md:p-8 rounded-2xl md:rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl"
             >
               <h4 className="text-white font-bold text-xl mb-2">Still have questions?</h4>
               <p className="text-white/50 text-sm font-light mb-6">Our partners are available to provide custom insights for your firm.</p>
@@ -100,7 +100,7 @@ export default function FAQ() {
                 </a>
                 
                 <a 
-                  href="#contact"
+                  href="/contact"
                   className="flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-red-600 hover:bg-red-500 text-white transition-all duration-300 shadow-lg shadow-red-600/20 hover:shadow-red-500/40 group"
                 >
                   <CalendarDays size={18} className="group-hover:scale-110 transition-transform" />
@@ -126,7 +126,7 @@ export default function FAQ() {
                   >
                     <button
                       onClick={() => setActive(isActive ? null : index)}
-                      className={`group relative w-full text-left p-6 md:p-8 rounded-[1.5rem] transition-all duration-500 overflow-hidden
+                      className={`group relative w-full text-left p-4 md:p-6 lg:p-8 rounded-xl md:rounded-[1.5rem] transition-all duration-500 overflow-hidden
                         ${isActive 
                           ? 'bg-white/10 border-white/20 shadow-2xl shadow-red-500/5' 
                           : 'bg-white/5 border-white/10 hover:bg-white/[0.08] hover:border-red-500/30 hover:-translate-y-1'
@@ -149,7 +149,7 @@ export default function FAQ() {
                           `}>
                             {faq.category}
                           </span>
-                          <h3 className={`text-xl md:text-2xl font-bold leading-snug transition-colors duration-300
+                          <h3 className={`text-base md:text-xl lg:text-2xl font-bold leading-snug transition-colors duration-300
                             ${isActive ? 'text-white' : 'text-white/80 group-hover:text-white'}
                           `}>
                             {faq.q}
@@ -157,7 +157,7 @@ export default function FAQ() {
                         </div>
 
                         {/* Animated Plus/Cross Icon */}
-                        <div className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-500
+                        <div className={`flex-shrink-0 w-10 h-10 min-w-[2.5rem] rounded-full border flex items-center justify-center transition-all duration-500
                           ${isActive ? 'bg-red-600 border-red-600 rotate-45' : 'bg-white/5 border-white/10 group-hover:border-red-500/50 group-hover:bg-red-600/10'}
                         `}>
                           <Plus size={20} className={isActive ? 'text-white' : 'text-red-500'} />

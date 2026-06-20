@@ -43,7 +43,7 @@ export default function Overview() {
               whileInView={{ opacity: 1, x: 0, rotate: -1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, ease: "circOut" }}
-              className="relative aspect-[4/5] w-full rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.6)] border border-white/10"
+              className="relative aspect-[4/5] w-full rounded-2xl md:rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.6)] border border-white/10"
             >
               <Image 
                 src="/images/team-collab.png" 
@@ -58,7 +58,7 @@ export default function Overview() {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-10 -right-6 lg:-right-12 bg-white/5 backdrop-blur-2xl border border-white/10 p-8 rounded-[2.5rem] shadow-2xl z-20 hidden md:block max-w-[240px]"
+              className="absolute -bottom-10 -right-4 lg:-right-12 bg-white/5 backdrop-blur-2xl border border-white/10 p-5 md:p-8 rounded-2xl md:rounded-[2.5rem] shadow-2xl z-20 hidden md:block max-w-[200px] md:max-w-[240px]"
             >
               <div className="w-12 h-12 rounded-2xl bg-red-600/20 flex items-center justify-center text-red-500 mb-4">
                 <TrendingUp size={24} />
@@ -93,7 +93,7 @@ export default function Overview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-white mb-10"
+              className="text-4xl md:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-white mb-10"
             >
               Your Strategic <br />
               <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400 group cursor-default">
@@ -122,7 +122,7 @@ export default function Overview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-xl md:text-2xl text-white/70 leading-relaxed font-light"
+                className="text-base md:text-xl lg:text-2xl text-white/70 leading-relaxed font-light"
               >
                 EliteCloudBooks handles the one thing every business owner wishes they had more time for: <span className="text-white font-bold">their finances</span>.
               </motion.p>
@@ -131,7 +131,7 @@ export default function Overview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-xl md:text-2xl text-white/70 leading-relaxed font-light"
+                className="text-base md:text-xl lg:text-2xl text-white/70 leading-relaxed font-light"
               >
                 We combine <span className="text-white font-bold">cloud-based technology</span> with real accounting expertise — bringing together <span className="text-white font-bold underline decoration-red-500/40 decoration-2 underline-offset-4">40+ years of combined partner experience</span> to serve CPA firms and mid-market businesses across the U.S.
               </motion.p>

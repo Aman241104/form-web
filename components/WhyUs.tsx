@@ -101,7 +101,7 @@ export default function WhyUs() {
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
           
           {/* Left Column: Visual Storytelling */}
-          <div className="lg:col-span-6 space-y-12">
+          <div className="lg:col-span-6 space-y-8 lg:space-y-12">
             <div className="space-y-6">
               <div className="reveal-why-header">
                 <span className="inline-block px-4 py-1.5 rounded-full bg-red-500/10 text-red-500 text-[11px] font-bold tracking-[0.2em] uppercase border border-red-500/20">
@@ -147,7 +147,7 @@ export default function WhyUs() {
               {/* Floating Trusted Badge */}
               <div 
                 ref={badgeRef}
-                className="absolute -top-6 -right-6 lg:-right-8 bg-white/5 backdrop-blur-xl border border-white/10 p-5 rounded-3xl shadow-2xl z-20 hidden md:block"
+                className="absolute -top-5 -right-4 lg:-right-8 bg-white/5 backdrop-blur-xl border border-white/10 p-4 md:p-5 rounded-2xl md:rounded-3xl shadow-2xl z-20 hidden md:block"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center">
@@ -170,12 +170,12 @@ export default function WhyUs() {
               {points.map((point, index) => (
                 <div 
                   key={index} 
-                  className="reveal-why-card group relative p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1.5 hover:bg-white/[0.08] hover:border-red-500/30 hover:shadow-2xl hover:shadow-red-500/5 cursor-default"
+                  className="reveal-why-card group relative p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1.5 hover:bg-white/[0.08] hover:border-red-500/30 hover:shadow-2xl hover:shadow-red-500/5 cursor-default"
                 >
                   {/* Left Accent Line Animation */}
                   <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-red-600 transition-all duration-500 group-hover:h-3/5 rounded-r-full" />
                   
-                  <div className="flex gap-8 items-start">
+                  <div className="flex gap-4 md:gap-8 items-start">
                     {/* Number styling in pill */}
                     <div className="flex-shrink-0">
                       <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500 font-display font-bold text-sm transition-all duration-500 group-hover:bg-red-600 group-hover:text-white group-hover:border-red-600 group-hover:scale-110">

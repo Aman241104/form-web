@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Send, CheckCircle2, Building2, UserCircle2, BarChart3, AlertCircle, Zap, TrendingUp } from 'lucide-react';
+import { ArrowRight, Send, CheckCircle2, Building2, UserCircle2, BarChart3, AlertCircle, Zap, TrendingUp, Globe } from 'lucide-react';
 import { getWhatsAppLink } from './StickyWhatsApp';
 
 type FormData = {
@@ -22,6 +22,7 @@ export default function GatekeeperForm() {
     bottleneck: '',
     email: ''
   });
+  const [emailError, setEmailError] = useState('');
 
   const nextStep = (field: keyof FormData, value: string) => {
     setData({ ...data, [field]: value });
@@ -29,12 +30,17 @@ export default function GatekeeperForm() {
   };
 
   const handleSubmit = () => {
+    if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      setEmailError('Please enter a valid professional email address.');
+      return;
+    }
+    setEmailError('');
     const message = `Hello Elite Cloud Books, I've completed the intake brief:
 - Representing: ${data.persona}
 - Bottleneck: ${data.bottleneck}
 - Scale: ${data.size}
 - Professional Email: ${data.email}`;
-    
+
     window.open(getWhatsAppLink(message), '_blank');
   };
 
@@ -77,7 +83,7 @@ export default function GatekeeperForm() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 lg:py-48 bg-[#05080f] overflow-hidden">
+    <section id="contact" className="relative py-16 md:py-24 lg:py-48 bg-[#05080f] overflow-hidden">
       {/* Background depth */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-red-600/5 rounded-full blur-[180px] opacity-30" />
@@ -85,7 +91,7 @@ export default function GatekeeperForm() {
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-center">
           
           {/* Left Column: Dynamic Content */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
@@ -102,11 +108,11 @@ export default function GatekeeperForm() {
                   Step 0{step} — {step === 4 ? "Alignment" : stepsContent[step-1].tag}
                 </div>
                 
-                <h2 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
                   {step === 4 ? "Where should we send your brief?" : stepsContent[step-1].title}
                 </h2>
 
-                <p className="text-xl text-white/50 font-light leading-relaxed max-w-md">
+                <p className="text-base md:text-xl text-white/50 font-light leading-relaxed max-w-md">
                   {step === 4 ? "Enter your professional email to receive your custom capacity and scaling roadmap." : stepsContent[step-1].desc}
                 </p>
 
@@ -125,7 +131,7 @@ export default function GatekeeperForm() {
 
           {/* Right Column: Interaction Cards */}
           <div className="lg:col-span-6">
-            <div className="relative min-h-[440px] flex flex-col justify-center">
+            <div className="relative min-h-[360px] md:min-h-[440px] flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 {step < 4 ? (
                   <motion.div
@@ -141,7 +147,7 @@ export default function GatekeeperForm() {
                         whileHover={{ x: 8, backgroundColor: "rgba(255,255,255,0.08)" }}
                         whileTap={{ scale: 0.98 }}
                         onClick={() => nextStep(stepsContent[step-1].field, opt.label)}
-                        className="w-full text-left p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-between group transition-all"
+                        className="w-full text-left p-5 md:p-8 rounded-xl md:rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-between group transition-all"
                       >
                         <div className="flex items-center gap-6">
                           <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500 group-hover:bg-red-600 group-hover:text-white transition-all">
@@ -163,18 +169,22 @@ export default function GatekeeperForm() {
                     key="step-final"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="p-10 rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl space-y-10"
+                    className="p-6 md:p-10 rounded-2xl md:rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl space-y-8 md:space-y-10"
                   >
                     <div className="space-y-4">
                        <label className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40">Professional Email</label>
                        <div className="relative">
-                          <input 
-                            type="email" 
-                            placeholder="name@company.com" 
+                          <input
+                            type="email"
+                            placeholder="name@company.com"
                             value={data.email}
-                            onChange={(e) => setData({...data, email: e.target.value})}
-                            className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-5 text-white placeholder:text-white/20 focus:outline-none focus:border-red-500/50 transition-colors"
+                            onChange={(e) => { setData({...data, email: e.target.value}); setEmailError(''); }}
+                            onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
+                            className={`w-full bg-white/5 border rounded-2xl px-6 py-5 text-white placeholder:text-white/20 focus:outline-none transition-colors ${emailError ? 'border-red-500/70' : 'border-white/10 focus:border-red-500/50'}`}
                           />
+                          {emailError && (
+                            <p className="mt-2 text-red-400 text-xs font-bold">{emailError}</p>
+                          )}
                        </div>
                     </div>
                     
@@ -205,13 +215,13 @@ export default function GatekeeperForm() {
 
         {/* Bottom Progress Bar */}
         <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
-           <div className="flex items-center gap-6">
+           <div className="flex items-center gap-4 md:gap-6">
               <div className="flex gap-2">
                  {[1,2,3,4].map((s) => (
                    <div key={s} className={`h-1 rounded-full transition-all duration-700 ${step >= s ? 'w-8 bg-red-600' : 'w-4 bg-white/10'}`} />
                  ))}
               </div>
-              <span className="text-white/30 text-[10px] font-black uppercase tracking-widest">Protocol Syncing: {Math.round((step/4)*100)}%</span>
+              <span className="text-white/30 text-[10px] font-black uppercase tracking-widest">Step {step} of 4</span>
            </div>
 
            <div className="flex items-center gap-3">
@@ -224,11 +234,3 @@ export default function GatekeeperForm() {
   );
 }
 
-// Add Globe icon placeholder for missing lucide import in the static array
-function Globe({ size, className }: { size?: number, className?: string }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-    </svg>
-  );
-}

@@ -124,12 +124,12 @@ export default function Accreditations() {
         <div className="relative group mb-12 overflow-hidden py-10">
           <motion.div 
             style={{ x: x1 }}
-            className="flex whitespace-nowrap gap-12 lg:gap-24"
+            className="flex whitespace-nowrap gap-6 md:gap-12 lg:gap-24"
           >
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={index}
-                className="relative w-36 h-14 lg:w-48 lg:h-16 flex-shrink-0 transition-all duration-500 hover:scale-110 group/logo flex items-center justify-center"
+                className="relative w-24 h-10 md:w-36 md:h-14 lg:w-48 lg:h-16 flex-shrink-0 transition-all duration-500 hover:scale-110 group/logo flex items-center justify-center"
               >
                 <img
                   src={logo.src}
@@ -146,12 +146,12 @@ export default function Accreditations() {
         <div className="relative group mb-24 overflow-hidden py-10 border-b border-white/5">
           <motion.div 
             style={{ x: x2 }}
-            className="flex whitespace-nowrap gap-12 lg:gap-24"
+            className="flex whitespace-nowrap gap-6 md:gap-12 lg:gap-24"
           >
             {[...[...logos].reverse(), ...[...logos].reverse()].map((logo, index) => (
               <div
                 key={index}
-                className="relative w-36 h-14 lg:w-48 lg:h-16 flex-shrink-0 transition-all duration-500 hover:scale-110 group/logo flex items-center justify-center"
+                className="relative w-24 h-10 md:w-36 md:h-14 lg:w-48 lg:h-16 flex-shrink-0 transition-all duration-500 hover:scale-110 group/logo flex items-center justify-center"
               >
                 <img
                   src={logo.src}
@@ -168,7 +168,7 @@ export default function Accreditations() {
         </div>
 
         {/* Trust Metrics with Count-Up */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-20">
           {stats.map((stat, index) => (
             <motion.div 
               key={index}
@@ -178,7 +178,7 @@ export default function Accreditations() {
               transition={{ delay: index * 0.1 }}
               className="flex flex-col items-center md:items-start text-center md:text-left group"
             >
-              <div className="text-5xl lg:text-7xl font-black text-white mb-4 tracking-tighter group-hover:text-red-500 transition-colors duration-500">
+              <div className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 tracking-tighter group-hover:text-red-500 transition-colors duration-500">
                 <CountUp end={stat.value} />{stat.suffix}
               </div>
               <div className="text-white/40 text-xs lg:text-sm font-black uppercase tracking-[0.3em] flex items-center gap-3">

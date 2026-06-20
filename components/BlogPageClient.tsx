@@ -50,7 +50,7 @@ export default function BlogPageClient() {
         </div>
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-10 md:gap-16 items-center">
             
             {/* Left Content */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
@@ -63,7 +63,7 @@ export default function BlogPageClient() {
                   Global Intelligence
                 </span>
                 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
                   Applied <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600">
                     Insights.
@@ -157,7 +157,7 @@ export default function BlogPageClient() {
       </section>
 
       {/* 3. BLOG GRID */}
-      <section id="intelligence-grid" className="py-24 lg:py-32">
+      <section id="intelligence-grid" className="py-16 md:py-24 lg:py-32">
         <div className="container mx-auto px-6 max-w-7xl">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
@@ -327,14 +327,14 @@ export default function BlogPageClient() {
       </section>
 
       {/* 5. NEWSLETTER SECTION */}
-      <section className="relative py-32 lg:py-48 bg-[#05080f] overflow-hidden">
+      <section className="relative py-20 md:py-32 lg:py-48 bg-[#05080f] overflow-hidden">
         <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="space-y-12"
             >
-              <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tighter">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tighter">
                 Scale Your Intelligence. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600">Delivered Weekly.</span>
               </h2>

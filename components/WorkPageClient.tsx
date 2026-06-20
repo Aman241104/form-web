@@ -24,14 +24,14 @@ export default function WorkPageClient() {
     <main className="bg-[#05080f] text-white min-h-screen">
       
       {/* 1. HERO SECTION */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-red-600/5 rounded-full blur-[180px] opacity-40" />
           <div className="absolute inset-0 opacity-[0.015] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
         </div>
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-10 md:gap-16 items-center">
             
             {/* Left Content */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
@@ -44,14 +44,14 @@ export default function WorkPageClient() {
                   Performance Proof
                 </span>
                 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
                   Real Financial <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600">
                     Impact.
                   </span>
                 </h1>
 
-                <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed max-w-2xl">
+                <p className="text-base md:text-xl lg:text-2xl text-white/60 font-light leading-relaxed max-w-2xl">
                   We don't just list services; we deliver measurable outcomes. Explore how we scale capacity and precision for leading firms.
                 </p>
 
@@ -163,7 +163,7 @@ export default function WorkPageClient() {
       </section>
 
       {/* 3. CASE STUDY GRID + FILTER */}
-      <section id="case-studies" className="py-24 lg:py-48">
+      <section id="case-studies" className="py-16 md:py-24 lg:py-48">
         <div className="container mx-auto px-6 max-w-7xl">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
@@ -221,7 +221,7 @@ export default function WorkPageClient() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#05080f] via-[#05080f]/40 to-transparent" />
                       
-                      <div className="absolute inset-0 p-10 flex flex-col justify-end">
+                      <div className="absolute inset-0 p-5 md:p-10 flex flex-col justify-end">
                          <div className="flex items-center gap-4 mb-4">
                             <span className="text-[9px] font-black uppercase tracking-widest text-red-500 bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20">
                                {project.category}
@@ -257,7 +257,7 @@ export default function WorkPageClient() {
       {/* 4. TOTAL IMPACT METRICS */}
       <section className="py-24 lg:py-32 bg-[#080c14] border-y border-white/5">
          <div className="container mx-auto px-6 max-w-7xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
                {[
                  { l: "Global Clients", v: "200+", d: "Ambition served daily." },
                  { l: "Efficiency Boost", v: "30%", d: "Average increase in cycle speed." },
@@ -276,14 +276,14 @@ export default function WorkPageClient() {
       </section>
 
       {/* 5. FINAL CONVERSION CTA */}
-      <section className="relative py-32 lg:py-48 bg-[#05080f] overflow-hidden">
+      <section className="relative py-20 md:py-32 lg:py-48 bg-[#05080f] overflow-hidden">
         <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="space-y-12"
             >
-              <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tighter">
+              <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tighter">
                 Let's Build Your Next <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-red-600">Success Story.</span>
               </h2>

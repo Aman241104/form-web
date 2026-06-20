@@ -103,7 +103,7 @@ export default function Industries() {
               <Link 
                 href={`/industries/${industry.id}`}
                 key={industry.id} 
-                className={`reveal-ind-card group relative flex flex-col p-8 lg:p-10 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-500 overflow-hidden
+                className={`reveal-ind-card group relative flex flex-col p-5 md:p-8 lg:p-10 rounded-2xl md:rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-500 overflow-hidden
                   ${isFeatured ? 'lg:col-span-8 lg:row-span-1' : 'lg:col-span-4'}
                   ${hoveredIndex !== null && hoveredIndex !== index ? 'opacity-40 grayscale-[0.5]' : 'opacity-100'}
                   hover:-translate-y-2 hover:bg-white/[0.08] hover:border-red-500/30 hover:shadow-2xl hover:shadow-red-500/5

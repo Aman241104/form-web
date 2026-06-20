@@ -12,14 +12,14 @@ export default function Blogs() {
   const otherPosts = blogPosts.slice(1);
 
   return (
-    <section id="blogs" className="relative py-24 lg:py-32 bg-[#05080f] overflow-hidden">
+    <section id="blogs" className="relative py-16 md:py-24 lg:py-32 bg-[#05080f] overflow-hidden">
       {/* Background Depth */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[120px] opacity-20" />
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-center">
           
           {/* Left Column: Context */}
           <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -84,7 +84,7 @@ export default function Blogs() {
             >
               <Link 
                 href={`/blog/${featuredPost.id}`} 
-                className="group relative block aspect-[16/9] w-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 hover:border-red-500/30"
+                className="group relative block aspect-[16/9] w-full rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 hover:border-red-500/30"
               >
                 <Image 
                   src={featuredPost.image} 
@@ -95,7 +95,7 @@ export default function Blogs() {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#05080f] via-[#05080f]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
                 
-                <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+                <div className="absolute inset-0 p-5 md:p-8 lg:p-12 flex flex-col justify-end">
                   <div className="flex flex-wrap items-center gap-4 mb-4">
                     <span className="px-3 py-1 rounded-full bg-red-600 text-[10px] font-black text-white uppercase tracking-wider">
                       {featuredPost.category}
@@ -104,7 +104,7 @@ export default function Blogs() {
                       <Clock size={12} /> {featuredPost.readTime}
                     </span>
                   </div>
-                  <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 transition-transform duration-500 group-hover:-translate-y-1">
+                  <h4 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 transition-transform duration-500 group-hover:-translate-y-1">
                     {featuredPost.title}
                   </h4>
                   <p className="text-white/60 text-sm font-medium uppercase tracking-[0.2em]">

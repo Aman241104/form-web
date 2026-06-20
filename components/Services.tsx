@@ -96,7 +96,7 @@ export default function Services() {
               >
                 <Link 
                   href={`/services/${service.id}`} 
-                  className={`group relative flex flex-col h-full p-8 lg:p-10 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-500 overflow-hidden
+                  className={`group relative flex flex-col h-full p-6 md:p-8 lg:p-10 rounded-2xl md:rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-500 overflow-hidden
                     hover:-translate-y-2 hover:bg-white/[0.08] hover:border-red-500/40 hover:shadow-[0_20px_40px_-15px_rgba(230,57,70,0.2)]
                   `}
                 >
@@ -127,7 +127,7 @@ export default function Services() {
                       </div>
 
                       <h3 className={`font-bold text-white mb-4 group-hover:text-red-400 transition-colors
-                        ${isFeatured ? 'text-3xl md:text-4xl' : 'text-2xl'}
+                        ${isFeatured ? 'text-2xl md:text-3xl lg:text-4xl' : 'text-xl md:text-2xl'}
                       `}>
                         {service.title}
                       </h3>

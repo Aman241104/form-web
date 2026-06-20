@@ -140,7 +140,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial Carousel */}
-        <div className="relative h-[500px] md:h-[450px] flex items-center justify-center">
+        <div className="relative">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={index}
@@ -154,33 +154,34 @@ export default function Testimonials() {
                 opacity: { duration: 0.2 },
                 scale: { duration: 0.4 }
               }}
-              className="absolute w-full max-w-4xl"
+              className="w-full max-w-4xl mx-auto"
             >
-              <div className="group relative p-8 md:p-12 lg:p-16 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl transition-all duration-500 hover:bg-white/[0.08] hover:border-red-500/20">
+              <div className="group relative p-6 md:p-10 lg:p-16 rounded-2xl md:rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl transition-all duration-500 hover:bg-white/[0.08] hover:border-red-500/20">
                 {/* Decorative Quote Mark */}
-                <div className="absolute top-10 left-10 text-white/5 opacity-10 transition-opacity group-hover:opacity-20">
-                  <Quote size={120} fill="currentColor" />
+                <div className="absolute top-6 left-6 md:top-10 md:left-10 text-white/5 opacity-10 transition-opacity group-hover:opacity-20">
+                  <Quote size={80} fill="currentColor" className="md:hidden" />
+                  <Quote size={120} fill="currentColor" className="hidden md:block" />
                 </div>
 
                 <div className="relative z-10 flex flex-col items-center text-center">
-                  <div className="mb-8">
-                    <div className="flex gap-1 text-yellow-500/80 mb-6 justify-center">
+                  <div className="mb-6 md:mb-8">
+                    <div className="flex gap-1 text-yellow-500/80 mb-4 md:mb-6 justify-center">
                       {[...Array(testimonials[index].rating)].map((_, i) => (
-                        <Star key={i} size={16} fill="currentColor" />
+                        <Star key={i} size={14} fill="currentColor" />
                       ))}
                     </div>
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-medium leading-snug tracking-tight text-white mb-8">
+                    <h3 className="text-xl md:text-2xl lg:text-4xl font-display font-medium leading-snug tracking-tight text-white mb-5 md:mb-8">
                       &ldquo;{testimonials[index].shortQuote}&rdquo;
                     </h3>
                   </div>
 
-                  <p className="text-lg text-white/60 leading-relaxed font-light mb-12 max-w-2xl italic">
+                  <p className="text-sm md:text-base lg:text-lg text-white/60 leading-relaxed font-light mb-8 md:mb-12 max-w-2xl italic">
                     {testimonials[index].fullQuote}
                   </p>
 
-                  <div className="flex items-center gap-5 mt-4">
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-red-500/20 group-hover:border-red-500/50 transition-colors">
-                      <Image 
+                  <div className="flex items-center gap-4">
+                    <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-red-500/20 group-hover:border-red-500/50 transition-colors flex-shrink-0">
+                      <Image
                         src={testimonials[index].avatar}
                         alt={testimonials[index].name}
                         fill
@@ -188,8 +189,8 @@ export default function Testimonials() {
                       />
                     </div>
                     <div className="text-left">
-                      <h4 className="text-white font-bold text-lg leading-tight">{testimonials[index].name}</h4>
-                      <p className="text-white/40 text-sm uppercase tracking-widest">{testimonials[index].role}, {testimonials[index].company}</p>
+                      <h4 className="text-white font-bold text-base md:text-lg leading-tight">{testimonials[index].name}</h4>
+                      <p className="text-white/40 text-xs md:text-sm uppercase tracking-widest">{testimonials[index].role}, {testimonials[index].company}</p>
                     </div>
                   </div>
                 </div>
@@ -198,15 +199,33 @@ export default function Testimonials() {
           </AnimatePresence>
 
           {/* Navigation Controls */}
-          <div className="absolute inset-x-0 flex justify-between items-center pointer-events-none px-4 lg:-px-20 z-20">
-            <button 
+          <div className="flex justify-center gap-4 mt-6 md:hidden">
+            <button
+              onClick={prevStep}
+              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white transition-all duration-300 active:bg-red-600 active:border-red-600"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={nextStep}
+              className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white transition-all duration-300 active:bg-red-600 active:border-red-600"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+
+          {/* Desktop Navigation Controls */}
+          <div className="hidden md:flex absolute inset-x-0 top-1/2 -translate-y-1/2 justify-between items-center pointer-events-none px-0 z-20 -mx-8 lg:-mx-16">
+            <button
               onClick={prevStep}
               className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white pointer-events-auto transition-all duration-300 hover:bg-red-600 hover:border-red-600 hover:shadow-[0_0_20px_rgba(230,57,70,0.4)] hover:-translate-x-2"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={24} />
             </button>
-            <button 
+            <button
               onClick={nextStep}
               className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white pointer-events-auto transition-all duration-300 hover:bg-red-600 hover:border-red-600 hover:shadow-[0_0_20px_rgba(230,57,70,0.4)] hover:translate-x-2"
               aria-label="Next testimonial"

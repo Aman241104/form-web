@@ -101,7 +101,7 @@ export default function TermsPage() {
               Legal
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold leading-[1.0] tracking-tight text-white mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.0] tracking-tight text-white mb-6">
             Terms of <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">Service.</span>
           </h1>
           <p className="text-white/40 text-sm font-light">Last updated: January 1, 2026</p>
